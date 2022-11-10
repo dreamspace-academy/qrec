@@ -1,0 +1,1 @@
+develop the QR code scanner
