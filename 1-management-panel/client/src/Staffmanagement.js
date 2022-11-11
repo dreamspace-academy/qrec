@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Staffmanagement() {
+function StaffManagement() {
   return (
     <div>
       <p>Staffmanagement</p>
@@ -8,4 +8,4 @@ function Staffmanagement() {
   )
 }
 
-export default Staffmanagement
+export default StaffManagement
