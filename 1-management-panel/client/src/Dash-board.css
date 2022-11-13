@@ -1,15 +1,18 @@
 /* main div class DashBoard */
 .DashBoard {
     position: fixed;
-    min-width: 300px;
-    max-width: 340px;
-    background-color: rgb(54, 1, 75);
-    height: 100vh;
+    min-width: 340px;
+    background-image: url(./images/dashboard.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-size: 100%;
 }
 
 /* ul class navbar-nav */
 .navbar-nav {
-    font-size: 120%;
+    font-size: 1rem;
     font-weight: 800;
 }
 
@@ -17,42 +20,26 @@
 #left-arrow {
     position: absolute;
     top: 10px;
-    left: 270px;
+    left: 92%;
     font-size: 20px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: rgb(203, 192, 192);
 }
-#Right-arrow{
-        position: absolute;
-        top: 10px;
-        left: 55px;
-        font-size: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: rgb(203, 192, 192);
-    }
+
+#Right-arrow {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(203, 192, 192);
+}
+
 #Right-arrow {
     opacity: 0;
     visibility: hidden;
-}
-
-.color2 {
-    position: absolute;
-    top: 45%;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg, rgb(145, 53, 148) 0%, rgb(0, 255, 255) 100%);
-    clip-path: circle(90px at left);
-}
-
-.color1 {
-    position: absolute;
-    top: 45%;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg, rgb(231, 164, 55) 0%, rgb(168, 148, 3) 100%);
-    clip-path: circle(190px at left);
 }

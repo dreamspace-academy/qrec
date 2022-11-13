@@ -11,9 +11,8 @@ import Home from "./home";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* Vinothraj comment this two functions  */}
-    {/* dont write any thing to this page */}
-    {/* Pls write 'import' to home page this page */}
+    {/* Dont write any thing to this page */}
+    {/* Pls write 'import' any page go to Home.js page */}
     <Home />
   </React.StrictMode>
 

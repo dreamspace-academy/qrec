@@ -19,6 +19,8 @@ function Dash() {
     let A = document.getElementById("dash");
     A.style.minWidth = "75px";
     A.style.maxWidth = "85px";
+    A.style.backgroundImage = "none"
+    A.style.fontSize = "0%"
     A.style.backgroundColor = "Black"
     let B = document.getElementById("Right-arrow");
     B.style.opacity = "1";
@@ -29,8 +31,7 @@ function Dash() {
   };
   const arrowlft = () => {
     let D = document.getElementById("dash");
-    D.style.minWidth = " 300px";
-    D.style.maxWidth = "340px";
+    D.style.minWidth = " 340px";
     D.style.backgroundColor = "rgb(54, 1, 75)";
     let B = document.getElementById("Right-arrow");
     B.style.opacity = "0";
@@ -42,7 +43,7 @@ function Dash() {
   return (
     <div className="DashBoard" id="dash">
       <header className="fs-1 text fw-bold text-danger text-center p-3 header">
-        qRec
+        <p>qRec</p>
       </header>
       <div className="container-fluid text-light">
         <button
@@ -62,34 +63,45 @@ function Dash() {
           <FontAwesomeIcon icon={faArrowRightLong} ></FontAwesomeIcon>
         </button>
         <ul className="navbar-nav">
-          <i className="fa fa-users navbar-brand nav-item d-inline p-2 mb-3 mt-4">
+          <button className='btn btn-outline-warning p-3 border-0 active'><i className="fa fa-users navbar-brand nav-item  d-inline p-2 mb-3 mt-4">
+            &nbsp;&nbsp;
+            <span className="nav-link d-inline " href="#">
+              <p className='h4 fs-3'> View All</p>
+            </span>
+          </i></button>
+          <button className='btn btn-outline-light p-3 border-0'><i className="fa fa-users navbar-brand nav-item  d-inline p-2 mb-3 mt-4">
+            &nbsp;&nbsp;
+            <span className="nav-link d-inline " href="#">
+              <p className='h4 fs-3'> Staff</p>
+            </span>
+          </i></button>
+          <button className='btn btn-outline-success p-3 border-0'><i className="fa fa-list-alt nav-item d-inline p-2 mb-3 mt-4">
             &nbsp;&nbsp;
             <span className="nav-link d-inline" href="#">
-              Staff Management
+              <p className='h4 fs-2'> Attendance</p>
+
             </span>
-          </i>
-          <i className="fa fa-list-alt nav-item d-inline p-2 mb-3 mt-4">
+          </i></button>
+          <button className='btn btn-outline-info  p-3 border-0'> <i className="fa fa-cog nav-item d-inline p-2 mb-3 mt-4 ">
             &nbsp;&nbsp;
             <span className="nav-link d-inline" href="#">
-              Attendance Management
+              <p className='h4 fs-2'>Settings</p>
+
             </span>
-          </i>
-          <i className="fa fa-cog nav-item d-inline p-2 mb-3 mt-4 ">
+          </i></button>
+          <button className='btn btn-outline-primary p-3 border-0'> <i className="far fa-question-circle nav-item d-inline p-2 mb-3 mt-4">
             &nbsp;&nbsp;
             <span className="nav-link d-inline" href="#">
-              Settings
+              <p className='h4 fs-3'>SignOut</p>
+
             </span>
-          </i>
-          <i className="far fa-question-circle nav-item d-inline p-2 mb-3 mt-4">
-            &nbsp;&nbsp;
-            <span className="nav-link d-inline" href="#">
-              SignOut
-            </span>
-          </i>
+          </i></button>
         </ul>
       </div>
-      <div className="color1" />
       <div className="color2" />
+      <div className="color1" />
+
+
     </div>
 
   )

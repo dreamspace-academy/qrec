@@ -3,7 +3,6 @@ import pyqrcode
 import png
 from pyqrcode import QRCode
   
-  
 # String which represents the QR code
 # String which represents the QR code
 msg=str(input("What's your name? " ))

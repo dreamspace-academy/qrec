@@ -1,5 +1,17 @@
-body{
+body {
     width: auto;
     padding: 0%;
     margin: 0%;
+}
+
+.Dash {
+    min-width: 300px;
+    max-width: 340px;
+    float: left;
+    overflow: hidden;
+    background-color: black;
+}
+
+.fix-dash {
+    display: flex;
 }
