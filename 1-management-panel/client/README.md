@@ -77,3 +77,4 @@ npm i bootstrap
 <!-- import fontawesome  -->
 <!-- "dependencies": {@fortawesome/fontawesome-svg-core": "^6.2.0"} -->
 npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesom
+npm install --save @fortawesome/free-solid-svg-icons
