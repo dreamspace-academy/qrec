@@ -4,15 +4,16 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import LoginPage from './LoginPage';
 import StaffDetails from './StaffDetails';
-
+import Dash from './Dash-board';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <StaffDetails />
-    <LoginPage />
-
+    {/* Vinothraj comment this two functions */}
+    {/* <StaffDetails /> */}
+    {/* <LoginPage /> */}
+    <Dash/>
   </React.StrictMode>
 
 );

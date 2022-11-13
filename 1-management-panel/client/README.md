@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<!-- bootstrap package-lock.json -->
+<!-- "dependencies": {"bootstrap": "^5.2.2"} -->
+npm i bootstrap
+
+<!-- import fontawesome  -->
+<!-- "dependencies": {@fortawesome/fontawesome-svg-core": "^6.2.0"} -->
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesom
