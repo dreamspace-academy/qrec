@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import LoginPage from './LoginPage';
-// import StaffDetails from './StaffDetails';
-// import Dash from './Dash-board';
 
 // import home page
 import Home from "./home";
