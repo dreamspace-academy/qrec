@@ -14,7 +14,7 @@ root.render(
     {/* Vinothraj comment this two functions  */}
     {/* dont write any thing to this page */}
     {/* Pls write 'import' to home page this page */}
-    <Home/>
+    <Home />
   </React.StrictMode>
 
 );
