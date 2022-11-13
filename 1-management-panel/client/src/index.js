@@ -2,18 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import LoginPage from './LoginPage';
-import StaffDetails from './StaffDetails';
-import Dash from './Dash-board';
+// import LoginPage from './LoginPage';
+// import StaffDetails from './StaffDetails';
+// import Dash from './Dash-board';
+
+// import home page
+import Home from "./home";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* Vinothraj comment this two functions */}
-    {/* <StaffDetails /> */}
-    {/* <LoginPage /> */}
-    <Dash/>
+    {/* Vinothraj comment this two functions  */}
+    {/* dont write any thing to this page */}
+    {/* Pls write 'import' to home page this page */}
+    <Home/>
   </React.StrictMode>
 
 );
