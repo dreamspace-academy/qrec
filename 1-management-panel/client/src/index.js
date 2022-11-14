@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* Dont write any thing to this page */}
-    {/* Pls write 'import' any page go to Home.js page */}
+    {/* Go to Home.js page */}
     <Home />
   </React.StrictMode>
 

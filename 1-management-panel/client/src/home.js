@@ -7,6 +7,7 @@ const Home = () => {
             {/* add Dash-Board */}
             <div className='Dash'>
                 <span className='fix-dash'><Dash /></span> 
+                
                 {/* add your page */}
             </div>
         </div>
