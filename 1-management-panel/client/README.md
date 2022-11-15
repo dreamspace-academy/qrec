@@ -78,3 +78,7 @@ npm i bootstrap
 <!-- "dependencies": {@fortawesome/fontawesome-svg-core": "^6.2.0"} -->
 npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesom
 npm install --save @fortawesome/free-solid-svg-icons
+
+<!-- install React router -v 5 -->
+<!-- "dependencies": {"react-router-dom": "^5.3.4"} -->
+ npm install react-router-dom@5 

@@ -1,16 +1,37 @@
 import Dash from './Dash-board'
+import StaffDeatils from './Staff';
+import Settings from './Setting';
+import Attend from './Attendance';
+import View from './Viewall';
 import "./Home.css";
-import Staff from './Staff';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Home = () => {
     return (
-        <div className='row-3'>
-            {/* add Dash-Board */}
-            <div className='Dash'>
-                <span className='fix-dash'><Dash/></span>
-                {/* add your page */}
+        <Router>
+            <div className='body'>
+                <Dash />
+                {/* import your jsx file bellow */}
+                <div className='container bg-dark'>
+
+                    <Switch>
+                        <Route exact path="/">
+                            <View />
+                        </Route>
+                        <Route exact path="/Attend">
+                            <Attend />
+                        </Route>
+                        <Route exact path="/staff">
+                            <StaffDeatils />
+                        </Route>
+                        <Route exact path="/Settings">
+                            <Settings />
+                        </Route>
+                    </Switch>
+                </div>
             </div>
-        </div>
+
+        </Router>
     );
 }
 export default Home;

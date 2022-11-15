@@ -5,6 +5,9 @@ import './Dash-board.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import Bootstrap-js
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
+// import link tag
+import { Link } from "react-router-dom";
+
 // import fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
@@ -18,9 +21,7 @@ function Dash() {
   const arrow = () => {
     let A = document.getElementById("dash");
     A.style.minWidth = "75px";
-    A.style.maxWidth = "85px";
-    A.style.backgroundImage = "none"
-    A.style.fontSize = "0%"
+    A.style.maxWidth = "75px";
     A.style.backgroundColor = "Black"
     let B = document.getElementById("Right-arrow");
     B.style.opacity = "1";
@@ -29,10 +30,10 @@ function Dash() {
     C.style.opacity = "0";
     C.style.visibility = "hidden"
   };
-  const arrowlft = () => {
+  const arrowRit = () => {
     let D = document.getElementById("dash");
     D.style.minWidth = " 340px";
-    D.style.backgroundColor = "rgb(54, 1, 75)";
+    D.style.maxWidth = " 340px";
     let B = document.getElementById("Right-arrow");
     B.style.opacity = "0";
     B.style.visibility = "hidden";
@@ -57,51 +58,29 @@ function Dash() {
         <button
           className="btn border-0 btn-outline-dark "
           id="Right-arrow"
-          onClick={arrowlft}
+          onClick={arrowRit}
           type="button"
         >
           <FontAwesomeIcon icon={faArrowRightLong} ></FontAwesomeIcon>
         </button>
         <ul className="navbar-nav">
-          <button className='btn btn-outline-warning p-3 border-0 active'><i className="fa fa-users navbar-brand nav-item  d-inline p-2 mb-3 mt-4">
-            &nbsp;&nbsp;
-            <span className="nav-link d-inline " href="#">
-              <p className='h4 fs-3'> View All</p>
-            </span>
-          </i></button>
-          <button className='btn btn-outline-light p-3 border-0'><i className="fa fa-users navbar-brand nav-item  d-inline p-2 mb-3 mt-4">
-            &nbsp;&nbsp;
-            <span className="nav-link d-inline " href="#">
-              <p className='h4 fs-3'> Staff</p>
-            </span>
-          </i></button>
-          <button className='btn btn-outline-success p-3 border-0'><i className="fa fa-list-alt nav-item d-inline p-2 mb-3 mt-4">
-            &nbsp;&nbsp;
-            <span className="nav-link d-inline" href="#">
-              <p className='h4 fs-2'> Attendance</p>
-
-            </span>
-          </i></button>
-          <button className='btn btn-outline-info  p-3 border-0'> <i className="fa fa-cog nav-item d-inline p-2 mb-3 mt-4 ">
-            &nbsp;&nbsp;
-            <span className="nav-link d-inline" href="#">
-              <p className='h4 fs-2'>Settings</p>
-
-            </span>
-          </i></button>
-          <button className='btn btn-outline-primary p-3 border-0'> <i className="far fa-question-circle nav-item d-inline p-2 mb-3 mt-4">
-            &nbsp;&nbsp;
-            <span className="nav-link d-inline" href="#">
-              <p className='h4 fs-3'>SignOut</p>
-
-            </span>
-          </i></button>
+          <button className='btn btn-outline-info border-0 mt-4 mb-4'>
+            <p className='h4 fs-3'><Link to={"/"} className="nav-link">View All</Link> </p>
+          </button>
+          <button className='btn btn-outline-info border-0 mt-4 mb-4'>
+            <p className='h4 fs-3'><Link to={"/Staff"} className="nav-link">Staff</Link> </p>
+          </button>
+          <button className='btn btn-outline-info border-0 mt-4 mb-4'>
+            <p className='h4 fs-3'><Link to={"/Attend"} className="nav-link">Attendance</Link> </p>
+          </button>
+          <button className='btn btn-outline-info border-0 mt-4 mb-4'>
+            <p className='h4 fs-3'><Link to={"/Settings"} className="nav-link">Setting</Link> </p>
+          </button>
+          <button className='btn btn-outline-info border-0 mt-4 mb-4'>
+            <p className='h4 fs-3'><Link to={"/"} className="nav-link"></Link>Logout </p>
+          </button>
         </ul>
       </div>
-      <div className="color2" />
-      <div className="color1" />
-
-
     </div>
 
   )
