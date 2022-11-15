@@ -7,15 +7,9 @@ const Home = () => {
         <div className='row-3'>
             {/* add Dash-Board */}
             <div className='Dash'>
-                <span className='fix-dash'><Dash /></span> 
-                
+                <span className='fix-dash'><Dash/></span>
                 {/* add your page */}
             </div>
-            <div>
-                <Staff/>
-            </div>
-           
-          
         </div>
     );
 }
