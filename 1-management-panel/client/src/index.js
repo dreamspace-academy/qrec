@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 // import home page
 import Home from "./home";
-
+import Staff from './Staff';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +14,8 @@ root.render(
     {/* Dont write any thing to this page */}
     {/* Go to Home.js page */}
     <Home />
+    
+    
   </React.StrictMode>
 
 );
