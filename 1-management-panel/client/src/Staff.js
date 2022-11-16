@@ -6,8 +6,8 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
 
 const StaffDeatils = () => {
     return ( 
-        <div>
-            <h1 className="text-center text-light">Staff</h1>
+        <div className="bg-info text-center text-dark">
+            <p className="fw-bold fs-2">Staff</p>
         </div>
      );
 }

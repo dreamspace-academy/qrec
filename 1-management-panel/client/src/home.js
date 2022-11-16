@@ -9,11 +9,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 const Home = () => {
     return (
         <Router>
-            <div className='body'>
+            <div className='body-page'>
                 <Dash />
                 {/* import your jsx file bellow */}
-                <div className='container bg-dark'>
-
+                <div className='Routing-content bg-dark border-0 rounded'>
                     <Switch>
                         <Route exact path="/">
                             <View />
@@ -27,6 +26,7 @@ const Home = () => {
                         <Route exact path="/Settings">
                             <Settings />
                         </Route>
+                        
                     </Switch>
                 </div>
             </div>
