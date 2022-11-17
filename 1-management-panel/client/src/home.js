@@ -1,37 +1,43 @@
-import Dash from './Dash-board'
-import StaffDeatils from './Staff';
-import Settings from './Setting';
-import Attend from './Attendance';
-import View from './Viewall';
-import "./Home.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./Home.css";
+import DASH from "./Components/Dash-bord";
+import All from "./pages/Dashboard";
+import About from './pages/About';
+import Analytics from './pages/Analytics';
+import Comment from './pages/Comment';
+import Product from './pages/Product';
+import ProductList from './pages/ProductList';
 
 const Home = () => {
     return (
-        <Router>
-            <div className='body-page'>
-                <Dash />
-                {/* import your jsx file bellow */}
-                <div className='Routing-content bg-dark border-0 rounded'>
-                    <Switch>
-                        <Route exact path="/">
-                            <View />
+        
+            
+                <Router>
+            <DASH>
+            <Switch>
+                    <Route path="/">
+                        <All/>
                         </Route>
-                        <Route exact path="/Attend">
-                            <Attend />
-                        </Route>
-                        <Route exact path="/staff">
-                            <StaffDeatils />
-                        </Route>
-                        <Route exact path="/Settings">
-                            <Settings />
-                        </Route>
-                        
-                    </Switch>
-                </div>
-            </div>
-
-        </Router>
+                    <Route path="/About">
+                        <About />
+                    </Route>
+                    <Route path="/Analytics">
+                        <Analytics />
+                    </Route>
+                    <Route path="/Comment">
+                        <Comment />
+                    </Route>
+                    <Route path="/Product">
+                        <Product />
+                    </Route>
+                    <Route path="/ProductList">
+                        <ProductList />
+                    </Route>
+            </Switch>
+            </DASH>
+                </Router>
+            
+        
     );
 }
 export default Home;

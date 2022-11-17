@@ -82,3 +82,7 @@ npm install --save @fortawesome/free-solid-svg-icons
 <!-- install React router -v 5 -->
 <!-- "dependencies": {"react-router-dom": "^5.3.4"} -->
  npm install react-router-dom@5 
+
+<!-- npm install react-icons --save -->
+npm install react-icons --save
+npm run build
