@@ -4,6 +4,9 @@ import {
     FaBars,
     FaLock,
     FaUser,
+    FaTasks,
+    FaWrench,
+    FaPowerOff,
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
@@ -25,17 +28,17 @@ const DASH = ({ children }) => {
         {
             path: "/attendance",
             name: "Attendance",
-            
+            icon: <FaTasks />
         },
         {
             path: "/settings",
             name: "Settings",
-            
+            icon: <FaWrench />
         },
         {
             path: "/logout",
             name: "Log-out",
-            icon: <FaLock />
+            icon: <FaPowerOff />
         },
     ]
     return (

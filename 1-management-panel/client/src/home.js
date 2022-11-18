@@ -5,7 +5,7 @@ import All from "./pages/Dashboard";
 import Staff from './pages/Staff';
 import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
-import Product from './pages/Product';
+import LogOut from './pages/LogOut';
 
 const Home = () => {
     return (
@@ -27,7 +27,7 @@ const Home = () => {
                         <Settings />
                     </Route>
                     <Route path="/logout">
-                        <Product />
+                        <LogOut />
                     </Route>
             </Switch>
             </DASH>
