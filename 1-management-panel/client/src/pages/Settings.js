@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Comment = () => {
+const Settings = () => {
     return (
         <div>
-            <h1>Comment page</h1>
+            <h1>Settings</h1>
         </div>
     );
 };
 
-export default Comment;
+export default Settings;

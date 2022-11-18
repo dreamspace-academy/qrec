@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Home.css";
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
-import About from './pages/About';
-import Analytics from './pages/Analytics';
-import Comment from './pages/Comment';
+import Staff from './pages/Staff';
+import Attendance from './pages/Attendance';
+import Settings from './pages/Settings';
 import Product from './pages/Product';
 
 const Home = () => {
@@ -14,19 +14,19 @@ const Home = () => {
                 <Router>
             <DASH>
             <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <All/>
                         </Route>
                     <Route path="/about">
-                        <About />
+                        <Staff />
                     </Route>
-                    <Route path="/Addendance">
-                        <Analytics />
+                    <Route path="/Attendance">
+                        <Attendance />
                     </Route>
-                    <Route path="/Setting">
-                        <Comment />
+                    <Route path="/settings">
+                        <Settings />
                     </Route>
-                    <Route path="/Log-out">
+                    <Route path="/logout">
                         <Product />
                     </Route>
             </Switch>
