@@ -2,7 +2,7 @@ import React from 'react';
 
 const Staff = () => {
     return (
-        <div>
+        <div className='ui dividing header'>
             <h1>Staff Management</h1>
         </div>
     );
