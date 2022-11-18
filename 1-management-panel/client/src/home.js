@@ -6,7 +6,6 @@ import About from './pages/About';
 import Analytics from './pages/Analytics';
 import Comment from './pages/Comment';
 import Product from './pages/Product';
-import ProductList from './pages/ProductList';
 
 const Home = () => {
     return (
@@ -18,20 +17,17 @@ const Home = () => {
                     <Route path="/">
                         <All/>
                         </Route>
-                    <Route path="/About">
+                    <Route path="/about">
                         <About />
                     </Route>
-                    <Route path="/Analytics">
+                    <Route path="/Addendance">
                         <Analytics />
                     </Route>
-                    <Route path="/Comment">
+                    <Route path="/Setting">
                         <Comment />
                     </Route>
-                    <Route path="/Product">
+                    <Route path="/Log-out">
                         <Product />
-                    </Route>
-                    <Route path="/ProductList">
-                        <ProductList />
                     </Route>
             </Switch>
             </DASH>
