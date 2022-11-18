@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import {
     FaTh,
     FaBars,
-    FaRegChartBar,
-    FaCommentAlt,
-    FaShoppingBag,
-    FaUser
+    FaLock,
+    FaUser,
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
@@ -21,23 +19,23 @@ const DASH = ({ children }) => {
         },
         {
             path: "/about",
-            name: "Staff management",
+            name: "Staff",
             icon: <FaUser />
         },
         {
             path: "/Addendance",
-            name: "Addendance management",
-            icon: <FaRegChartBar />
+            name: "Addendance",
+            
         },
         {
             path: "/Setting",
             name: "Setting",
-            icon: <FaCommentAlt />
+            
         },
         {
             path: "/Log-out",
             name: "Log-out",
-            icon: <FaShoppingBag />
+            icon: <FaLock />
         },
     ]
     return (
