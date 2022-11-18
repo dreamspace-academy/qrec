@@ -14,7 +14,7 @@ main {
 }
 
 .sidebar {
-  background-image: url(./images/dashboard.png);
+  background-image: url(./images/sidebar.png);
   color: rgb(255, 132, 0);
   background-position: center;
   background-repeat: no-repeat;
