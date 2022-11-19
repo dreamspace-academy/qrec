@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
     FaTh,
     FaBars,
-    FaLock,
     FaUser,
     FaTasks,
     FaWrench,
@@ -43,7 +42,7 @@ const DASH = ({ children }) => {
     ]
     return (
         <div className="container">
-            <div style={{ width: isOpen ? "200px" : "50px", transition: "all 0.9s : all 0.9s" }} className="sidebar">
+            <div style={{ width: isOpen ? "200px" : "50px", }} className="sidebar">
                 <div className="top_section">
                     <h1 style={{ display: isOpen ? "block" : "none", transition: "all 2s : all 2s" }} className="logo">qRec</h1>
                     <div style={{ marginLeft: isOpen ? "60px" : "0px", transition: "all 0.9s : all 0.9s" }} className="bars">

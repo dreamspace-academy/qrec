@@ -15,7 +15,8 @@ main {
 
 .sidebar {
   background-image: url(./images/sidebar.png);
-  color: rgb(255, 132, 0);
+  color: whitesmoke;
+  font-size: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,6 +33,7 @@ main {
 
 .logo {
   font-size: 40px;
+  color: red;
   text-align: center;
   transition: all 2s ease-in-out;
 }
@@ -47,6 +49,7 @@ main {
   display: flex;
   color: #fff;
   padding: 10px 15px;
+  margin: 20px 0px;
   gap: 15px;
   transition: all 0.5s;
 }
@@ -65,4 +68,5 @@ main {
 .icon,
 .link_text {
   font-size: 20px;
+  margin: 10px 0px;
 }
