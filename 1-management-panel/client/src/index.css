@@ -33,7 +33,7 @@ main {
 
 .logo {
   font-size: 40px;
-  color: orangered;
+  color: #dd6941;
   text-align: center;
   transition: all 2s ease-in-out;
 }

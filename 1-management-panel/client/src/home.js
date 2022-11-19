@@ -9,14 +9,14 @@ import LogOut from './pages/LogOut';
 
 const Home = () => {
     return (
-        
-            
-                <Router>
+
+
+        <Router>
             <DASH>
-            <Switch>
+                <Switch>
                     <Route exact path="/">
-                        <All/>
-                        </Route>
+                        <All />
+                    </Route>
                     <Route path="/about">
                         <Staff />
                     </Route>
@@ -29,11 +29,11 @@ const Home = () => {
                     <Route path="/logout">
                         <LogOut />
                     </Route>
-            </Switch>
+                </Switch>
             </DASH>
-                </Router>
-            
-        
+        </Router>
+
+
     );
 }
 export default Home;
