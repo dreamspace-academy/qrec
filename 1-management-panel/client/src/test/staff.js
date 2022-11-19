@@ -1,9 +1,9 @@
 import React from 'react';
-import '../PageStyle/Staff.css'
+import img from "../images/logo.png"
 
 const Staff = () => {
     return (
-        <div className='container-fluid Scroll'>
+        <div>
             <div className='ui dividing header'>
                 <h1>Staff Management
                     <button className='ui black mini button right floated '>
@@ -96,7 +96,7 @@ const Staff = () => {
                     </div>
                     <div class="ui card">
                         <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+                            <img src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
                         </div>
                         <div class="content">
                             <div class="header">Vinothraj</div>
@@ -163,7 +163,7 @@ const Staff = () => {
                     </div>
                     <div class="ui card">
                         <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+                            <img src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
                         </div>
                         <div class="content">
                             <div class="header">Vinothraj</div>
@@ -230,7 +230,7 @@ const Staff = () => {
                     </div>
                     <div class="ui card">
                         <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+                            <img src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
                         </div>
                         <div class="content">
                             <div class="header">Vinothraj</div>
@@ -282,6 +282,8 @@ const Staff = () => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

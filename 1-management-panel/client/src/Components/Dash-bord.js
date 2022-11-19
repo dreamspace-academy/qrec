@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Dash-board.css'
 import {
     FaTh,
     FaBars,
@@ -43,10 +44,10 @@ const DASH = ({ children }) => {
         },
     ]
     return (
-        <div className="container">
+        <div className="DashBoardItem">
             <div style={{ width: isOpen ? "200px" : "50px", }} className="sidebar">
                 <div className="top_section">
-                    <h1 style={{ display: isOpen ? "block" : "none", transition: "all 2s : all 2s" }} className="logo">qRec</h1>
+                    <h1 style={{ display: isOpen ? "block" : "none", transition: "all 2s : all 2s" }} className="logo fw-bold">qRec</h1>
                     <div style={{ marginLeft: isOpen ? "60px" : "0px", transition: "all 0.9s : all 0.9s" }} className="bars">
                         <FaBars onClick={toggle} />
                     </div>
@@ -60,7 +61,7 @@ const DASH = ({ children }) => {
                     ))
                 }
             </div>
-            <main>{children}</main>
+            <main className='overflow-auto'>{children}</main>
         </div>
     );
 };
