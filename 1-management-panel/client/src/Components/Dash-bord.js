@@ -38,7 +38,7 @@ const DASH = ({ children }) => {
             icon: <FaWrench />
         },
         {
-            path: "/logout",
+            path: "/login",
             name: "Log-out",
             icon: <FaPowerOff />
         },
