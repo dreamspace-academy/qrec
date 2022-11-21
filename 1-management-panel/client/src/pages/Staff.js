@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../PageStyle/Staff.css'
 
 
@@ -7,11 +8,12 @@ const Staff = () => {
         <div className='container-fluid Scroll'>
             <div className='ui dividing header'>
                 <h1>Staff Management
+                    <Link to={'/addstaff'}>
                     <button className='ui black mini button right floated '>
-                        <i aria-hidden="true" class=" user plus large icon" id="addstaff">
-                            <link href='./Staffcreate' />
+                        <i aria-hidden="true" class=" user plus large icon" id="addStaff">
                         </i>
                     </button>
+                    </Link>
                 </h1>
             </div>
 

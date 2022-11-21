@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Home.css";
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
-import Staff from './pages/StaffManage';
+import Staff from './pages/Staff';
 import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
 import LogOut from './pages/LogOut';
