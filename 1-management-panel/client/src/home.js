@@ -7,7 +7,10 @@ import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
 import LogOut from './pages/LogOut';
 import Add from './pages/Staffcreate';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Details from "./pages/StaffDetails";
+import Edit from './pages/Editstaff1';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 const Home = () => {
     return (
 
@@ -33,6 +36,12 @@ const Home = () => {
                         <Route path="/addStaff">
                             <Add />
                         </Route>
+                        <Route path="/staffdetails">
+                            <Add />
+                        </Route> 
+                        <Route path="/staffedit">
+                            <Add />
+                        </Route>   
                     </Switch>
                 </DASH>
             </Router>
