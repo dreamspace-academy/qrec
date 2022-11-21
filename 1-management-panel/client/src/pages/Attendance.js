@@ -13,21 +13,28 @@ const TableExampleStriped = () => (
             <h1>Attendance Management</h1>
         </div>
 
-        <div >
-            <Header as='h3' block>
+        <div  >
+            <Header as='h3' block >
                 <Form>
-                    <Form.Group widths='equal'>
-
-                        <Form.Select
-                            fluid
-                            label=''
+                    <Form.Group inline className='ui center aligned container'>
+                        <Form.Select inline
+                            fixed
+                            label='Search by'
                             options={options}
                             placeholder='Search by'
+                            width={5}
                         />
-                        <Form.Input fluid label='' placeholder='Type Here' />
-                        <Button icon>
+                        <Form.Input fluid label='' placeholder='Type Here' width={7} />
+                        <Button secondary icon>
                             <Icon inline name='search' />
                         </Button>
+                    </Form.Group>
+<hr />
+                    <Form.Group inline>
+                        <Form.Input label='Date' placeholder='xx' width={6} />
+                        <Form.Input label='Month' placeholder='xx' width={4} />
+                        <Form.Input label='Year' placeholder='xxxx' width={6} />
+                        <Button secondary>Filter</Button>
                     </Form.Group>
                 </Form>
 
