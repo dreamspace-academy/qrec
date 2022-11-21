@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Home.css";
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
-import Staff from './pages/Staff';
+import Staff from './pages/StaffManage';
 import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
 import LogOut from './pages/LogOut';
+import Add from './pages/Staffcreate';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 const Home = () => {
     return (
@@ -28,6 +29,9 @@ const Home = () => {
                         </Route>
                         <Route path="/logout">
                             <LogOut />
+                        </Route>
+                        <Route path="/addStaff">
+                            <Add />
                         </Route>
                     </Switch>
                 </DASH>

@@ -14,7 +14,7 @@ const Staffcreate = () => (
     <Form.Field>
       <Checkbox label='I agree to the Terms and Conditions' />
     </Form.Field>
-    <Button type='submit'>Submit</Button>
+    <Button type='submit'>Add</Button>
   </Form>
 )
 
