@@ -1,13 +1,16 @@
 import React from 'react';
 import '../PageStyle/Staff.css'
 
+
 const Staff = () => {
     return (
         <div className='container-fluid Scroll'>
             <div className='ui dividing header'>
                 <h1>Staff Management
                     <button className='ui black mini button right floated '>
-                        <i aria-hidden="true" class=" user plus large icon"></i>
+                        <i aria-hidden="true" class=" user plus large icon" id="addstaff">
+                            <link href='./Staffcreate' />
+                        </i>
                     </button>
                 </h1>
             </div>
@@ -282,6 +285,7 @@ const Staff = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 };
