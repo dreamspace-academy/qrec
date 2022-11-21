@@ -37,10 +37,10 @@ const Home = () => {
                             <Add />
                         </Route>
                         <Route path="/staffdetails">
-                            <Add />
+                            <Details />
                         </Route> 
                         <Route path="/staffedit">
-                            <Add />
+                            <Edit />
                         </Route>   
                     </Switch>
                 </DASH>

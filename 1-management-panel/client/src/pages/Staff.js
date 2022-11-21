@@ -22,11 +22,12 @@ const Staff = () => {
 
             <div>
                 <div className='ui five cards'>
-                <Link to={'/staffdetails'}>
+              
                     <Card>
-                        <img src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
+                   <img src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                       
+                  <Card.Content>
+                            <Card.Header> <Link to={'/staffdetails'} style={{ textDecoration: 'none' }}>Gunarakulan</Link></Card.Header>
                             <Card.Meta>
                                 <span className='date'>Joined in 2015</span>
                             </Card.Meta>
@@ -39,8 +40,9 @@ const Staff = () => {
                                 ID : 001
                             </a>
                         </Card.Content>
+                        
                     </Card>
-                    </Link>
+               
                    
                     <Card>
                         <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
@@ -372,6 +374,7 @@ const Staff = () => {
                         </Card.Content>
                     </Card>
                 </div>
+            
             </div>
 
         </div>
