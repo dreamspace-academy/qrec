@@ -1,293 +1,376 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Image } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
 
 
 const Staff = () => {
     return (
         <div className='container-fluid Scroll'>
+
             <div className='ui dividing header'>
                 <h1>Staff Management
                     <Link to={'/addstaff'}>
-                    <button className='ui black mini button right floated '>
-                        <i aria-hidden="true" class=" user plus large icon" id="addStaff">
-                        </i>
-                    </button>
+                        <button className='ui black mini button right floated '>
+                            <i aria-hidden="true" class=" user plus large icon" id="addStaff">
+                            </i>
+                        </button>
                     </Link>
                 </h1>
             </div>
 
+
             <div>
-                <div className="ui five cards">
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Gunarakulan</div>
-                            <div class="meta"><span class="date">Joined in 2016</span></div>
-                            <div class="description">Guardian</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 001</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Vinothraj</div>
-                            <div class="meta">Joined in 2022</div>
-                            <div class="description">Trainee</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 002</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
+                <div className='ui five cards'>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Ashathkavi</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2018</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Staff
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 002
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Vinothraj</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2022</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Trainee
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 003
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
                 </div>
-                <div className="ui five cards">
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Gunarakulan</div>
-                            <div class="meta"><span class="date">Joined in 2016</span></div>
-                            <div class="description">Guardian</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 001</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Vinothraj</div>
-                            <div class="meta">Joined in 2022</div>
-                            <div class="description">Trainee</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 002</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
+                <div className='ui five cards'>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Ashathkavi</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2018</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Staff
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 002
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Vinothraj</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2022</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Trainee
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 003
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
                 </div>
-                <div className="ui five cards">
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Gunarakulan</div>
-                            <div class="meta"><span class="date">Joined in 2016</span></div>
-                            <div class="description">Guardian</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 001</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Vinothraj</div>
-                            <div class="meta">Joined in 2022</div>
-                            <div class="description">Trainee</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 002</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
+                <div className='ui five cards'>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Ashathkavi</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2018</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Staff
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 002
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Vinothraj</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2022</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Trainee
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 003
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
                 </div>
-                <div className="ui five cards">
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Gunarakulan</div>
-                            <div class="meta"><span class="date">Joined in 2016</span></div>
-                            <div class="description">Guardian</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 001</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Vinothraj</div>
-                            <div class="meta">Joined in 2022</div>
-                            <div class="description">Trainee</div>
-                        </div>
-                        <div class="extra content">
-                            <a>ID : 002</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
-                        </div>
-                        <div class="content">
-                            <div class="header">Matthew</div>
-                            <div class="meta"><span class="date">Joined in 2015</span></div>
-                            <div class="description">Matthew is a musician living in Nashville.</div>
-                        </div>
-                        <div class="extra content">
-                            <a><i aria-hidden="true" class="user icon"></i>22 Friends</a>
-                        </div>
-                    </div>
+                <div className='ui five cards'>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Ashathkavi</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2018</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Staff
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 002
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Vinothraj</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2022</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Trainee
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 003
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
+                    <Card>
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>Gunarakulan</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Joined in 2015</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                Guardian
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <a>
+                                ID : 001
+                            </a>
+                        </Card.Content>
+                    </Card>
                 </div>
             </div>
-            
+
         </div>
     );
 };
