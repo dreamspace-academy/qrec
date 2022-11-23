@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { Form, Input, TextArea, Button, Select, Divider } from 'semantic-ui-react';
+
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -92,13 +94,15 @@ const StaffEdit = () => {return(
        </Form.Group>
     
     
-    
+    <Link to={'./StaffDetails'}>
     <Form.Field
       id='form-button-control-public'
       control={Button}
       content='Update'
       label='Confirm Details and Update'
+      
     />
+    </Link>
   </Form>
   </div>
 )
