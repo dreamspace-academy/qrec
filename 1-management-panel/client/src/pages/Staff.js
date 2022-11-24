@@ -62,7 +62,7 @@ const Staff = () => {
                         </Card.Content>
                     </Card>
                     <Card>
-                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Vinothraj</Card.Header>
                             <Card.Meta>
@@ -149,7 +149,7 @@ const Staff = () => {
                         </Card.Content>
                     </Card>
                     <Card>
-                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Vinothraj</Card.Header>
                             <Card.Meta>
@@ -236,7 +236,7 @@ const Staff = () => {
                         </Card.Content>
                     </Card>
                     <Card>
-                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Vinothraj</Card.Header>
                             <Card.Meta>
@@ -323,7 +323,7 @@ const Staff = () => {
                         </Card.Content>
                     </Card>
                     <Card>
-                        <Image src='https://ca.slack-edge.com/THANGN4NM-U0490NGVDBJ-d83cdb88edee-512' wrapped ui={false} />
+                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Vinothraj</Card.Header>
                             <Card.Meta>

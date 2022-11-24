@@ -10,26 +10,26 @@ const All = () => {
             </Header>
 
 
-            <Header as='h2'>qRec is a QR based attendance system.</Header>
+            <Header as='h2'> qRec is a QR based attendance system.</Header>
             <br />
             <List verticalAlign='middle' size='large'>
                 <ul>
                     <List.Item>
                         <li> Attendance Management keeps track of your employee or students present/absent details.</li>
-                    </List.Item> <br />
+                    </List.Item> 
                     <List.Item> <br />
                         <li>        It is the system to document the time your employees/students work and the time they take off.</li>
-                    </List.Item> <br />
+                    </List.Item> 
                     <List.Item> <br />
                         <li>       This is a computer vision based attendance system prototype that was developed for the DreamSpace Academy to manage the students attendances in a proper way.</li>
-                    </List.Item> <br />
+                    </List.Item> 
                     <List.Item> <br />
                         <li>     This system is using the QR technology as an identity to index the employees/students.</li>
-                    </List.Item> <br />
+                    </List.Item> 
                     <List.Item> <br />
                         <li>      Every students or employees will have an identity card that was printed with a QR code. When they scan the QR code, it takes attendance of the particular student or employee.</li>
-                    </List.Item> <br />
-                    <List.Item>      <br />
+                    </List.Item> 
+                    <List.Item> <br />
                         <li>     This computerized system is using a camera as the QR code reader, because it is based on computer vision technology.</li>
                     </List.Item> <br />
                 </ul>
