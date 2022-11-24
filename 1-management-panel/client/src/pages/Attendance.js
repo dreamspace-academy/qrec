@@ -31,9 +31,9 @@ const TableExampleStriped = () => (
                     </Form.Group>
 <hr />
                     <Form.Group inline>
-                        <Form.Input label='Date' placeholder='xx' width={6} />
-                        <Form.Input label='Month' placeholder='xx' width={4} />
-                        <Form.Input label='Year' placeholder='xxxx' width={6} />
+                        <Form.Input label='Date' placeholder='xx' width={6}  type='number'   />
+                        <Form.Input label='Month' placeholder='xx' width={4} type='number'  />
+                        <Form.Input label='Year' placeholder='xxxx' width={6} type='number'  />
                         <Button secondary>Filter</Button>
                     </Form.Group>
                 </Form>

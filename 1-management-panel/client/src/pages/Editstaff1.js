@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
+=======
+import React from 'react'
+import {Link} from 'react-router-dom'
+>>>>>>> 81c48e2ea5702669027d65b22bf580bce4b83296
 import { Form, Input, TextArea, Button, Select, Divider } from 'semantic-ui-react';
+
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -93,12 +99,17 @@ const StaffEdit = () => {return(
        </Form.Group>
     
     
+<<<<<<< HEAD
        <Link to={'/staffdetails'}>
+=======
+    <Link to={'./StaffDetails'}>
+>>>>>>> 81c48e2ea5702669027d65b22bf580bce4b83296
     <Form.Field
       id='form-button-control-public'
       control={Button}
       content='Update'
       label='Confirm Details and Update'
+      
     />
     </Link>
   </Form>
