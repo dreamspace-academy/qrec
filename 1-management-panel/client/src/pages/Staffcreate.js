@@ -1,9 +1,5 @@
 import React from 'react'
 import { Form, Input, TextArea, Button, Select, Divider } from 'semantic-ui-react';
-import { Uploader } from "uploader";
-import { UploadButton } from "react-uploader";
-import { UploadDropzone } from "react-uploader";
-
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -18,10 +14,6 @@ const Staffcreate = () => {
       <div className='ui dividing header'>
         <h1>Staff Registation</h1>
       </div>
-
-     
-
-
 
       <Form>
         <Form.Group widths='equal'>
