@@ -22,10 +22,8 @@ const Staff = () => {
 
             <div>
                 <div className='ui five cards'>
-
                     <Card>
                         <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} circular />
-
                         <Card.Content>
                             <Card.Header> <Link to={'/staffdetails'} style={{ textDecoration: 'none' }}>Gunarakulan</Link></Card.Header>
                             <Card.Meta>
@@ -36,13 +34,10 @@ const Staff = () => {
                             </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
+                            <a>ID : 001</a>
                         </Card.Content>
-
                     </Card>
-                    <Card>
+                    {/* <Card>
                         <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Ashathkavi</Card.Header>
@@ -109,10 +104,10 @@ const Staff = () => {
                                 ID : 001
                             </a>
                         </Card.Content>
-                    </Card>
+                    </Card> */}
                 </div>
                 <div className='ui five cards'>
-                    <Card>
+                    <Card className='cards'>
                         <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Gunarakulan</Card.Header>
@@ -129,7 +124,7 @@ const Staff = () => {
                             </a>
                         </Card.Content>
                     </Card>
-                    <Card>
+                    {/* <Card>
                         <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Ashathkavi</Card.Header>
@@ -196,7 +191,7 @@ const Staff = () => {
                                 ID : 001
                             </a>
                         </Card.Content>
-                    </Card>
+                    </Card> */}
                 </div>
                 <div className='ui five cards'>
                     <Card>

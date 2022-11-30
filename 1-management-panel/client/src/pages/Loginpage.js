@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import logo from "./logo2.png";
-
-
-import "./Loginpage.css";
+import logo from "../images/logo2.png"
+import "../PageStyle/Loginpage.css";
 
 function Loginpage() {
   // React States

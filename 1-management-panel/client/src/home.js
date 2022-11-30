@@ -6,6 +6,7 @@ import Staff from './pages/Staff';
 import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
 import LogOut from './pages/LogOut';
+import Loginpage from './pages/Loginpage';
 import Add from './pages/Staffcreate';
 import Details from "./pages/StaffDetails";
 import Edit from './pages/Editstaff1';
@@ -30,8 +31,8 @@ const Home = () => {
                         <Route path="/settings">
                             <Settings />
                         </Route>
-                        <Route path="/logout">
-                            <LogOut />
+                        <Route path="/login">
+                            <Loginpage />
                         </Route>
                         <Route path="/addStaff">
                             <Add />
