@@ -13,7 +13,7 @@ const StaffDetails = () => {
       <div className='ui dividing header'>
         <h1>Staff Detail</h1>
       </div>
-      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' size='medium' centered rounded /> <br />
+      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
       <Form >
         <Form.Group widths='equal'>
           <Form.Field

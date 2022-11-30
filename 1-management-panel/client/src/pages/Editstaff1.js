@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Input, TextArea, Button, Select, Divider } from 'semantic-ui-react';
+import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 
 
 const genderOptions = [
@@ -15,6 +15,7 @@ const StaffEdit = () => {
       <div className='ui dividing header'>
         <h1>Edit Staff</h1>
       </div>
+      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
       <Form>
         <Form.Group widths='equal'>
           <Form.Field

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, TextArea, Button, Select, Divider } from 'semantic-ui-react';
+import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -14,7 +14,7 @@ const Staffcreate = () => {
       <div className='ui dividing header'>
         <h1>Staff Registation</h1>
       </div>
-
+      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
       <Form>
         <Form.Group widths='equal'>
           <Form.Field
