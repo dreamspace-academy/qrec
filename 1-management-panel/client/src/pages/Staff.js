@@ -24,7 +24,7 @@ const Staff = () => {
                 <div className='ui five cards'>
               
                     <Card>
-                   <img src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                   <Image  src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} circular />
                        
                   <Card.Content>
                             <Card.Header> <Link to={'/staffdetails'} style={{ textDecoration: 'none' }}>Gunarakulan</Link></Card.Header>
@@ -376,7 +376,7 @@ const Staff = () => {
                 </div>
             
             </div>
-
+<br /><br /><br /><br />
         </div>
     );
 };
