@@ -10,7 +10,7 @@ const genderOptions = [
 
 const Staffcreate = () => {
   return (
-    <div>
+    <div className='container-fluid Scroll'>
       <div className='ui dividing header'>
         <h1>Staff Registation</h1>
       </div>
@@ -103,6 +103,7 @@ const Staffcreate = () => {
           label='Confirm Details and Register'
         />
       </Form>
+      <br /><br /><br />
     </div>
   )
 }
