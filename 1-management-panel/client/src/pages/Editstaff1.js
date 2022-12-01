@@ -11,7 +11,7 @@ const genderOptions = [
 
 const StaffEdit = () => {
   return (
-    <div>
+    <div className='container-fluid Scroll'>
       <div className='ui dividing header'>
         <h1>Edit Staff</h1>
       </div>
@@ -104,7 +104,7 @@ const StaffEdit = () => {
           />
         </Link>
       </Form>
-
+<br /><br /><br />
     </div>
   )
 }

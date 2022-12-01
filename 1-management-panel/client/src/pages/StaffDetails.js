@@ -19,7 +19,12 @@ const StaffDetails = () => {
         </h1>
 
       </div>
-      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
+      <Image
+        src='https://react.semantic-ui.com/images/avatar/large/matthew.png'
+        control={Input}
+        size='medium'
+        centered 
+        rounded /> <br />
       <Form >
         <Form.Group widths='equal'>
           <Form.Field

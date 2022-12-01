@@ -38,13 +38,14 @@ const Staff = () => {
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
-                                <div class="image"><img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+                                <div class="image">
+                                    <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png"/>
                                 </div>
                                 <div class="content">
                                     <div class="header">{doc.fname}</div>
                                     <div class="meta">{doc.email}</div>
                                     <div class="description">
-                                    {doc.job}
+                                        {doc.job}
                                     </div>
                                 </div>
                                 <div class="extra content">

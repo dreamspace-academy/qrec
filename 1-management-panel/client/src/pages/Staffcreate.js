@@ -101,9 +101,7 @@ const Staffcreate = () => {
 
 
       <Form onSubmit={handleSubmit}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded
-          value={profile}
-          onChange={(e) => setProfile(e.target.value)} /> <br />
+      <div class="ui focus input"><input type="file" placeholder="Search..."/></div> <br />
 
         <Form.Group widths='equal'>
           <Form.Field

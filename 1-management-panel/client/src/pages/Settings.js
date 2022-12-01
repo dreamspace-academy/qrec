@@ -34,6 +34,8 @@ const Settings = () => {
 
         <Button primary type='confirm'>Confirm</Button>
       </Form>
+<br />
+    
 
     </div>
   );
