@@ -74,6 +74,8 @@ const Staffcreate = () => {
     setPhone("");
     setRemark("");
 
+    this.props.history.push("/about")
+
   };
 
 
@@ -101,7 +103,9 @@ const Staffcreate = () => {
 
 
       <Form onSubmit={handleSubmit}>
-      <div class="ui focus input"><input type="file" placeholder="Search..."/></div> <br />
+        <div class="ui focus input">
+          <input type="file" placeholder="Search..."  />
+        </div> <br />
 
         <Form.Group widths='equal'>
           <Form.Field
