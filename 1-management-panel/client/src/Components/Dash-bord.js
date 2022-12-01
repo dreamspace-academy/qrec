@@ -42,6 +42,11 @@ const DASH = ({ children }) => {
             name: "Log-out",
             icon: <FaPowerOff />
         },
+        {
+            path: "/qr",
+            name: "QR",
+            icon: <FaPowerOff />
+        },
     ]
     return (
         <div className="DashBoardItem">

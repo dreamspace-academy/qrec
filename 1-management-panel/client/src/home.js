@@ -9,6 +9,7 @@ import Loginpage from './pages/Loginpage';
 import Add from './pages/Staffcreate';
 import Details from "./pages/StaffDetails";
 import Edit from './pages/Editstaff1';
+import Qr from './pages/QR';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 
@@ -40,6 +41,9 @@ const Home = () => {
                         </Route>
                         <Route path="/login">
                             <Loginpage />
+                        </Route>
+                        <Route path="/login">
+                            <Qr />
                         </Route>
                         <Route path="/addStaff">
                             <Add />
