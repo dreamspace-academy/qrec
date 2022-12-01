@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Image, Reveal } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
+import StaffDataService from "../services/staffs.services";
 
 
 const Staff = () => {
+
+    const [staffs, setStaffs] = useState([]);
+
+    useEffect(() => {
+        getStaffs();
+    }, [])
+
+    const getStaffs = async () => {
+        const data = await StaffDataService.getAllStaffs();
+        console.log(data.docs);
+        setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    };
+
+
     return (
         <div className='container-fluid Scroll'>
-
             <div className='ui dividing header'>
                 <h1>Staff Management
                     <Link to={'/addstaff'}>
@@ -18,354 +32,27 @@ const Staff = () => {
                     </Link>
                 </h1>
             </div>
-
-
+            {/* <pre>{JSON.stringify(staffs, undefined, 2)}</pre> */}
             <div>
                 <div className='ui five cards'>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} circular />
-                        <Card.Content>
-                            <Card.Header> <Link to={'/staffdetails'} style={{ textDecoration: 'none' }}>Gunarakulan</Link></Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>ID : 001</a>
-                        </Card.Content>
-                    </Card>
-                    {/* <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Ashathkavi</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2018</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Staff
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 002
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Vinothraj</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2022</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Trainee
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 003
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card> */}
-                </div>
-                <div className='ui five cards'>
-                    <Card className='cards'>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    {/* <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Ashathkavi</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2018</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Staff
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 002
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Vinothraj</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2022</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Trainee
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 003
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card> */}
-                </div>
-                <div className='ui five cards'>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Ashathkavi</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2018</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Staff
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 002
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Vinothraj</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2022</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Trainee
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 003
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                </div>
-                <div className='ui five cards'>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Ashathkavi</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2018</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Staff
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 002
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Vinothraj</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2022</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Trainee
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 003
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Gunarakulan</Card.Header>
-                            <Card.Meta>
-                                <span className='date'>Joined in 2015</span>
-                            </Card.Meta>
-                            <Card.Description>
-                                Guardian
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <a>
-                                ID : 001
-                            </a>
-                        </Card.Content>
-                    </Card>
+                    {staffs.map((doc) => {
+                        return (
+                            <div class="ui card" key={doc.id}>
+                                <div class="image"><img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+                                </div>
+                                <div class="content">
+                                    <div class="header">{doc.fname}</div>
+                                    <div class="meta">{doc.email}</div>
+                                    <div class="description">
+                                    {doc.job}
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <a>ID : {doc.staff}</a>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
 
             </div>

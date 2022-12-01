@@ -12,12 +12,12 @@ const StaffDetails = () => {
     <div className='container-fluid Scroll'>
       <div className='ui dividing header'>
         <h1>Staff Detail
-        <button className='ui black mini button right floated '>
-          <i aria-hidden="true" class=" trash large icon" id="addStaff">
-          </i>
-        </button>
+          <button className='ui black mini button right floated '>
+            <i aria-hidden="true" class=" trash large icon" id="addStaff">
+            </i>
+          </button>
         </h1>
-        
+
       </div>
       <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
       <Form >
