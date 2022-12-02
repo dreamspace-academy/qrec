@@ -7,6 +7,7 @@ import {
     FaTasks,
     FaWrench,
     FaPowerOff,
+    FaQrcode
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
@@ -45,7 +46,7 @@ const DASH = ({ children }) => {
         {
             path: "/qr",
             name: "QR",
-            icon: <FaPowerOff />
+            icon: <FaQrcode />
         },
     ]
     return (
