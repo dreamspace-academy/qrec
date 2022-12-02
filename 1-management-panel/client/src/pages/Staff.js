@@ -43,23 +43,23 @@ const Staff = ({ getStaffId }) => {
                                 <div class="image">
                                     <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
                                 </div>
-                                
                                 <div class="content">
-                                    <Link to="/staffdetails" ></Link>
                                     <Button
                                         className='ui button center aligned container inline'
                                         onClick={(e) => getStaffId(doc.id)}>
-                                        <div class="ui header">  {doc.fname}</div>
-                                        <div class="meta">{doc.email}</div>
-                                        <div class="description">
-                                            {doc.job}
-                                        </div>
-                                        </Button>
+                                        <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
+                                            <div class="ui header">{doc.fname}</div>
+                                            <div class="meta">{doc.email}</div>
+                                            <div class="description">
+                                                {doc.job}
+                                            </div>
+                                        </Link>
+                                    </Button>
                                 </div>
                                 <div class="ui extra content left floated">
                                     {/* <a>ID : {doc.staff}</a> */}
                                 </div>
-                               
+
 
                             </div>
                         );
