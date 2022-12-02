@@ -5,7 +5,7 @@ function QR() {
   return (
     <div className='container-fluid Scroll'>
       <div className='ui dividing header'>
-            <h1>QR Page</h1>
+            <h1>QR Viewer</h1>
         </div>
         <br />
       <div >

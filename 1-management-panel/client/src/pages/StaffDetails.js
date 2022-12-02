@@ -79,6 +79,13 @@ const StaffDetails = ({ id, setStaffId }) => {
             <i aria-hidden="true" class=" trash large icon" id="addStaff">
             </i>
           </button>
+          <Link to={'/qr'}>
+          <button
+            className='ui black mini button right floated '>
+            <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
+            </i>
+          </button>
+          </Link>
         </h1>
 
       </div>
