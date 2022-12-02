@@ -201,6 +201,14 @@ const Staffcreate = () => {
             value={remark}
             onChange={(e) => setRemark(e.target.value)}
           />
+          <Form.Field
+            id='form-input-control-remark-name'
+            control={TextArea}
+            label='Remarks'
+            placeholder='text'
+            value={remark}
+            onChange={(e) => setRemark(e.target.value)}
+          />
         </Form.Group>
 
 
