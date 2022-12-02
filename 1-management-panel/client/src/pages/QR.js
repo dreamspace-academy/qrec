@@ -3,17 +3,18 @@ import Img from "../images/QR.jpg";
 function QR() {
 
   return (
-    <div className="App">
-      <div>
-        <h1> QR code </h1>
+    <div className='container-fluid Scroll'>
+      <div className='ui dividing header'>
+            <h1>QR Page</h1>
+        </div>
+      <div className="ui container">
+        <img src={Img} alt="QR code" class="ui medium bordered rounded image" />
       </div>
-      <div>
-        <img src={Img} alt="QR code" />
-      </div>
+      <br />
       <div>
         <h2>
           <a href={Img} Target="_blank" download>
-            Download QR
+            <button className="ui blue button ">Download QR</button> 
           </a>
         </h2>
       </div>
