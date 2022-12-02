@@ -7,14 +7,17 @@ function QR() {
       <div className='ui dividing header'>
             <h1>QR Page</h1>
         </div>
-      <div className="ui container">
-        <img src={Img} alt="QR code" class="ui medium bordered rounded image" />
+        <br />
+      <div >
+        <img src={Img} alt="QR code" class="ui medium bordered rounded image left aligned item" />
       </div>
       <br />
       <div>
         <h2>
           <a href={Img} Target="_blank" download>
-            <button className="ui blue button ">Download QR</button> 
+            <button class="ui icon right labeled blue button">
+              Download<i aria-hidden="true" class="download icon"></i>
+              </button> 
           </a>
         </h2>
       </div>
