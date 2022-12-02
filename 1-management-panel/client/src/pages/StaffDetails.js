@@ -64,6 +64,7 @@ const StaffDetails = ({ id, setStaffId }) => {
 
   const deleteHandler = async (id) => {
     await StaffDataService.deleteStaff(id);
+    console.log(getStaffs())
     getStaffs();
   }
 
@@ -74,14 +75,14 @@ const StaffDetails = ({ id, setStaffId }) => {
       <div className='ui dividing header'>
         <h1>Staff Detail
           <button
-            className='ui red mini button right floated '
+            className='ui mini icon negative button right floated '
             onClick={(e) => deleteHandler(doc.id)}>
             <i aria-hidden="true" class=" trash large icon" id="addStaff">
             </i>
           </button>
-          <Link to={'/qr'}>
+          <Link to={'/qrview'}>
           <button
-            className='ui black mini button right floated '>
+            className='ui mini icon black button right floated '>
             <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
             </i>
           </button>
@@ -93,6 +94,7 @@ const StaffDetails = ({ id, setStaffId }) => {
       <div>
 
         <Image
+          Input
           src='https://react.semantic-ui.com/images/avatar/large/matthew.png'
           control={Input}
           size='medium'

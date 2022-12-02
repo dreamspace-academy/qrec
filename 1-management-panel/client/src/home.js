@@ -42,7 +42,7 @@ const Home = () => {
                         <Route path="/login">
                             <Loginpage />
                         </Route>
-                        <Route path="/qr">
+                        <Route path="/qrview">
                             <Qr />
                         </Route>
                         <Route path="/addStaff">

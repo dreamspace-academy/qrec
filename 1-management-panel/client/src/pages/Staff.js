@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Image, Reveal } from 'semantic-ui-react'
-import { Button } from 'react-bootstrap'
+import { Card, Image, Reveal, Button } from 'semantic-ui-react'
+// import { Button } from 'react-bootstrap'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 
@@ -36,7 +36,7 @@ const Staff = ({ getStaffId }) => {
             {/* <pre>{JSON.stringify(staffs, undefined, 2)}</pre> */}
             <div>
 
-                <div className='ui five cards'>
+            <div className='ui five cards'>
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
@@ -49,19 +49,18 @@ const Staff = ({ getStaffId }) => {
                                         onClick={(e) => getStaffId(doc.id)}>
                                         <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
                                             <div class="ui header">{doc.fname}</div>
-                                            <div class="meta">{doc.email}</div>
+                                            {/* <div class="meta">{doc.email}</div> */}
                                             <div class="description">
                                                 {doc.job}
                                             </div>
                                         </Link>
                                     </Button>
                                 </div>
-                                <div class="ui extra content left floated">
-                                    {/* <a>ID : {doc.staff}</a> */}
+                                <div class="ui extra content left aligned container">
+                                    <a>ID : {doc.staff}</a>
                                 </div>
-
-
                             </div>
+                            
                         );
                     })}
                 </div>

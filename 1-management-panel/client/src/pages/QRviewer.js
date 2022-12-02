@@ -17,7 +17,7 @@ function QR() {
       <div>
         <h2>
           <a href={Img} Target="_blank" download>
-            <Button class="ui right blue labled button">
+            <Button className="ui blue button">
               Download
             </Button>
           </a>

@@ -61,6 +61,7 @@ const Staffcreate = () => {
       setMessage({ error: false, msg: "Staff added sucessfully" })
     } catch (err) {
       setMessage({ error: true, msg: err.message });
+      
     }
 
     setStaff("");
@@ -104,7 +105,7 @@ const Staffcreate = () => {
 
       <Form onSubmit={handleSubmit}>
         <div class="ui focus input">
-          <input type="file" placeholder="Search..."  />
+          <input type="file" placeholder="Search..." />
         </div> <br />
 
         <Form.Group widths='equal'>
@@ -205,13 +206,9 @@ const Staffcreate = () => {
 
 
 
-        <Form.Field
-          id='form-button-control-public'
-          control={Button}
-          type="Submit"
-          content='Register'
-          label='Confirm Details and Register'
-        />
+        <Button className='ui blue button' type='submit'>
+          Add
+        </Button>
       </Form>
       <br /><br /><br />
     </div>

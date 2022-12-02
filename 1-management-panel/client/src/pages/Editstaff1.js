@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
@@ -10,8 +10,8 @@ const genderOptions = [
   { key: 'f', text: 'Female', value: 'female' },
 ]
 
-const StaffEdit = ({id, getStaffId}) => {
-  
+const StaffEdit = ({ id, getStaffId }) => {
+
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -75,7 +75,7 @@ const StaffEdit = ({id, getStaffId}) => {
       </div>
       <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
       <Form>
-      <Form.Group widths='equal'>
+        <Form.Group widths='equal'>
           <Form.Field
             id='form-input-control-staff-id'
             control={Input}
@@ -169,15 +169,12 @@ const StaffEdit = ({id, getStaffId}) => {
         </Form.Group>
 
         <Link to={'/staffdetails'}>
-          <Form.Field
-            id='form-button-control-public'
-            control={Button}
-            content='Update'
-            label='Confirm Details and Update'
-          />
+          <Button className='ui blue button'>
+            Update
+          </Button>
         </Link>
       </Form>
-<br /><br /><br />
+      <br /><br /><br />
     </div>
   )
 }
