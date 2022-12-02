@@ -1,5 +1,6 @@
 import Img from "../images/QR.jpg";
 
+
 function QR() {
 
   return (

@@ -3,6 +3,8 @@ import { Form, Input, TextArea, Button, Select, Divider, Image, } from 'semantic
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
 
+
+
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
   { key: 'f', text: 'Female', value: 'female' },
@@ -80,6 +82,7 @@ const Staffcreate = () => {
 
 
 
+ 
 
   return (
 
