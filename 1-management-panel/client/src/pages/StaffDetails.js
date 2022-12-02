@@ -74,7 +74,7 @@ const StaffDetails = ({ id, setStaffId }) => {
       <div className='ui dividing header'>
         <h1>Staff Detail
           <button
-            className='ui black mini button right floated '
+            className='ui red mini button right floated '
             onClick={(e) => deleteHandler(doc.id)}>
             <i aria-hidden="true" class=" trash large icon" id="addStaff">
             </i>

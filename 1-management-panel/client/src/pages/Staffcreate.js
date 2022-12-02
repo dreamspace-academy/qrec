@@ -3,8 +3,6 @@ import { Form, Input, TextArea, Button, Select, Divider, Image, } from 'semantic
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
 
-
-
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
   { key: 'f', text: 'Female', value: 'female' },
@@ -82,7 +80,6 @@ const Staffcreate = () => {
 
 
 
- 
 
   return (
 
@@ -195,14 +192,6 @@ const Staffcreate = () => {
             // searchInput={{ id: 'form-select-control-gender' }}
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-          />
-          <Form.Field
-            id='form-input-control-remark-name'
-            control={TextArea}
-            label='Remarks'
-            placeholder='text'
-            value={remark}
-            onChange={(e) => setRemark(e.target.value)}
           />
           <Form.Field
             id='form-input-control-remark-name'
