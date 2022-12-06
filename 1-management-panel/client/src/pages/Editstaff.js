@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
 import { doc } from 'firebase/firestore';
+import { Alert } from 'react-bootstrap';
 
 
 const genderOptions = [
@@ -132,6 +133,18 @@ const StaffEdit = ({ id, setStaffId }) => {
       <div className='ui dividing header'>
         <h1>Edit Staff</h1>
       </div>
+      
+      {message?.msg && (
+        <Alert
+          variant={message?.error ? "danger" : "success"}
+          dismissble
+          onClose={() => setMessage("")}
+        >
+          {" "}
+          {message?.msg}
+        </Alert>
+      )}
+
       <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
 
       <Form onSubmit={handleSubmit}>
