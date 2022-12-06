@@ -31,10 +31,10 @@ const Staff = ({ getStaffId }) => {
             <div className='ui dividing header'>
                 <h1>Staff Management
                     <Link to={'/addstaff'}>
-                        <button className='ui black medium icon button right floated '>
-                            <i aria-hidden="true" class=" user plus large icon" id="addStaff">
+                        <Button className='ui black small compact button right floated '>
+                            Add &nbsp; <i aria-hidden="true" class=" user plus icon " id="addStaff">
                             </i>
-                        </button>
+                        </Button>
                     </Link>
                 </h1>
             </div>
@@ -67,8 +67,8 @@ const Staff = ({ getStaffId }) => {
                                     <div className="ui  container">
                                         <Link to={'/qrview'}>
                                             <div
-                                                className='ui tiny black circular icon button left floated item'>
-                                                <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
+                                                className='ui tiny black circular basic icon button left floated item'>
+                                                <i aria-hidden="true" class=" qrcode solid large icon" id="addStaff">
                                                 </i>
                                             </div>
                                         </Link>
