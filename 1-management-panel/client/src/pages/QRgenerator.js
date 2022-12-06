@@ -5,6 +5,7 @@ import StaffDataService from "../services/staffs.services";
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 
 const QrCode = ({ id, setStaffId }) => {
+  
 
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
@@ -99,11 +100,10 @@ const QrCode = ({ id, setStaffId }) => {
               className="ui focus input"
               type="text"
               value={staff}
-              placeholder={url}
               onChange={qrCodeEncoder}
             /> &nbsp; <br />
-            <button type="submit" className="ui blue button">
-              {/* disabled={!url} */}
+            <button type="submit" disabled={!staff} className="ui blue button">
+              
               Download
             </button>
           </Form>
