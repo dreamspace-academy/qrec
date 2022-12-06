@@ -6,11 +6,6 @@ import { doc } from 'firebase/firestore';
 import { Alert } from 'react-bootstrap';
 
 
-const genderOptions = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-]
-
 const StaffEdit = ({ id, setStaffId }) => {
 
   const [staff, setStaff] = useState("");
@@ -79,8 +74,6 @@ const StaffEdit = ({ id, setStaffId }) => {
     setGender("");
     setPhone("");
     setRemark("");
-
-    this.props.history.push("/about")
 
   };
 
