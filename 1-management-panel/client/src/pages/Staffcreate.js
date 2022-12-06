@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Input, TextArea, Button, Select, Divider, Image, } from 'semantic-ui-react';
+import { Form, Input, TextArea, Button, Select, Divider, Image, Message } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
 
@@ -61,7 +61,7 @@ const Staffcreate = () => {
       setMessage({ error: false, msg: "Staff added sucessfully" })
     } catch (err) {
       setMessage({ error: true, msg: err.message });
-      
+
     }
 
     setStaff("");
@@ -103,9 +103,11 @@ const Staffcreate = () => {
 
 
 
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} success>
+
         <div class="ui focus input">
           <input type="file" placeholder="Search..." />
+          <img src="" alt="" typeof='preview'/>
         </div> <br />
 
         <Form.Group widths='equal'>
@@ -202,8 +204,15 @@ const Staffcreate = () => {
             value={remark}
             onChange={(e) => setRemark(e.target.value)}
           />
+          
         </Form.Group>
-
+        
+        {/* <Message
+          success
+          header='Form Completed'
+          content="You're all signed up for the newsletter"
+        /> */}
+        
 
 
         <Button className='ui blue button' type='submit'>

@@ -64,7 +64,7 @@ const StaffDetails = ({ id, setStaffId }) => {
 
   const deleteHandler = async (id) => {
     await StaffDataService.deleteStaff(id);
-    // console.log(getStaffs())
+    console.log(getStaffs())
     getStaffs();
   }
 
@@ -74,18 +74,18 @@ const StaffDetails = ({ id, setStaffId }) => {
 
       <div className='ui dividing header'>
         <h1>Staff Detail
-          <button
+          {/* <Button
             className='ui mini icon negative button right floated '
             onClick={(e) => deleteHandler(doc.id)}>
             <i aria-hidden="true" class=" trash large icon" id="addStaff">
             </i>
-          </button>
+          </Button> */}
           <Link to={'/qrview'}>
-          <button
-            className='ui mini icon black button right floated '>
+          <Button
+            className='ui mini icon black button right floated '>Generate
             <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
             </i>
-          </button>
+          </Button>
           </Link>
         </h1>
 

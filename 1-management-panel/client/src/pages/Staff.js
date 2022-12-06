@@ -20,6 +20,11 @@ const Staff = ({ getStaffId }) => {
         setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
 
+    const deleteHandler = async (id) => {
+        await StaffDataService.deleteStaff(id);
+        getStaffs();
+    }
+
 
     return (
         <div className='container-fluid Scroll'>
@@ -36,31 +41,48 @@ const Staff = ({ getStaffId }) => {
             {/* <pre>{JSON.stringify(staffs, undefined, 2)}</pre> */}
             <div>
 
-            <div className='ui five cards'>
+                <div className='ui five cards'>
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
                                 <div class="image">
-                                    <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+                                    <Image src={"https://react.semantic-ui.com/images/avatar/large/matthew.png"} />
                                 </div>
                                 <div class="content">
-                                    <Button
-                                        className='ui button center aligned container inline'
-                                        onClick={(e) => getStaffId(doc.id)}>
-                                        <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
+                                    <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
+                                        <div
+                                            className='ui button center aligned container inline'
+                                            onClick={(e) => getStaffId(doc.id)}
+                                        >
                                             <div class="ui header">{doc.fname}</div>
-                                            {/* <div class="meta">{doc.email}</div> */}
-                                            <div class="description">
-                                                {doc.job}
+                                            {/* <div class="description">{doc.email}</div> */}
+                                            <div class="description">{doc.job}</div>
+
+                                            <div className='ui extra content'>ID : {doc.staff}</div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="ui extra content fluid inline container">
+                                    <div className="ui  container">
+                                        <Link to={'/qrview'}>
+                                            <div
+                                                className='ui tiny black circular icon button left floated item'>
+                                                <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
+                                                </i>
                                             </div>
                                         </Link>
-                                    </Button>
+                                        <div
+                                            className='ui tiny negative circular icon button right floated item'
+                                            onClick={(e) => deleteHandler(doc.id)}>
+                                            <i aria-hidden="true" class=" trash large icon" id="addStaff">
+                                            </i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="ui extra content left aligned container">
-                                    <a>ID : {doc.staff}</a>
-                                </div>
+
+
                             </div>
-                            
+
                         );
                     })}
                 </div>
