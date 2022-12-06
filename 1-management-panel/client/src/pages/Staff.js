@@ -45,23 +45,24 @@ const Staff = ({ getStaffId }) => {
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
-                                <div class="image">
-                                    <Image src={"https://react.semantic-ui.com/images/avatar/large/matthew.png"} />
-                                </div>
-                                <div class="content">
+
+                                {/* <div class="content"></div> */}
                                     <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
                                         <div
-                                            className='ui button center aligned container inline'
+                                            className='ui basic button center aligned container inline'
                                             onClick={(e) => getStaffId(doc.id)}
                                         >
-                                            <div class="ui header">{doc.fname}</div>
+                                            <div class="image">
+                                                <Image src={"https://react.semantic-ui.com/images/avatar/large/matthew.png"} />
+                                            </div>
+                                            <div class="ui header">{doc.fname}</div><hr />
                                             {/* <div class="description">{doc.email}</div> */}
                                             <div class="description">{doc.job}</div>
 
                                             <div className='ui extra content'>ID : {doc.staff}</div>
                                         </div>
                                     </Link>
-                                </div>
+                                
                                 <div className="ui extra content fluid inline container">
                                     <div className="ui  container">
                                         <Link to={'/qrview'}>
@@ -72,7 +73,7 @@ const Staff = ({ getStaffId }) => {
                                             </div>
                                         </Link>
                                         <div
-                                            className='ui tiny negative circular icon button right floated item'
+                                            className='ui tiny circular icon red basic button right floated item'
                                             onClick={(e) => deleteHandler(doc.id)}>
                                             <i aria-hidden="true" class=" trash large icon" id="addStaff">
                                             </i>

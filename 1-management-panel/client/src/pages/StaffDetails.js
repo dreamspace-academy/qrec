@@ -82,7 +82,7 @@ const StaffDetails = ({ id, setStaffId }) => {
           </Button> */}
           <Link to={'/qrview'}>
           <Button
-            className='ui mini icon black button right floated '>Generate
+            className='ui mini icon black button right floated '>Generate &nbsp;
             <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
             </i>
           </Button>
