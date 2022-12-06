@@ -64,7 +64,7 @@ const StaffDetails = ({ id, setStaffId }) => {
 
   const deleteHandler = async (id) => {
     await StaffDataService.deleteStaff(id);
-    console.log(getStaffs())
+    // console.log(getStaffs())
     getStaffs();
   }
 

@@ -8,7 +8,7 @@ import Settings from './pages/Settings';
 import Loginpage from './pages/Loginpage';
 import Add from './pages/Staffcreate';
 import Details from "./pages/StaffDetails";
-import Edit from './pages/Editstaff1';
+import Edit from './pages/Editstaff';
 import Qr from './pages/QRviewer';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";

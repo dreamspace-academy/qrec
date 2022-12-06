@@ -10,7 +10,7 @@ const genderOptions = [
   { key: 'f', text: 'Female', value: 'female' },
 ]
 
-const StaffEdit = ({ id, getStaffId }) => {
+const StaffEdit = ({ id, setStaffId }) => {
 
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
@@ -59,11 +59,13 @@ const StaffEdit = ({ id, getStaffId }) => {
     console.log(newStaff);
 
     try {
-      await StaffDataService.addStaffs(newStaff);
-      setMessage({ error: false, msg: "Staff added sucessfully" })
+      if (id !== undefined && id !== "") {
+        await StaffDataService.updateStaff(id, newStaff);
+        setStaffId("");
+        setMessage({ error: false, msg: "Updated successfully!" });
+      }
     } catch (err) {
-      setMessage({ error: true, msg: err.message });
-      
+      setMessage({ error: true, msg: err.message })
     }
 
     setStaff("");
