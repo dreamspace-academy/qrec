@@ -9,7 +9,7 @@ const genderOptions = [
   { key: 'f', text: 'Female', value: 'female' },
 ]
 
-const StaffDetails = ({ id, setStaffId }) => {
+const StaffDetails = ({ id, getStaffId }) => {
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -53,7 +53,6 @@ const StaffDetails = ({ id, setStaffId }) => {
   const [staffs, setStaffs] = useState([]);
   useEffect(() => {
     getStaffs();
-
   }, [])
 
   const getStaffs = async () => {
@@ -62,30 +61,34 @@ const StaffDetails = ({ id, setStaffId }) => {
     setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
-  const deleteHandler = async (id) => {
-    await StaffDataService.deleteStaff(id);
-    console.log(getStaffs())
-    getStaffs();
+  const idHandler = async (id) => {
+    try {
+      const docSnap = await StaffDataService.getStaff(id);
+      console.log("The selected id is : ", docSnap.data())
+    } catch (err) {
+      setMessage({ error: true, msg: err.message });
+    }
   }
+
 
 
   return (
     <div className='container-fluid Scroll'>
 
       <div className='ui dividing header'>
-        <h1>Staff Detail
+        <h1>Staff Details
           {/* <Button
             className='ui mini icon negative button right floated '
             onClick={(e) => deleteHandler(doc.id)}>
             <i aria-hidden="true" class=" trash large icon" id="addStaff">
             </i>
           </Button> */}
-          <Link to={'/qrview'}>
-          <Button
-            className='ui mini icon black button right floated '>Generate &nbsp;
-            <i aria-hidden="true" class=" qrcode large icon" id="addStaff">
-            </i>
-          </Button>
+          <Link to={'/qrgenerate'}>
+            <Button
+              className='ui mini icon black button right floated'
+              onClick={idHandler}>
+              Generate &nbsp; <i aria-hidden="true" class=" qrcode large icon" id="addStaff"></i>
+            </Button>
           </Link>
         </h1>
 
