@@ -24,6 +24,63 @@ const StaffEdit = ({ id, getStaffId }) => {
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    if (
+      staff === "" ||
+      fname === "" ||
+      lname === "" ||
+      email === "" ||
+      phone === "" ||
+      department === "" ||
+      dob === "" ||
+      job === "" ||
+      gender === "" ||
+      remark === ""
+    ) {
+      setMessage({ error: true, msg: "All fields are mandatory!" });
+      return;
+    }
+
+    const newStaff = {
+      staff,
+      fname,
+      lname,
+      email,
+      department,
+      job,
+      dob,
+      gender,
+      phone,
+      remark
+
+    }
+    console.log(newStaff);
+
+    try {
+      await StaffDataService.addStaffs(newStaff);
+      setMessage({ error: false, msg: "Staff added sucessfully" })
+    } catch (err) {
+      setMessage({ error: true, msg: err.message });
+      
+    }
+
+    setStaff("");
+    setFname("");
+    setLname("");
+    setEmail("");
+    setDepartment("");
+    setJob("");
+    setDob("");
+    setGender("");
+    setPhone("");
+    setRemark("");
+
+    this.props.history.push("/about")
+
+  };
+
   const detailsHandler = async () => {
     setMessage("");
     try {
@@ -74,13 +131,14 @@ const StaffEdit = ({ id, getStaffId }) => {
         <h1>Edit Staff</h1>
       </div>
       <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
-      <Form>
+
+      <Form onSubmit={handleSubmit}>
         <Form.Group widths='equal'>
           <Form.Field
             id='form-input-control-staff-id'
             control={Input}
             label='Staff ID'
-            placeholder={doc.staff}
+            
             value={staff}
             onChange={(e) => setStaff(e.target.value)}
           />
@@ -88,7 +146,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-error-email'
             control={Input}
             label='Email'
-            placeholder={doc.email}
+            
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -99,7 +157,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-first-name'
             control={Input}
             label='First name'
-            placeholder={doc.fname}
+            
             value={fname}
             onChange={(e) => setFname(e.target.value)}
           />
@@ -107,7 +165,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-phone-number'
             control={Input}
             label='Phone Number'
-            placeholder={doc.phone}
+            
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
@@ -117,7 +175,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-last-name'
             control={Input}
             label='Last name'
-            placeholder={doc.lname}
+           
             value={lname}
             onChange={(e) => setLname(e.target.value)}
           />
@@ -125,7 +183,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-lab-name'
             control={Input}
             label='Department'
-            placeholder={doc.department}
+            
             value={department}
             onChange={(e) => setDepartment(e.target.value)}
           />
@@ -136,7 +194,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-dateofbirth-name'
             control={Input}
             label='D.O.B'
-            placeholder={doc.dob}
+            
             value={dob}
             onChange={(e) => setDob(e.target.value)}
           />
@@ -144,7 +202,7 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-role-name'
             control={Input}
             label='Job Role'
-            placeholder={doc.job}
+            
             value={job}
             onChange={(e) => setJob(e.target.value)}
           />
@@ -154,7 +212,7 @@ const StaffEdit = ({ id, getStaffId }) => {
           <Form.Field
             control={Input}
             label='Gender'
-            placeholder={doc.gender}
+           
             value={gender}
             onChange={(e) => setGender(e.target.value)}
           />
@@ -162,17 +220,17 @@ const StaffEdit = ({ id, getStaffId }) => {
             id='form-input-control-remark-name'
             control={TextArea}
             label='Remarks'
-            placeholder={doc.remark}
+            
             value={remark}
             onChange={(e) => setRemark(e.target.value)}
           />
         </Form.Group>
 
-        <Link to={'/staffdetails'}>
-          <Button className='ui blue button'>
+        {/* <Link to={'/staffdetails'}></Link> */}
+          <Button className='ui blue button' type='submit'>
             Update
           </Button>
-        </Link>
+        
       </Form>
       <br /><br /><br />
     </div>
