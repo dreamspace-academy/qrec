@@ -105,10 +105,9 @@ const StaffEdit = ({ id, setStaffId }) => {
   }, [id])
 
   const [staffs, setStaffs] = useState([]);
-  useEffect(() => {
-    getStaffs();
-
-  }, [])
+  // useEffect(() => {
+  //   getStaffs();
+  // }, [])
 
   const getStaffs = async () => {
     const data = await StaffDataService.getStaffs();

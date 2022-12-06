@@ -9,7 +9,7 @@ import Loginpage from './pages/Loginpage';
 import Add from './pages/Staffcreate';
 import Details from "./pages/StaffDetails";
 import Edit from './pages/Editstaff';
-import Qr from './pages/QRviewer';
+import QrV from './pages/QRviewer';
 import QrG from './pages/QRgenerator';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
@@ -44,7 +44,7 @@ const Home = () => {
                             <Loginpage />
                         </Route>
                         <Route path="/qrview">
-                            <Qr />
+                            <QrV />
                         </Route>
                         <Route path="/qrgenerate">
                             <QrG id={staffId} setStaffId={setStaffId}/>

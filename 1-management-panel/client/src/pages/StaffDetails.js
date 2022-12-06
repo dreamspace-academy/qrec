@@ -1,6 +1,6 @@
 import { doc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
 
@@ -10,6 +10,7 @@ const genderOptions = [
 ]
 
 const StaffDetails = ({ id, getStaffId }) => {
+
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -51,9 +52,9 @@ const StaffDetails = ({ id, getStaffId }) => {
   }, [id])
 
   const [staffs, setStaffs] = useState([]);
-  useEffect(() => {
-    getStaffs();
-  }, [])
+  // useEffect(() => {
+  //   getStaffs();
+  // }, [])
 
   const getStaffs = async () => {
     const data = await StaffDataService.getStaffs();
@@ -61,14 +62,14 @@ const StaffDetails = ({ id, getStaffId }) => {
     setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
-  const idHandler = async (id) => {
-    try {
-      const docSnap = await StaffDataService.getStaff(id);
-      console.log("The selected id is : ", docSnap.data())
-    } catch (err) {
-      setMessage({ error: true, msg: err.message });
-    }
-  }
+  // const idHandler = async (id) => {
+  //   try {
+  //     const docSnap = await StaffDataService.getStaffs(id);
+  //     console.log("The selected id is : ", docSnap.data())
+  //   } catch (err) {
+  //     setMessage({ error: true, msg: err.message });
+  //   }
+  // }
 
 
 
@@ -85,9 +86,9 @@ const StaffDetails = ({ id, getStaffId }) => {
           </Button> */}
           <Link to={'/qrgenerate'}>
             <Button
-              className='ui mini icon black button right floated'
-              onClick={idHandler}>
-              Generate &nbsp; <i aria-hidden="true" class=" qrcode large icon" id="addStaff"></i>
+              className='ui small icon black button right floated'
+              onClick={(e) => getStaffs(doc.id)}>
+              Generate &nbsp; <i aria-hidden="true" class=" qrcode icon" id="addStaff"></i>
             </Button>
           </Link>
         </h1>
@@ -111,7 +112,7 @@ const StaffDetails = ({ id, getStaffId }) => {
               control={Input}
               label='Staff ID'
               value={staff}
-              placeholder={doc.staff}
+              placeholder={staff}
               onChange={(e) => setStaff("")}
               readOnly
             />
