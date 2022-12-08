@@ -47,9 +47,9 @@ const QrCode = ({ id, setStaffId }) => {
   }, [id])
 
   const [staffs, setStaffs] = useState([]);
-  // useEffect(() => {
-  //   getStaffs();
-  // }, [id])
+  useEffect(() => {
+    getStaffs();
+  }, [id])
 
   const getStaffs = async () => {
     const data = await StaffDataService.getStaffs();
@@ -59,7 +59,8 @@ const QrCode = ({ id, setStaffId }) => {
 
   const [url, setUrl] = useState("");
   const qrRef = useRef();
-  const downloadQRCode = (e) => {
+  const downloadQRCode = async(e) => {
+    // await delay(1000);
     e.preventDefault();
     let canvas = qrRef.current.querySelector("canvas");
     let image = canvas.toDataURL("image/png");
@@ -72,7 +73,11 @@ const QrCode = ({ id, setStaffId }) => {
     setUrl("");
   };
 
-  const qrCodeEncoder = (e) => {
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
+  const qrCodeEncoder = async (e) => {
     setUrl(e.target.value);
   };
 
@@ -99,8 +104,10 @@ const QrCode = ({ id, setStaffId }) => {
             <input
               className="ui focus input"
               type="text"
-              value={staff}
-              onChange={qrCodeEncoder}
+              control={Input}
+              defaultValue={staff}
+              onMouseMove={qrCodeEncoder}
+              readOnly
             /> &nbsp; <br />
             <button type="submit" disabled={!staff} className="ui blue button">
               
