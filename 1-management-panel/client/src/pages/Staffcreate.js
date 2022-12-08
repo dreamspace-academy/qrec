@@ -42,6 +42,7 @@ const Staffcreate = () => {
     }
 
     const newStaff = {
+      profile,
       staff,
       fname,
       lname,
@@ -64,6 +65,7 @@ const Staffcreate = () => {
 
     }
 
+    setProfile("");
     setStaff("");
     setFname("");
     setLname("");
@@ -79,8 +81,13 @@ const Staffcreate = () => {
 
   };
 
+  
 
-
+  const onProfileChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setProfile(URL.createObjectURL(event.target.files[0]));
+    }
+  }
 
   return (
 
@@ -105,9 +112,18 @@ const Staffcreate = () => {
 
       <Form onSubmit={handleSubmit} success>
 
-        <div class="ui focus input">
-          <input type="file" placeholder="Search..." />
-          <img src="" alt="" typeof='preview'/>
+        <div class="ui center aligned item">
+          <Image
+            type={Input}
+            src={profile}
+            control={Input}
+            
+            size='medium'
+            centered
+            rounded
+          /> <br />
+          <input type="file" placeholder="Search..." onChange={onProfileChange} className='ui center aligned container' />
+          
         </div> <br />
 
         <Form.Group widths='equal'>
@@ -204,15 +220,15 @@ const Staffcreate = () => {
             value={remark}
             onChange={(e) => setRemark(e.target.value)}
           />
-          
+
         </Form.Group>
-        
+
         {/* <Message
           success
           header='Form Completed'
           content="You're all signed up for the newsletter"
         /> */}
-        
+
 
 
         <Button className='ui blue button' type='submit'>
