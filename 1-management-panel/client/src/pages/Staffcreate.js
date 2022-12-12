@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Form, Input, TextArea, Button, Select, Divider, Image, Message } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
+import {ref} from 'firebase/storage';
+import {storage} from '../firebase-config';
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },
@@ -81,7 +83,7 @@ const Staffcreate = () => {
 
   };
 
-  
+
 
   const onProfileChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -109,7 +111,6 @@ const Staffcreate = () => {
       )}
 
 
-
       <Form onSubmit={handleSubmit} success>
 
         <div class="ui center aligned item">
@@ -117,14 +118,18 @@ const Staffcreate = () => {
             type={Input}
             src={profile}
             control={Input}
-            
             size='medium'
             centered
             rounded
-          /> <br />
-          <input type="file" placeholder="Search..." onChange={onProfileChange} className='ui center aligned container' />
-          
-        </div> <br />
+          />
+          <br />
+          <div class="ui input">
+            <input type="file" placeholder="Search..." onChange={onProfileChange} />
+          </div>
+          &nbsp;
+          <div className='ui small compact button'>Save</div>
+        </div> 
+        <br />
 
         <Form.Group widths='equal'>
           <Form.Field
