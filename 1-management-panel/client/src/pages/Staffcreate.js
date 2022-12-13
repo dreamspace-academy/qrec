@@ -2,13 +2,9 @@ import React, { useState } from 'react'
 import { Form, Input, TextArea, Button, Select, Divider, Image, Message } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
-import {ref} from 'firebase/storage';
-import {storage} from '../firebase-config';
-
-const genderOptions = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-]
+import { ref, uploadBytes } from 'firebase/storage';
+import { storage } from '../firebase-config';
+import { v4 } from 'uuid';
 
 const Staffcreate = () => {
   const [profile, setProfile] = useState("");
@@ -84,18 +80,24 @@ const Staffcreate = () => {
   };
 
 
-
   const onProfileChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       setProfile(URL.createObjectURL(event.target.files[0]));
     }
   }
 
+  const uploadProfile = () => {
+    if (profile == "") return;
+    const profileRef = ref(storage, `profiles/${profile.name + v4()}`)
+    uploadBytes(profileRef, profile).then(() => {
+      alert("Profile Updated")
+    })
+  }
+
   return (
 
     <div className='container-fluid Scroll'>
       <div className='ui dividing header'>
-
         <h1>Staff Registation</h1>
       </div>
 
@@ -124,11 +126,15 @@ const Staffcreate = () => {
           />
           <br />
           <div class="ui input">
-            <input type="file" placeholder="Search..." onChange={onProfileChange} />
+            <input
+              type="file"
+              placeholder="Search..."
+              onChange={(e) => setProfile(e.target.files)}
+            />
           </div>
           &nbsp;
-          <div className='ui small compact button'>Save</div>
-        </div> 
+          <div className='ui small compact button' onClick={uploadProfile}>Save</div>
+        </div>
         <br />
 
         <Form.Group widths='equal'>
