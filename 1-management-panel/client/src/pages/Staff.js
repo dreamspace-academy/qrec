@@ -4,6 +4,7 @@ import { Card, Image, Reveal, Button } from 'semantic-ui-react'
 // import { Button } from 'react-bootstrap'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
+import StaffProfileService from "../services/staffs.services";
 
 
 const Staff = ({ getStaffId }) => {
@@ -16,6 +17,7 @@ const Staff = ({ getStaffId }) => {
 
     const getStaffs = async () => {
         const data = await StaffDataService.getAllStaffs();
+        const datas = await StaffProfileService.getAllStaffs();
         console.log(data.docs);
         setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
@@ -53,7 +55,7 @@ const Staff = ({ getStaffId }) => {
                                             onClick={(e) => getStaffId(doc.id)}
                                         >
                                             <div class="image">
-                                                <Image src={"https://react.semantic-ui.com/images/avatar/large/matthew.png"} />
+                                                <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
                                             </div>
                                             <div class="ui header">{doc.fname}</div><hr />
                                             {/* <div class="description">{doc.email}</div> */}
@@ -65,15 +67,15 @@ const Staff = ({ getStaffId }) => {
                                 
                                 <div className="ui extra content fluid inline container">
                                     <div className="ui  container">
-                                        <Link to={'/qrview'}>
+                                        {/* <Link to={'/qrview'}>
                                             <div
-                                                className='ui tiny black circular basic icon button left floated item'>
+                                                className='ui tiny black circular icon button left floated item'>
                                                 <i aria-hidden="true" class=" qrcode solid large icon" id="addStaff">
                                                 </i>
                                             </div>
-                                        </Link>
+                                        </Link> */}
                                         <div
-                                            className='ui tiny circular icon red basic button right floated item'
+                                            className='ui tinycircular icon red button center aligned container '
                                             onClick={(e) => deleteHandler(doc.id)}>
                                             <i aria-hidden="true" class=" trash large icon" id="addStaff">
                                             </i>

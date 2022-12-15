@@ -3,10 +3,9 @@ import { QRCodeCanvas } from "qrcode.react";
 import { doc } from 'firebase/firestore';
 import StaffDataService from "../services/staffs.services";
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
-import Staff from "./Staff";
+
 
 const QrCode = ({ id, setStaffId }) => {
-
 
   const [staff, setStaff] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
