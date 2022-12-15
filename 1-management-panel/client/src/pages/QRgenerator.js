@@ -3,9 +3,10 @@ import { QRCodeCanvas } from "qrcode.react";
 import { doc } from 'firebase/firestore';
 import StaffDataService from "../services/staffs.services";
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
+import Staff from "./Staff";
 
 const QrCode = ({ id, setStaffId }) => {
-  
+
 
   const [staff, setStaff] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
@@ -15,6 +16,7 @@ const QrCode = ({ id, setStaffId }) => {
     try {
       const docSnap = await StaffDataService.getStaff(id);
       console.log("The record is : ", docSnap.data())
+      setStaff(docSnap.data().staff);
       QrCreate(docSnap.data().staff);
     } catch (err) {
       setMessage({ error: true, msg: err.message });
@@ -36,12 +38,12 @@ const QrCode = ({ id, setStaffId }) => {
   const getStaffs = async () => {
     const data = await StaffDataService.getStaffs();
     console.log(data.docs);
-    setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))) 
+    setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
   const [url, setUrl] = useState("");
   const qrRef = useRef();
-  const downloadQRCode = async(e) => {
+  const downloadQRCode = async (e) => {
     e.preventDefault();
     let canvas = qrRef.current.querySelector("canvas");
     let image = canvas.toDataURL("image/png");
@@ -54,9 +56,11 @@ const QrCode = ({ id, setStaffId }) => {
     setUrl("");
   };
 
-  const QrCreate = async(id) =>{
+  const QrCreate = async (id) => {
     setUrl(id);
   }
+
+  console.log(staff)
 
   const qrcode = (
     <QRCodeCanvas
@@ -68,7 +72,7 @@ const QrCode = ({ id, setStaffId }) => {
   );
 
   return (
-    <div>
+    <div key={doc.id}>
       <div className="ui dividing header">
         <h1>QR Generator</h1>
       </div>
@@ -77,14 +81,23 @@ const QrCode = ({ id, setStaffId }) => {
         <div ref={qrRef}>{qrcode}</div>
         <br />
         <div className="input__group">
-   
-            <label>Staff ID :{staff} &nbsp; </label>
-             <br />
-             <br />
-            <div onClick={downloadQRCode} type="submit" className="ui blue button">       
-              Download
+
+          <Form key={doc.id}>
+            <div>
+              Staff ID : &nbsp; &nbsp;
+              <div class="ui input" key={doc.staff}>
+                <input type="text" defaultValue={staff} value={staff} readOnly />
+              </div>
             </div>
-         
+          </Form>
+
+          <br />
+          <br />
+
+          <div onClick={downloadQRCode} type="submit" className="ui blue button">
+            Download
+          </div>
+
         </div>
       </div>
     </div>
