@@ -86,9 +86,10 @@ const Staffcreate = () => {
     }
   }
 
-  const uploadProfile = () => {
+  const uploadProfile = async(profile) => {
     if (profile == "") return;
     const profileRef = ref(storage, `profiles/${profile.name + v4()}`)
+    var metadata = { contentType: 'image.jpeg', };
     uploadBytes(profileRef, profile).then(() => {
       alert("Profile Updated")
     })
