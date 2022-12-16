@@ -1,5 +1,5 @@
 import cv2
-import pymongo
+# import pymongo
 import time
 from datetime import datetime
 import pyttsx3
@@ -42,7 +42,7 @@ while count<3:
 
     cv2.destroyWindow(window_name)
 #import decoded QR Name to server
-    import pymongo
+    # import pymongo
     
     client = pymongo.MongoClient("mongodb://localhost:27017")
     db = client.test
