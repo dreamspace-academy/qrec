@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Icon, Header, Form, Button } from 'semantic-ui-react'
+import { Table, Icon, Header, Form, Button, Card } from 'semantic-ui-react'
 import AttenDataService from "../services/attendance.services";
 
 
@@ -13,10 +13,10 @@ const Attendance = ({ getStaffId }) => {
     const [attendance, setAttendance] = useState([]);
 
     useEffect(() => {
-        getStaffs();
+        getAttendance();
     }, [])
 
-    const getStaffs = async () => {
+    const getAttendance = async () => {
         const data = await AttenDataService.getAllAttendance();
         console.log(data.docs);
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
@@ -24,10 +24,11 @@ const Attendance = ({ getStaffId }) => {
 
     return (
         <div className='container-fluid Scroll'>
+
             <div className='ui dividing header'>
                 <h1>Attendance Management</h1>
             </div>
-            {/* <pre>{JSON.stringify(staffs, undefined, 2)}</pre> */}
+            {/* <pre>{JSON.stringify(attendance, undefined, 2)}</pre> */}
             <div  >
                 <Header as='h3' block >
                     <Form>
@@ -57,37 +58,36 @@ const Attendance = ({ getStaffId }) => {
             </div>
             <br />
             <div>
-                {attendance.map((doc) => {
-                    return (
-                        <Table celled>
-                            <Table.Header>
-                                <Table.Row>
-                                    <Table.HeaderCell>ID</Table.HeaderCell>
-                                    <Table.HeaderCell>Name</Table.HeaderCell>
-                                    <Table.HeaderCell>Department</Table.HeaderCell>
-                                    <Table.HeaderCell>Time</Table.HeaderCell>
-                                    <Table.HeaderCell>Status</Table.HeaderCell>
-                                </Table.Row>
-                            </Table.Header>
+                <div>
+                    <Table celled >
+                        <Table.Header>
+                            <Table.Row>
+                                <Table.HeaderCell>ID</Table.HeaderCell>
+                                <Table.HeaderCell>Name</Table.HeaderCell>
+                                <Table.HeaderCell>Department</Table.HeaderCell>
+                                <Table.HeaderCell>Time</Table.HeaderCell>
+                                <Table.HeaderCell>Status</Table.HeaderCell>
+                            </Table.Row>
+                        </Table.Header>
+                        {attendance.map((doc) => {
+                            return (
+                                <Table.Body >
 
-                            <Table.Body key={doc.id}>
+                                    <Table.Row>
+                                        <Table.Cell>{doc.StaffID}</Table.Cell>
+                                        <Table.Cell>{doc.name}</Table.Cell>
+                                        <Table.Cell>{doc.department}</Table.Cell>
+                                        <Table.Cell>{doc.time}</Table.Cell>
+                                        <Table.Cell positive>{doc.present}</Table.Cell>
+                                    </Table.Row>
 
-                                <Table.Row>
-                                    <Table.Cell>{doc.staff}</Table.Cell>
-                                    <Table.Cell>{doc.name}</Table.Cell>
-                                    <Table.Cell>{doc.department}</Table.Cell>
-                                    <Table.Cell>{doc.time}</Table.Cell>
-                                    <Table.Cell >
+                                </Table.Body>
+                            )
+                        })}
+                    </Table>
+                </div>
 
-                                        {doc.present}
-                                    </Table.Cell>
-                                </Table.Row>
 
-                            </Table.Body>
-
-                        </Table>
-                    )
-                })}
             </div>
         </div>
     )

@@ -20,6 +20,12 @@ const Staffcreate = () => {
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
 
+  const genderOptions = [
+    { key: 'male', value: 'male', text: 'Male' },
+    { key: 'female', value: 'female', text: 'Female' },
+    { key: 'others', value: 'others', text: 'Others' },
+  ]
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -86,7 +92,7 @@ const Staffcreate = () => {
     }
   }
 
-  const uploadProfile = async(profile) => {
+  const uploadProfile = async (profile) => {
     if (profile == "") return;
     const profileRef = ref(storage, `profiles/${profile.name + v4()}`)
     var metadata = { contentType: 'image.jpeg', };
@@ -214,6 +220,7 @@ const Staffcreate = () => {
         </Form.Group>
 
         <Form.Group widths='equal'>
+          
           <Form.Field
             control={Input}
             // options={genderOptions}
