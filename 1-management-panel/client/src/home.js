@@ -20,9 +20,13 @@ const Home = () => {
 
     const getStaffIdHandler = (id) => {
         console.log("ID of the selected staff is :", id)
-        setStaffId(id);        
+        setStaffId(id);
     }
-    
+
+    const searchFilterSelected = (searchValue) => {
+        console.log(searchValue)
+    }
+
     return (
         <div className="container-fluid m-0 p-0 float-start">
             <Router>
@@ -32,10 +36,13 @@ const Home = () => {
                             <All />
                         </Route>
                         <Route path="/about">
-                            <Staff getStaffId={getStaffIdHandler}/>
+                            <Staff getStaffId={getStaffIdHandler} />
                         </Route>
                         <Route path="/Attendance">
-                            <Attendance getStaffId={getStaffIdHandler}/>
+                            <Attendance
+                                getStaffId={getStaffIdHandler}
+                                onSearchFilterSelected={searchFilterSelected}
+                            />
                         </Route>
                         <Route path="/settings">
                             <Settings />
@@ -47,17 +54,17 @@ const Home = () => {
                             <QrV />
                         </Route>
                         <Route path="/qrgenerate">
-                            <QrG id={staffId} setStaffId={setStaffId}/>
+                            <QrG id={staffId} setStaffId={setStaffId} />
                         </Route>
                         <Route path="/addStaff">
                             <Add />
                         </Route>
                         <Route path="/staffdetails">
-                            <Details id={staffId} setStaffId={setStaffId}/>
-                        </Route> 
+                            <Details id={staffId} setStaffId={setStaffId} />
+                        </Route>
                         <Route path="/staffedit">
-                            <Edit id={staffId} setStaffId={setStaffId}/>
-                        </Route>   
+                            <Edit id={staffId} setStaffId={setStaffId} />
+                        </Route>
                     </Switch>
                 </DASH>
             </Router>

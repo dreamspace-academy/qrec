@@ -65,18 +65,18 @@ const QrCode = ({ id, setStaffId }) => {
     <QRCodeCanvas
       value={url}
       size={300}
-      bgColor={"#ffffff"}
+      bgColor={"#F0F0F0"}
       level={"H"}
     />
   );
 
   return (
-    <div key={doc.id}>
+    <div>
       <div className="ui dividing header">
         <h1>QR Generator</h1>
       </div>
 
-      <div className="qrcode__container">
+      <div className="ui qrcode center aligned container">
         <div ref={qrRef}>{qrcode}</div>
         <br />
         <div className="input__group">
