@@ -8,6 +8,8 @@ const options = [
     { key: 'i', text: 'ID', value: 'id' },
 ]
 
+
+
 const Attendance = ({ getStaffId }) => {
 
     const [attendance, setAttendance] = useState([]);
@@ -62,6 +64,7 @@ const Attendance = ({ getStaffId }) => {
                     <Table celled >
                         <Table.Header>
                             <Table.Row>
+                                <Table.HeaderCell>Date</Table.HeaderCell>
                                 <Table.HeaderCell>ID</Table.HeaderCell>
                                 <Table.HeaderCell>Name</Table.HeaderCell>
                                 <Table.HeaderCell>Department</Table.HeaderCell>
@@ -74,11 +77,12 @@ const Attendance = ({ getStaffId }) => {
                                 <Table.Body >
 
                                     <Table.Row>
+                                        <Table.Cell>{doc.Date}</Table.Cell>
                                         <Table.Cell>{doc.StaffID}</Table.Cell>
                                         <Table.Cell>{doc.name}</Table.Cell>
                                         <Table.Cell>{doc.department}</Table.Cell>
                                         <Table.Cell>{doc.time}</Table.Cell>
-                                        <Table.Cell positive>{doc.present}</Table.Cell>
+                                        <Table.Cell positive>Present</Table.Cell>
                                     </Table.Row>
 
                                 </Table.Body>
