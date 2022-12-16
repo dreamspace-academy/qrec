@@ -53,6 +53,7 @@ const TableExampleStriped = () => (
                 </Table.Header>
 
                 <Table.Body>
+                    
                     <Table.Row>
                         <Table.Cell>001</Table.Cell>
                         <Table.Cell>Gunarakulan</Table.Cell>
@@ -62,71 +63,6 @@ const TableExampleStriped = () => (
                             Absent
                         </Table.Cell>
                     </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>002</Table.Cell>
-                        <Table.Cell>Ashathkavi</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell positive>
-                            <Icon name='checkmark' />
-                            Present
-                        </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>003</Table.Cell>
-                        <Table.Cell>Vinothraj</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell negative>
-                            <Icon name='close' />
-                            Absent
-                        </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>001</Table.Cell>
-                        <Table.Cell>Gunarakulan</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell negative>
-                            <Icon name='close' />
-                            Absent
-                        </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>001</Table.Cell>
-                        <Table.Cell>Gunarakulan</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell negative>
-                            <Icon name='close' />
-                            Absent
-                        </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>001</Table.Cell>
-                        <Table.Cell>Gunarakulan</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell negative>
-                            <Icon name='close' />
-                            Absent
-                        </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>001</Table.Cell>
-                        <Table.Cell>Gunarakulan</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell negative>
-                            <Icon name='close' />
-                            Absent
-                        </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>001</Table.Cell>
-                        <Table.Cell>Gunarakulan</Table.Cell>
-                        <Table.Cell>Software Lab</Table.Cell>
-                        <Table.Cell negative>
-                            <Icon name='close' />
-                            Absent
-                        </Table.Cell>
-                    </Table.Row>
-
-
 
                 </Table.Body>
             </Table>

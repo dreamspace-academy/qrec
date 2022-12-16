@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Image, Reveal, Button } from 'semantic-ui-react'
-// import { Button } from 'react-bootstrap'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import StaffProfileService from "../services/staffs.services";
@@ -66,7 +65,7 @@ const Staff = ({ getStaffId }) => {
                                     </Link>
                                 
                                 <div className="ui extra content fluid inline container">
-                                    <div className="ui  container">
+                                    <div className="ui container">
                                         {/* <Link to={'/qrview'}>
                                             <div
                                                 className='ui tiny black circular icon button left floated item'>

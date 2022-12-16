@@ -84,7 +84,7 @@ const QrCode = ({ id, setStaffId }) => {
           <Form key={doc.id}>
             <div>
               Staff ID : &nbsp; &nbsp;
-              <div class="ui input" key={doc.staff}>
+              <div class="ui input">
                 <input type="text" defaultValue={staff} value={staff} readOnly />
               </div>
             </div>

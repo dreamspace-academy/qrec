@@ -35,7 +35,7 @@ const Home = () => {
                             <Staff getStaffId={getStaffIdHandler}/>
                         </Route>
                         <Route path="/Attendance">
-                            <Attendance />
+                            <Attendance getStaffId={getStaffIdHandler}/>
                         </Route>
                         <Route path="/settings">
                             <Settings />
