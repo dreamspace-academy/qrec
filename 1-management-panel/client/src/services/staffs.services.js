@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 
 const staffCollectionRef = collection(db, "staffs")
+
 class StaffDataService {
    addStaffs = (newStaff) => {
       return addDoc(staffCollectionRef, newStaff);
