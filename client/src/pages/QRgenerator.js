@@ -64,7 +64,7 @@ const QrCode = ({ id, setStaffId }) => {
   const qrcode = (
     <QRCodeCanvas
       value={url}
-      size={300}
+      size={380}
       bgColor={"#F0F0F0"}
       level={"H"}
     />
@@ -82,7 +82,7 @@ const QrCode = ({ id, setStaffId }) => {
         <div className="input__group">
 
           <Form key={doc.id}>
-            <div>
+            <div className="ui small header" >
               Staff ID : &nbsp; &nbsp;
               <div class="ui input">
                 <input type="text" defaultValue={staff} value={staff} readOnly />

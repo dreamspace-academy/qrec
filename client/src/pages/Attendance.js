@@ -22,25 +22,25 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
     useEffect(() => {
         getAttendance();
         // searchFilter ();   
-        dateFilter ();   
+        dateFilter();
     }, [])
-    
+
     const getAttendance = async () => {
         const data = await AttenDataService.getAllAttendance();
         console.log(data.docs);
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
 
-    function searchFilter (e)  {
+    function searchFilter(e) {
         console.log(search)
-     
+
     }
 
-    let dateFilter = async(e) => {
+    let dateFilter = async (e) => {
         console.log(year, month, date)
     }
 
-    function selectValueChanged (event) {
+    function selectValueChanged(event) {
         console.log(event.target.value)
     }
 
@@ -77,9 +77,9 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
                     <hr />
                     <Form onSubmit={dateFilter}>
                         <Form.Group inline>
-                            <Form.Input label='Date' placeholder='xx' width={6} type='number' onChange={(e) => setDate(e.target.value)}/>
-                            <Form.Input label='Month' placeholder='xx' width={4} type='number' onChange={(e) => setMonth(e.target.value)}/>
-                            <Form.Input label='Year' placeholder='xxxx' width={6} type='number' onChange={(e) => setYear(e.target.value)}/>
+                            <Form.Input label='Date' placeholder='xx' width={6} type='number' onChange={(e) => setDate(e.target.value)} />
+                            <Form.Input label='Month' placeholder='xx' width={4} type='number' onChange={(e) => setMonth(e.target.value)} />
+                            <Form.Input label='Year' placeholder='xxxx' width={6} type='number' onChange={(e) => setYear(e.target.value)} />
                             <Button secondary>Filter</Button>
                         </Form.Group>
                     </Form>
@@ -118,8 +118,8 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
                         })}
                     </Table>
                 </div>
-
-
+                <br />
+                <br />
             </div>
         </div>
     )
