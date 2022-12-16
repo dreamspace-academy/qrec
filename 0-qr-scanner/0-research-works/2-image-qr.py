@@ -5,7 +5,7 @@ from pyqrcode import QRCode
   
 # String which represents the QR code
 # String which represents the QR code
-msg=input("What's your name? " )
+msg=("SWL - 04")
 
 # Generate QR code
   
