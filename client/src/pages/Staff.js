@@ -33,7 +33,7 @@ const Staff = ({ getStaffId }) => {
                 <h1>Staff Management
                     <Link to={'/addstaff'}>
                         <Button className='ui black small compact button right floated '>
-                            Add &nbsp; <i aria-hidden="true" class=" user plus icon " id="addStaff">
+                            Add &nbsp; <i aria-hidden="true" className=" user plus icon " id="addStaff">
                             </i>
                         </Button>
                     </Link>

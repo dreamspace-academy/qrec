@@ -13,16 +13,17 @@ const options = [
 const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
 
     const [attendance, setAttendance] = useState([]);
-    const [search, setSearch] = useState("");
-    const [select, setSelect] = useState("");
+    const [name, setName] = useState("");
+    const [staffID, setStaffID] = useState("");
     const [date, setDate] = useState("");
     const [month, setMonth] = useState("");
     const [year, setYear] = useState("");
 
     useEffect(() => {
         getAttendance();
-        // searchFilter ();   
-        dateFilter();
+        // searchFilter();
+        // dateFilter();
+        // selectFilter();
     }, [])
 
     const getAttendance = async () => {
@@ -31,18 +32,25 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
 
-    function searchFilter(e) {
-        console.log(search)
+    // const searchFilter = async (e) => {
+    //     console.log(search)
+    // }
 
-    }
+    // const searchFunction = function() {
+    //     if (name !== "" || name !== undefined) {
+    //         return doc.name.includes(name)
+    //     } else if (staffID !== "" || staffID !== undefined) {
+    //         return doc.StaffID.includes(staffID)
+    //     }
+    // } 
 
-    let dateFilter = async (e) => {
+    const dateFilter = async (e) => {
         console.log(year, month, date)
     }
 
-    function selectValueChanged(event) {
-        console.log(event.target.value)
-    }
+    // const selectFilter = async (e) => {
+    //     console.log(select)
+    // }
 
     return (
         <div className='container-fluid Scroll'>
@@ -53,36 +61,39 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
             {/* <pre>{JSON.stringify(attendance, undefined, 2)}</pre> */}
             <div  >
                 <Header as='h3' block >
-                    <Form onSubmit={searchFilter}>
+                    <form className='ui form' >
                         <Form.Group inline className='ui center aligned container'>
-                            <Form.Select inline
-                                fixed
-                                label='Search by'
-                                options={options}
-                                placeholder='Search by'
-                                width={5}
-                                onChange={selectValueChanged}
+
+                            <Form.Input
+                                className='ui input center aligned container'
+                                fluid
+                                label='Search by Staff ID'
+                                placeholder='Type Here'
+                                width={6}
+                                onChange={(e) => setStaffID(e.target.value)}
                             />
                             <Form.Input
-                                fluid label=''
+                                className='ui input center aligned container'
+                                fluid
+                                label='Search by Name'
                                 placeholder='Type Here'
-                                width={7}
-                                onChange={(e) => setSearch(e.target.value)}
+                                width={6}
+                                onChange={(e) => setName(e.target.value)}
                             />
-                            <Button secondary icon type='submit' >
+                            {/* <Button secondary icon type='submit' >
                                 <Icon inline name='search' />
-                            </Button>
+                            </Button> */}
                         </Form.Group>
-                    </Form>
+                    </form>
                     <hr />
-                    <Form onSubmit={dateFilter}>
+                    <form className='ui form' >
                         <Form.Group inline>
                             <Form.Input label='Date' placeholder='xx' width={6} type='number' onChange={(e) => setDate(e.target.value)} />
                             <Form.Input label='Month' placeholder='xx' width={4} type='number' onChange={(e) => setMonth(e.target.value)} />
                             <Form.Input label='Year' placeholder='xxxx' width={6} type='number' onChange={(e) => setYear(e.target.value)} />
-                            <Button secondary>Filter</Button>
+                            <Button secondary onClick={dateFilter}>Filter</Button>
                         </Form.Group>
-                    </Form>
+                    </form>
 
                 </Header>
             </div>
@@ -100,22 +111,27 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
                                 <Table.HeaderCell>Status</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
-                        {attendance.map((doc) => {
-                            return (
-                                <Table.Body >
-
-                                    <Table.Row>
-                                        <Table.Cell>{doc.Date}</Table.Cell>
-                                        <Table.Cell>{doc.StaffID}</Table.Cell>
-                                        <Table.Cell>{doc.name}</Table.Cell>
-                                        <Table.Cell>{doc.department}</Table.Cell>
-                                        <Table.Cell>{doc.time}</Table.Cell>
-                                        <Table.Cell positive><Icon name='checkmark' />Present</Table.Cell>
-                                    </Table.Row>
-
-                                </Table.Body>
-                            )
-                        })}
+                        {attendance
+                            .filter((doc) => {
+                                return (
+                                    doc.StaffID.includes(staffID) &&
+                                    doc.name.includes(name) 
+                                )        
+                            })
+                            .map((doc) => {
+                                return (
+                                    <Table.Body >
+                                        <Table.Row>
+                                            <Table.Cell>{doc.Date}</Table.Cell>
+                                            <Table.Cell>{doc.StaffID}</Table.Cell>
+                                            <Table.Cell>{doc.name}</Table.Cell>
+                                            <Table.Cell>{doc.department}</Table.Cell>
+                                            <Table.Cell>{doc.time}</Table.Cell>
+                                            <Table.Cell positive><Icon name='checkmark' />Present</Table.Cell>
+                                        </Table.Row>
+                                    </Table.Body>
+                                )
+                            })}
                     </Table>
                 </div>
                 <br />
