@@ -20,9 +20,7 @@ const Attendance = ({ getStaffId }) => {
 
     useEffect(() => {
         getAttendance();
-        dateFilter();
-        // searchFilter();
-        // selectFilter();
+        dateFilter();     
     }, [])
 
     const getAttendance = async () => {
@@ -31,29 +29,10 @@ const Attendance = ({ getStaffId }) => {
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
 
-    // const searchFilter = async (e) => {
-    //     console.log(search)
-    // }
-
-    // const searchFunction = function() {
-    //     if (name !== "" || name !== undefined) {
-    //         return doc.name.includes(name)
-    //     } else if (staffID !== "" || staffID !== undefined) {
-    //         return doc.StaffID.includes(staffID)
-    //     }
-    // } 
-
     const dateFilter = async (e) => {
         console.log(year, month, date)
     }
-
-
-
-    // const selectFilter = async (e) => {
-    //     console.log(select)
-    // }
-    const [sortState, setSortState] = useState("none");
-    
+   
 
     return (
         <div className='container-fluid Scroll'>
@@ -126,7 +105,7 @@ const Attendance = ({ getStaffId }) => {
                                     doc.Date_only.includes(date)
                                 )
                             })
-                            .sort([sortState].method)
+                            
                             .map((doc) => {
                                 return (
                                     <Table.Body >
