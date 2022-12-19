@@ -10,7 +10,7 @@ const options = [
 
 
 
-const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
+const Attendance = ({ getStaffId }) => {
 
     const [attendance, setAttendance] = useState([]);
     const [name, setName] = useState("");
@@ -21,8 +21,8 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
 
     useEffect(() => {
         getAttendance();
+        dateFilter();
         // searchFilter();
-        // dateFilter();
         // selectFilter();
     }, [])
 
@@ -62,12 +62,13 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
             <div  >
                 <Header as='h3' block >
                     <form className='ui form' >
+                        <div className='ui small header center aligned item '> Search By :</div>  <hr />
                         <Form.Group inline className='ui center aligned container'>
 
                             <Form.Input
                                 className='ui input center aligned container'
-                                fluid
-                                label='Search by Staff ID'
+                                
+                                label='StaffID'
                                 placeholder='Type Here'
                                 width={6}
                                 onChange={(e) => setStaffID(e.target.value)}
@@ -75,7 +76,7 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
                             <Form.Input
                                 className='ui input center aligned container'
                                 fluid
-                                label='Search by Name'
+                                label='Name'
                                 placeholder='Type Here'
                                 width={6}
                                 onChange={(e) => setName(e.target.value)}
@@ -85,13 +86,13 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
                             </Button> */}
                         </Form.Group>
                     </form>
-                    <hr />
+                   
                     <form className='ui form' >
                         <Form.Group inline>
                             <Form.Input label='Date' placeholder='xx' width={6} type='number' onChange={(e) => setDate(e.target.value)} />
                             <Form.Input label='Month' placeholder='xx' width={4} type='number' onChange={(e) => setMonth(e.target.value)} />
                             <Form.Input label='Year' placeholder='xxxx' width={6} type='number' onChange={(e) => setYear(e.target.value)} />
-                            <Button secondary onClick={dateFilter}>Filter</Button>
+                            {/* <Button secondary onClick={dateFilter}>Filter</Button> */}
                         </Form.Group>
                     </form>
 
@@ -114,9 +115,12 @@ const Attendance = ({ getStaffId, onSearchFilterSelected }) => {
                         {attendance
                             .filter((doc) => {
                                 return (
-                                    doc.StaffID.includes(staffID) &&
-                                    doc.name.includes(name) 
-                                )        
+                                    doc.StaffID.includes(staffID)
+                                    &&
+                                    doc.name.includes(name)
+                                    &&
+                                    doc.Date.includes(year || month || date)
+                                )
                             })
                             .map((doc) => {
                                 return (
