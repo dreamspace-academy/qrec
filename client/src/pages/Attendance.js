@@ -9,7 +9,6 @@ const options = [
 ]
 
 const Attendance = ({ getStaffId }) => {
-    
 
     const [attendance, setAttendance] = useState([]);
     const [name, setName] = useState("");
@@ -20,7 +19,7 @@ const Attendance = ({ getStaffId }) => {
 
     useEffect(() => {
         getAttendance();
-        dateFilter();     
+        // dateFilter();     
     }, [])
 
     const getAttendance = async () => {
@@ -32,11 +31,9 @@ const Attendance = ({ getStaffId }) => {
     const dateFilter = async (e) => {
         console.log(year, month, date)
     }
-   
 
     return (
-        <div className='container-fluid Scroll'>
-
+        <div>
             <div className='ui dividing header'>
                 <h1>Attendance Management</h1>
             </div>

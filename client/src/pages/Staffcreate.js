@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Input, TextArea, Button, Select, Divider, Image, Message } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
-import { ref, uploadBytes } from 'firebase/storage';
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from '../firebase-config';
 import { v4 } from 'uuid';
 
@@ -19,6 +19,7 @@ const Staffcreate = () => {
   const [gender, setGender] = useState("");
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
+  const [percent, setPercent] = useState(0);
 
   const genderOptions = [
     { key: 'male', value: 'male', text: 'Male' },
@@ -92,14 +93,46 @@ const Staffcreate = () => {
     }
   }
 
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setProfile(e.target.files[0]);
+    }
+  }
+
+  console.log("image :", profile)
+
   const uploadProfile = async (profile) => {
     if (profile == "") return;
-    const profileRef = ref(storage, `profiles/${profile.name + v4()}`)
-    var metadata = { contentType: 'image.jpeg', };
-    uploadBytes(profileRef, profile).then(() => {
-      alert("Profile Updated")
-    })
+    const profileRef = storage = Storage.storage(url:"gs://my-custom-bucket")
+    const uploadTask = uploadBytesResumable(profileRef, profile);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const percent = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+
+        // update progress
+        setPercent(percent);
+      },
+      (err) => console.log(err),
+      () => {
+        // download url
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          console.log(url);
+        });
+      }
+    );
+
+    // profileRef();
   }
+
+  // const uploadProfile = async () => {
+  //   const response = await fetch(profile.uri)
+  //   const blob = await response.blob();
+  //   var ref = firebase.storage().ref().child("profiles");
+  //   return ref.put(blob)
+  // }
 
   return (
 
@@ -134,9 +167,10 @@ const Staffcreate = () => {
           <br />
           <div class="ui input">
             <input
+              accept=".jpg, .png, .jpeg"
               type="file"
               placeholder="Search..."
-              onChange={(e) => setProfile(e.target.files)}
+              onChange={handleChange}
             />
           </div>
           &nbsp;
@@ -220,7 +254,7 @@ const Staffcreate = () => {
         </Form.Group>
 
         <Form.Group widths='equal'>
-          
+
           <Form.Field
             control={Input}
             // options={genderOptions}
