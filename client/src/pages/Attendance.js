@@ -8,9 +8,8 @@ const options = [
     { key: 'i', text: 'ID', value: 'id' },
 ]
 
-
-
 const Attendance = ({ getStaffId }) => {
+    
 
     const [attendance, setAttendance] = useState([]);
     const [name, setName] = useState("");
@@ -48,9 +47,13 @@ const Attendance = ({ getStaffId }) => {
         console.log(year, month, date)
     }
 
+
+
     // const selectFilter = async (e) => {
     //     console.log(select)
     // }
+    const [sortState, setSortState] = useState("none");
+    
 
     return (
         <div className='container-fluid Scroll'>
@@ -61,13 +64,12 @@ const Attendance = ({ getStaffId }) => {
             {/* <pre>{JSON.stringify(attendance, undefined, 2)}</pre> */}
             <div  >
                 <Header as='h3' block >
-                    <form className='ui form' >
+                    <Form className='ui form' >
                         <div className='ui small header center aligned item '> Search By :</div>  <hr />
-                        <Form.Group inline className='ui center aligned container'>
+                        <Form.Group inline >
 
                             <Form.Input
                                 className='ui input center aligned container'
-                                
                                 label='StaffID'
                                 placeholder='Type Here'
                                 width={6}
@@ -75,7 +77,6 @@ const Attendance = ({ getStaffId }) => {
                             />
                             <Form.Input
                                 className='ui input center aligned container'
-                                fluid
                                 label='Name'
                                 placeholder='Type Here'
                                 width={6}
@@ -85,17 +86,16 @@ const Attendance = ({ getStaffId }) => {
                                 <Icon inline name='search' />
                             </Button> */}
                         </Form.Group>
-                    </form>
-                   
-                    <form className='ui form' >
+                    </Form>
+
+                    <Form className='ui form' >
                         <Form.Group inline>
                             <Form.Input label='Date' placeholder='xx' width={6} type='number' onChange={(e) => setDate(e.target.value)} />
                             <Form.Input label='Month' placeholder='xx' width={4} type='number' onChange={(e) => setMonth(e.target.value)} />
                             <Form.Input label='Year' placeholder='xxxx' width={6} type='number' onChange={(e) => setYear(e.target.value)} />
                             {/* <Button secondary onClick={dateFilter}>Filter</Button> */}
                         </Form.Group>
-                    </form>
-
+                    </Form>
                 </Header>
             </div>
             <br />
@@ -119,14 +119,19 @@ const Attendance = ({ getStaffId }) => {
                                     &&
                                     doc.name.includes(name)
                                     &&
-                                    doc.Date.includes(year || month || date)
+                                    doc.Year.includes(year)
+                                    &&
+                                    doc.Month.includes(month)
+                                    &&
+                                    doc.Date_only.includes(date)
                                 )
                             })
+                            .sort([sortState].method)
                             .map((doc) => {
                                 return (
                                     <Table.Body >
                                         <Table.Row>
-                                            <Table.Cell>{doc.Date}</Table.Cell>
+                                            <Table.Cell>{doc.Year}-{doc.Month}-{doc.Date_only}</Table.Cell>
                                             <Table.Cell>{doc.StaffID}</Table.Cell>
                                             <Table.Cell>{doc.name}</Table.Cell>
                                             <Table.Cell>{doc.department}</Table.Cell>
