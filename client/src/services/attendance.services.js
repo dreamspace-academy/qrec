@@ -15,7 +15,7 @@ let m = attDate.getMonth() + 1;
 let y = attDate.getFullYear();
 let fullDate = `${y}-${m}-${d}`;
 
-const attenCollectionRef = collection(db, "attendance" + " " + fullDate)
+const attenCollectionRef = collection(db, "attendance", fullDate )
 
 class AttenDataService {
 
