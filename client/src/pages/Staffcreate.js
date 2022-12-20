@@ -5,6 +5,9 @@ import StaffDataService from '../services/staffs.services';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from '../firebase-config';
 import { v4 } from 'uuid';
+import firebase from 'firebase/app';
+import 'firebase/storage';
+
 
 const Staffcreate = () => {
   const [profile, setProfile] = useState("");
@@ -103,8 +106,8 @@ const Staffcreate = () => {
 
   const uploadProfile = async (profile) => {
     if (profile == "") return;
-    const profileRef = storage = Storage.storage(url:"gs://my-custom-bucket")
-    const uploadTask = uploadBytesResumable(profileRef, profile);
+    const profileRef = firebase.storage().ref().child('profile ')
+    const uploadTask = profileRef.put("profiles")
     uploadTask.on(
       "state_changed",
       (snapshot) => {
