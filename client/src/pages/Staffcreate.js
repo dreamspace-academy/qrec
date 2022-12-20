@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Input, TextArea, Button, Select, Divider, Image, Message } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from '../firebase-config';
 import { v4 } from 'uuid';
 import firebase from 'firebase/app';
@@ -106,28 +106,11 @@ const Staffcreate = () => {
 
   const uploadProfile = async (profile) => {
     if (profile == "") return;
-    const profileRef = firebase.storage().ref().child('profile ')
-    const uploadTask = profileRef.put("profiles")
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const percent = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-
-        // update progress
-        setPercent(percent);
-      },
-      (err) => console.log(err),
-      () => {
-        // download url
-        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-          console.log(url);
-        });
-      }
-    );
-
-    // profileRef();
+    const profileRef = ref(storage, `profiles/${profile.name + v4()}`)
+    var metadata = { contentType: 'image.jpeg', };
+    uploadBytes(profileRef, profile).then(() => {
+      alert("Profile Updated")
+    })
   }
 
   // const uploadProfile = async () => {
@@ -136,6 +119,14 @@ const Staffcreate = () => {
   //   var ref = firebase.storage().ref().child("profiles");
   //   return ref.put(blob)
   // }
+
+  let attDate = new Date()
+  let d = attDate.getDate();
+  let m = attDate.getMonth() + 1;
+  let y = attDate.getFullYear();
+
+  let fullDate = `${y}-${m}-${d}`;
+  console.log(fullDate);
 
   return (
 
