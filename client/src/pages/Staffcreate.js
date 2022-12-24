@@ -91,11 +91,11 @@ const Staffcreate = () => {
 
   };
 
-  // const onProfileChange = (event) => {
-  //   if (event.target.files && event.target.files[0]) {
-  //     setProfile(URL.createObjectURL(event.target.files[0]));
-  //   }
-  // }
+  const onProfileChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setProfile(URL.createObjectURL(event.target.files[0]));
+    }
+  }
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -123,6 +123,7 @@ const Staffcreate = () => {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImgUrl(downloadURL)
+          alert("Profile Updated")
         });
       }
     );
