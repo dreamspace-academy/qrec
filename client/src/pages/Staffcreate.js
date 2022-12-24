@@ -89,8 +89,6 @@ const Staffcreate = () => {
     setPhone("");
     setRemark("");
 
-    this.props.history.push("/about")
-
   };
 
   // const onProfileChange = (event) => {
@@ -130,13 +128,6 @@ const Staffcreate = () => {
     );
   }
 
-  // const uploadProfile = async () => {
-  //   const response = await fetch(profile.uri)
-  //   const blob = await response.blob();
-  //   var ref = firebase.storage().ref().child("profiles");
-  //   return ref.put(blob)
-  // }
-
   return (
 
     <div className='container-fluid Scroll'>
@@ -161,7 +152,7 @@ const Staffcreate = () => {
         <div class="ui center aligned item">
           <Image
             type={Input}
-            src={profile}
+            src={imgUrl}
             control={Input}
             size='medium'
             centered
@@ -177,7 +168,7 @@ const Staffcreate = () => {
             />
           </div>
           &nbsp;
-          <div className='ui small compact button' onClick={uploadProfile}>Save</div>
+          <div className='ui small compact button' onClick={uploadProfile} on>Save</div>
         </div>
         <br />
 
