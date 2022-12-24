@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import { Form, Input, TextArea, Button, Select, Divider, Image, Message } from 'semantic-ui-react';
+import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+// import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from '../firebase-config';
-import { v4 } from 'uuid';
-import firebase from 'firebase/app';
-import 'firebase/storage';
+// import { v4 } from 'uuid';
+// import firebase from 'firebase/compat/app';
+// import 'firebase/compat/auth';
+// import 'firebase/compat/firestore';
+// import 'firebase/storage';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
 
 const Staffcreate = () => {
@@ -22,13 +25,14 @@ const Staffcreate = () => {
   const [gender, setGender] = useState("");
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
-  const [percent, setPercent] = useState(0);
+  const [imgUrl, setImgUrl] = useState(null);
+  const [progresspercent, setProgresspercent] = useState(0);
 
-  const genderOptions = [
-    { key: 'male', value: 'male', text: 'Male' },
-    { key: 'female', value: 'female', text: 'Female' },
-    { key: 'others', value: 'others', text: 'Others' },
-  ]
+  // const genderOptions = [
+  //   { key: 'male', value: 'male', text: 'Male' },
+  //   { key: 'female', value: 'female', text: 'Female' },
+  //   { key: 'others', value: 'others', text: 'Others' },
+  // ]
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -89,12 +93,11 @@ const Staffcreate = () => {
 
   };
 
-
-  const onProfileChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      setProfile(URL.createObjectURL(event.target.files[0]));
-    }
-  }
+  // const onProfileChange = (event) => {
+  //   if (event.target.files && event.target.files[0]) {
+  //     setProfile(URL.createObjectURL(event.target.files[0]));
+  //   }
+  // }
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -104,13 +107,27 @@ const Staffcreate = () => {
 
   console.log("image :", profile)
 
-  const uploadProfile = async (profile) => {
-    if (profile == "") return;
-    const profileRef = ref(storage, `profiles/${profile.name + v4()}`)
-    var metadata = { contentType: 'image.jpeg', };
-    uploadBytes(profileRef, profile).then(() => {
-      alert("Profile Updated")
-    })
+  const uploadProfile = (e) => {
+    e.preventDefault()
+    if (!profile) return;
+    const storageRef = ref(storage, `profiles/${profile.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, profile);
+
+    uploadTask.on("state_changed",
+      (snapshot) => {
+        const progress =
+          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setProgresspercent(progress);
+      },
+      (error) => {
+        alert(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImgUrl(downloadURL)
+        });
+      }
+    );
   }
 
   // const uploadProfile = async () => {
@@ -119,14 +136,6 @@ const Staffcreate = () => {
   //   var ref = firebase.storage().ref().child("profiles");
   //   return ref.put(blob)
   // }
-
-  let attDate = new Date()
-  let d = attDate.getDate();
-  let m = attDate.getMonth() + 1;
-  let y = attDate.getFullYear();
-
-  let fullDate = `${y}-${m}-${d}`;
-  console.log(fullDate);
 
   return (
 

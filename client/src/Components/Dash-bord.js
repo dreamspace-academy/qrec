@@ -6,8 +6,7 @@ import {
     FaUser,
     FaTasks,
     FaWrench,
-    FaPowerOff,
-    FaQrcode
+    FaPowerOff
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 

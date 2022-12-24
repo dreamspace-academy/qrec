@@ -3,19 +3,16 @@ import {
    collection,
    getDocs,
    getDoc,
-   addDoc,
-   updateDoc,
-   deleteDoc,
    doc
 } from "firebase/firestore";
 
-let attDate = new Date()
-let d = attDate.getDate();
-let m = attDate.getMonth() + 1;
-let y = attDate.getFullYear();
-let fullDate = `${y}-${m}-${d}`;
+// let attDate = new Date()
+// let d = attDate.getDate();
+// let m = attDate.getMonth() + 1;
+// let y = attDate.getFullYear();
+// let fullDate = `${y}-${m}-${d}`;
 
-const attenCollectionRef = collection(db, "attendance", fullDate )
+const attenCollectionRef = collection(db, "attendance")
 
 class AttenDataService {
 

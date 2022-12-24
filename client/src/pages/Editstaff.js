@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
+// import { Link } from 'react-router-dom';
+import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
-import { doc } from 'firebase/firestore';
 import { Alert } from 'react-bootstrap';
 
 

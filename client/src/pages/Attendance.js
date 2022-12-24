@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Icon, Header, Form, Button, Card } from 'semantic-ui-react'
+import { Table, Icon, Header, Form } from 'semantic-ui-react'
 import AttenDataService from "../services/attendance.services";
 
 
-const options = [
-    { key: 'n', text: 'Name', value: 'name' },
-    { key: 'i', text: 'ID', value: 'id' },
-]
+// const options = [
+//     { key: 'n', text: 'Name', value: 'name' },
+//     { key: 'i', text: 'ID', value: 'id' },
+// ]
 
 const Attendance = ({ getStaffId }) => {
 
@@ -19,7 +19,6 @@ const Attendance = ({ getStaffId }) => {
 
     useEffect(() => {
         getAttendance();
-        // dateFilter();     
     }, [])
 
     const getAttendance = async () => {
@@ -27,10 +26,6 @@ const Attendance = ({ getStaffId }) => {
         console.log(data.docs);
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
-
-    const dateFilter = async (e) => {
-        console.log(year, month, date)
-    }
 
     return (
         <div>
@@ -99,15 +94,15 @@ const Attendance = ({ getStaffId }) => {
                                     &&
                                     doc.Month.includes(month)
                                     &&
-                                    doc.Date_only.includes(date)
+                                    doc.date_only.includes(date)
                                 )
                             })
-                            
+
                             .map((doc) => {
                                 return (
                                     <Table.Body >
                                         <Table.Row>
-                                            <Table.Cell>{doc.Year}-{doc.Month}-{doc.Date_only}</Table.Cell>
+                                            <Table.Cell>{doc.Year}-{doc.Month}-{doc.date_only}</Table.Cell>
                                             <Table.Cell>{doc.StaffID}</Table.Cell>
                                             <Table.Cell>{doc.name}</Table.Cell>
                                             <Table.Cell>{doc.department}</Table.Cell>
