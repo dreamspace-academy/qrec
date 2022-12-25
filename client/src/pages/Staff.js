@@ -40,13 +40,12 @@ const Staff = ({ getStaffId }) => {
             </div>
             {/* <pre>{JSON.stringify(staffs, undefined, 2)}</pre> */}
             <div>
-
                 <div className='ui five cards'>
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
-
                                 {/* <div class="content"></div> */}
+
                                 <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
                                     <div
                                         className='ui basic button center aligned container inline'
@@ -80,10 +79,8 @@ const Staff = ({ getStaffId }) => {
                                         </div>
                                     </div>
                                 </div>
-
-
+                                
                             </div>
-
                         );
                     })}
                 </div>

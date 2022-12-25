@@ -2,15 +2,8 @@ import React, { useState } from 'react'
 import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
-// import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from '../firebase-config';
-// import { v4 } from 'uuid';
-// import firebase from 'firebase/compat/app';
-// import 'firebase/compat/auth';
-// import 'firebase/compat/firestore';
-// import 'firebase/storage';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-
 
 const Staffcreate = () => {
   const [profile, setProfile] = useState("");
@@ -27,12 +20,6 @@ const Staffcreate = () => {
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [imgUrl, setImgUrl] = useState(null);
   const [progresspercent, setProgresspercent] = useState(0);
-
-  // const genderOptions = [
-  //   { key: 'male', value: 'male', text: 'Male' },
-  //   { key: 'female', value: 'female', text: 'Female' },
-  //   { key: 'others', value: 'others', text: 'Others' },
-  // ]
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,12 +78,6 @@ const Staffcreate = () => {
     setRemark("");
 
   };
-
-  // const onProfileChange = (event) => {
-  //   if (event.target.files && event.target.files[0]) {
-  //     setProfile(URL.createObjectURL(event.target.files[0]));
-  //   }
-  // }
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -271,14 +252,6 @@ const Staffcreate = () => {
           />
 
         </Form.Group>
-
-        {/* <Message
-          success
-          header='Form Completed'
-          content="You're all signed up for the newsletter"
-        /> */}
-
-
 
         <Button className='ui blue button' type='submit'>
           Add
