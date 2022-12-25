@@ -7,6 +7,7 @@ import { Alert } from 'react-bootstrap';
 
 const StaffEdit = ({ id, setStaffId }) => {
 
+  const [imgUrl, setImgUrl] = useState("");
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -82,6 +83,7 @@ const StaffEdit = ({ id, setStaffId }) => {
       const docSnap = await StaffDataService.getStaff(id);
       console.log("The record is : ", docSnap.data())
       setStaff(docSnap.data().staff);
+      setImgUrl(docSnap.data().imgUrl);
       setFname(docSnap.data().fname);
       setLname(docSnap.data().lname);
       setEmail(docSnap.data().email);
@@ -124,7 +126,7 @@ const StaffEdit = ({ id, setStaffId }) => {
       <div className='ui dividing header'>
         <h1>Edit Staff</h1>
       </div>
-      
+
       {message?.msg && (
         <Alert
           variant={message?.error ? "danger" : "success"}
@@ -136,7 +138,13 @@ const StaffEdit = ({ id, setStaffId }) => {
         </Alert>
       )}
 
-      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' control={Input} size='medium' centered rounded /> <br />
+      <Image
+        Input
+        src={imgUrl}
+        control={Input}
+        size='medium'
+        centered
+        rounded /> <br />
 
       <Form onSubmit={handleSubmit}>
         <Form.Group widths='equal'>
@@ -144,7 +152,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-staff-id'
             control={Input}
             label='Staff ID'
-            
+
             value={staff}
             onChange={(e) => setStaff(e.target.value)}
           />
@@ -152,7 +160,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-error-email'
             control={Input}
             label='Email'
-            
+
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -163,7 +171,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-first-name'
             control={Input}
             label='First name'
-            
+
             value={fname}
             onChange={(e) => setFname(e.target.value)}
           />
@@ -171,7 +179,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-phone-number'
             control={Input}
             label='Phone Number'
-            
+
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
@@ -181,7 +189,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-last-name'
             control={Input}
             label='Last name'
-           
+
             value={lname}
             onChange={(e) => setLname(e.target.value)}
           />
@@ -189,7 +197,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-lab-name'
             control={Input}
             label='Department'
-            
+
             value={department}
             onChange={(e) => setDepartment(e.target.value)}
           />
@@ -200,7 +208,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-dateofbirth-name'
             control={Input}
             label='D.O.B'
-            
+
             value={dob}
             onChange={(e) => setDob(e.target.value)}
           />
@@ -208,7 +216,7 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-role-name'
             control={Input}
             label='Job Role'
-            
+
             value={job}
             onChange={(e) => setJob(e.target.value)}
           />
@@ -218,7 +226,7 @@ const StaffEdit = ({ id, setStaffId }) => {
           <Form.Field
             control={Input}
             label='Gender'
-           
+
             value={gender}
             onChange={(e) => setGender(e.target.value)}
           />
@@ -226,17 +234,17 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-remark-name'
             control={TextArea}
             label='Remarks'
-            
+
             value={remark}
             onChange={(e) => setRemark(e.target.value)}
           />
         </Form.Group>
 
         {/* <Link to={'/staffdetails'}></Link> */}
-          <Button className='ui blue button' type='submit'>
-            Update
-          </Button>
-        
+        <Button className='ui blue button' type='submit'>
+          Update
+        </Button>
+
       </Form>
       <br /><br /><br />
     </div>

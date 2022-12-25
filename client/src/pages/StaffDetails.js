@@ -11,6 +11,7 @@ const genderOptions = [
 
 const StaffDetails = ({ id, getStaffId }) => {
 
+  const [imgUrl, setImgUrl] = useState("");
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -30,6 +31,7 @@ const StaffDetails = ({ id, getStaffId }) => {
       const docSnap = await StaffDataService.getStaff(id);
       console.log("The record is : ", docSnap.data())
       setStaff(docSnap.data().staff);
+      setImgUrl(docSnap.data().imgUrl);
       setFname(docSnap.data().fname);
       setLname(docSnap.data().lname);
       setEmail(docSnap.data().email);
@@ -99,7 +101,7 @@ const StaffDetails = ({ id, getStaffId }) => {
 
         <Image
           Input
-          src='https://react.semantic-ui.com/images/avatar/large/matthew.png'
+          src={imgUrl}
           control={Input}
           size='medium'
           centered

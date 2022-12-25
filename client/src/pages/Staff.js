@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, Image, Reveal, Button } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
-import StaffProfileService from "../services/staffs.services";
+import ProfileDataService from "../services/staffs.services";
 
 
 const Staff = ({ getStaffId }) => {
@@ -15,8 +15,7 @@ const Staff = ({ getStaffId }) => {
     }, [])
 
     const getStaffs = async () => {
-        const data = await StaffDataService.getAllStaffs();
-        const datas = await StaffProfileService.getAllStaffs();
+        const data = await StaffDataService.getAllStaffs() || await ProfileDataService.getAllProfiles();       
         console.log(data.docs);
         setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
@@ -25,7 +24,6 @@ const Staff = ({ getStaffId }) => {
         await StaffDataService.deleteStaff(id);
         getStaffs();
     }
-
 
     return (
         <div className='container-fluid Scroll'>
@@ -48,22 +46,22 @@ const Staff = ({ getStaffId }) => {
                             <div class="ui card" key={doc.id}>
 
                                 {/* <div class="content"></div> */}
-                                    <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
-                                        <div
-                                            className='ui basic button center aligned container inline'
-                                            onClick={(e) => getStaffId(doc.id)}
-                                        >
-                                            <div class="image">
-                                                <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
-                                            </div>
-                                            <div class="ui header">{doc.fname}</div><hr />
-                                            {/* <div class="description">{doc.email}</div> */}
-                                            <div class="description">{doc.job}</div>
-
-                                            <div className='ui extra content'>ID : {doc.staff}</div>
+                                <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
+                                    <div
+                                        className='ui basic button center aligned container inline'
+                                        onClick={(e) => getStaffId(doc.id)}
+                                    >
+                                        <div class="image">
+                                            <Image src={doc.imgUrl} />
                                         </div>
-                                    </Link>
-                                
+                                        <div class="ui header">{doc.fname}</div><hr />
+                                        {/* <div class="description">{doc.email}</div> */}
+                                        <div class="description">{doc.job}</div>
+
+                                        <div className='ui extra content'>ID : {doc.staff}</div>
+                                    </div>
+                                </Link>
+
                                 <div className="ui extra content fluid inline container">
                                     <div className="ui container">
                                         {/* <Link to={'/qrview'}>

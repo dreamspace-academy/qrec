@@ -54,7 +54,7 @@ const Staffcreate = () => {
     }
 
     const newStaff = {
-      profile,
+      imgUrl,
       staff,
       fname,
       lname,
@@ -78,6 +78,7 @@ const Staffcreate = () => {
     }
 
     setProfile("");
+    setImgUrl("");
     setStaff("");
     setFname("");
     setLname("");
@@ -91,11 +92,11 @@ const Staffcreate = () => {
 
   };
 
-  const onProfileChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      setProfile(URL.createObjectURL(event.target.files[0]));
-    }
-  }
+  // const onProfileChange = (event) => {
+  //   if (event.target.files && event.target.files[0]) {
+  //     setProfile(URL.createObjectURL(event.target.files[0]));
+  //   }
+  // }
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -150,7 +151,7 @@ const Staffcreate = () => {
 
       <Form onSubmit={handleSubmit} success>
 
-        <div class="ui center aligned item">
+        <div class="ui center aligned container">
           <Image
             type={Input}
             src={imgUrl}
@@ -169,7 +170,7 @@ const Staffcreate = () => {
             />
           </div>
           &nbsp;
-          <div className='ui small compact button' onClick={uploadProfile} on>Save</div>
+          <div className='ui small compact button' onClick={uploadProfile} >Save</div>
         </div>
         <br />
 
