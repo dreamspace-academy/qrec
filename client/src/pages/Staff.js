@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Image, Reveal, Button } from 'semantic-ui-react'
+import { storage } from '../firebase-config';
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
@@ -21,7 +22,7 @@ const Staff = ({ getStaffId }) => {
     };
 
     const deleteHandler = async (id) => {
-        await StaffDataService.deleteStaff(id);
+        await StaffDataService.deleteStaff(id) || await ProfileDataService.getAllProfiles(storage);
         getStaffs();
     }
 
@@ -54,7 +55,7 @@ const Staff = ({ getStaffId }) => {
                                         <div class="image">
                                             <Image src={doc.imgUrl} />
                                         </div>
-                                        <div class="ui header">{doc.fname}</div><hr />
+                                        <div class="ui large header">{doc.fname}</div><hr />
                                         {/* <div class="description">{doc.email}</div> */}
                                         <div class="description">{doc.job}</div>
 
@@ -62,7 +63,7 @@ const Staff = ({ getStaffId }) => {
                                     </div>
                                 </Link>
 
-                                <div className="ui extra content fluid inline container">
+                                <div className="ui content fluid inline container">
                                     <div className="ui container">
                                         {/* <Link to={'/qrview'}>
                                             <div
@@ -72,7 +73,7 @@ const Staff = ({ getStaffId }) => {
                                             </div>
                                         </Link> */}
                                         <div
-                                            className='ui tinycircular icon red button center aligned container '
+                                            className='ui tiny circular icon red button center aligned container '
                                             onClick={(e) => deleteHandler(doc.id)}>
                                             <i aria-hidden="true" class=" trash large icon" id="addStaff">
                                             </i>
