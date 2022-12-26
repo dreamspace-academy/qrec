@@ -47,18 +47,30 @@ const Attendance = ({ getStaffId }) => {
                                 width={6}
                                 onChange={(e) => setName(e.target.value)}
                             />
-                            {/* <Button secondary icon type='submit' >
-                                <Icon inline name='search' />
-                            </Button> */}
+
                         </Form.Group>
                     </Form>
 
                     <Form className='ui form' >
                         <Form.Group inline>
-                            <Form.Input label='Date' placeholder='xx' width={6} type='number' onChange={(e) => setDate(e.target.value)} />
-                            <Form.Input label='Month' placeholder='xx' width={4} type='number' onChange={(e) => setMonth(e.target.value)} />
-                            <Form.Input label='Year' placeholder='xxxx' width={6} type='number' onChange={(e) => setYear(e.target.value)} />
-                            {/* <Button secondary onClick={dateFilter}>Filter</Button> */}
+                            <Form.Input
+                                label='Date'
+                                placeholder='xx'
+                                width={6}
+                                type='number'
+                                onChange={(e) => setDate(e.target.value)} />
+                            <Form.Input
+                                label='Month'
+                                placeholder='xx'
+                                width={4}
+                                type='number'
+                                onChange={(e) => setMonth(e.target.value)} />
+                            <Form.Input
+                                label='Year'
+                                placeholder='xxxx'
+                                width={6}
+                                type='number'
+                                onChange={(e) => setYear(e.target.value)} />
                         </Form.Group>
                     </Form>
                 </Header>

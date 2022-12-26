@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Image, Reveal, Button } from 'semantic-ui-react'
-import { storage } from '../firebase-config';
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
@@ -22,7 +21,7 @@ const Staff = ({ getStaffId }) => {
     };
 
     const deleteHandler = async (id) => {
-        await StaffDataService.deleteStaff(id) || await ProfileDataService.getAllProfiles(storage);
+        await StaffDataService.deleteStaff(id) || await ProfileDataService.getAllProfiles(id);
         getStaffs();
     }
 
@@ -44,8 +43,7 @@ const Staff = ({ getStaffId }) => {
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
-                                {/* <div class="content"></div> */}
-
+                            
                                 <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
                                     <div
                                         className='ui basic button center aligned container inline'
@@ -55,9 +53,7 @@ const Staff = ({ getStaffId }) => {
                                             <Image src={doc.imgUrl} />
                                         </div>
                                         <div class="ui large header">{doc.fname}</div><hr />
-                                        {/* <div class="description">{doc.email}</div> */}
                                         <div class="description">{doc.job}</div>
-
                                         <div className='ui extra content'>ID : {doc.staff}</div>
                                     </div>
                                 </Link>
