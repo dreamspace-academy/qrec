@@ -25,7 +25,7 @@ function Loginpage() {
     pass: "invalid password"
   };
 
-  
+
 
   const handleSubmit = (event) => {
     //Prevent page reload
@@ -43,6 +43,7 @@ function Loginpage() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
+        
       }
     } else {
       // Username not found
@@ -59,39 +60,39 @@ function Loginpage() {
   // JSX code for login form
   const renderForm = (
     <dody>
-      
-    <div className="form">
-      
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" name="login" required />
-        </div>
-      </form>
-    </div>
+
+      <div className="form">
+
+        <form onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label>Username </label>
+            <input type="text" name="uname" required />
+            {renderErrorMessage("uname")}
+          </div>
+          <div className="input-container">
+            <label>Password </label>
+            <input type="password" name="pass" required />
+            {renderErrorMessage("pass")}
+          </div>
+          <div className="button-container">
+            <input type="submit" name="login" required />
+          </div>
+        </form>
+      </div>
     </dody>
   );
 
   return (
-    <div>   
-    <div className="loginpage">
-    <img src={logo}   />
-     <h1> Welcome to qRec</h1>
-     
-      <div className="login-form">
-       
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+    <div>
+      <div className="loginpage">
+        <img src={logo} width="240px" className="logo" />
+        <h1> Welcome to qRec</h1>
+        <div className="login-form">
+          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        </div>
+        <br />
+
       </div>
-    </div>
     </div>
   );
 }

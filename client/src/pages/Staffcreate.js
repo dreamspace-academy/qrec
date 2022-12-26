@@ -52,7 +52,6 @@ const Staffcreate = () => {
       gender,
       phone,
       remark
-
     }
     console.log(newStaff);
 

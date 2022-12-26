@@ -1,3 +1,8 @@
+.logo {
+  padding-top: 15px;
+  padding-bottom: -5px;
+  margin-bottom: 10px;
+}
 
 .loginpage {
   font-family: sans-serif;
@@ -6,9 +11,10 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  height: 150vh;
+  height: 100%;
+  padding: 26.5px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-image: url("../images/login\ page\ qRec.jpg");
+  background-image: url("../images/login-page-bg.jpg");
 }
 
 input[type="text"],

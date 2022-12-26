@@ -1,13 +1,8 @@
 import { doc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
-
-const genderOptions = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-]
 
 const StaffDetails = ({ id, getStaffId }) => {
 
@@ -23,7 +18,6 @@ const StaffDetails = ({ id, getStaffId }) => {
   const [gender, setGender] = useState("");
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
-
 
   const detailsHandler = async () => {
     setMessage("");
@@ -64,28 +58,11 @@ const StaffDetails = ({ id, getStaffId }) => {
     setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
-  // const idHandler = async (id) => {
-  //   try {
-  //     const docSnap = await StaffDataService.getStaffs(id);
-  //     console.log("The selected id is : ", docSnap.data())
-  //   } catch (err) {
-  //     setMessage({ error: true, msg: err.message });
-  //   }
-  // }
-
-
-
   return (
     <div className='container-fluid Scroll'>
 
       <div className='ui dividing header'>
         <h1>Staff Details
-          {/* <Button
-            className='ui mini icon negative button right floated '
-            onClick={(e) => deleteHandler(doc.id)}>
-            <i aria-hidden="true" class=" trash large icon" id="addStaff">
-            </i>
-          </Button> */}
           <Link to={'/qrgenerate'}>
             <Button
               className='ui small icon black button right floated'
@@ -94,7 +71,6 @@ const StaffDetails = ({ id, getStaffId }) => {
             </Button>
           </Link>
         </h1>
-
       </div>
 
       <div>

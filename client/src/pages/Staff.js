@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Image, Reveal, Button } from 'semantic-ui-react'
+import {  Image, Button } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
@@ -50,7 +50,7 @@ const Staff = ({ getStaffId }) => {
                                         onClick={(e) => getStaffId(doc.id)}
                                     >
                                         <div class="image">
-                                            <Image src={doc.imgUrl} />
+                                            <Image src={doc.imgUrl} rounded/>
                                         </div>
                                         <div class="ui large header">{doc.fname}</div><hr />
                                         <div class="description">{doc.job}</div>
