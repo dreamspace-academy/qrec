@@ -2,12 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Table, Icon, Header, Form } from 'semantic-ui-react'
 import AttenDataService from "../services/attendance.services";
 
-
-// const options = [
-//     { key: 'n', text: 'Name', value: 'name' },
-//     { key: 'i', text: 'ID', value: 'id' },
-// ]
-
 const Attendance = ({ getStaffId }) => {
 
     const [attendance, setAttendance] = useState([]);

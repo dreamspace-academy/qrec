@@ -132,7 +132,7 @@ const Staffcreate = () => {
 
       <Form onSubmit={handleSubmit} success>
 
-        <div class="ui center aligned container">
+        <div className="ui center aligned container">
           <Image
             type={Input}
             src={imgUrl}
@@ -142,16 +142,19 @@ const Staffcreate = () => {
             rounded
           />
           <br />
-          <div class="ui input">
-            <input
-              accept=".jpg, .png, .jpeg"
-              type="file"
-              placeholder="Search..."
-              onChange={handleChange}
-            />
+          <div className='input box'>
+            <div className="ui input">
+              <input
+                accept=".jpg, .png, .jpeg"
+                type="file"
+                placeholder="Search..."
+                onChange={handleChange}
+              />
+            </div>
+            &nbsp;
+            <div className='ui small compact button' onClick={uploadProfile} >Save</div>
           </div>
-          &nbsp;
-          <div className='ui small compact button' onClick={uploadProfile} >Save</div>
+
         </div>
         <br />
 
@@ -234,11 +237,9 @@ const Staffcreate = () => {
 
           <Form.Field
             control={Input}
-            // options={genderOptions}
+            id='form-input-control-gender-name'
             label='Gender'
             placeholder='Gender'
-            // search
-            // searchInput={{ id: 'form-select-control-gender' }}
             value={gender}
             onChange={(e) => setGender(e.target.value)}
           />

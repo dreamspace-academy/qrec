@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
 import { Alert } from 'react-bootstrap';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from '../firebase-config';
 
 
 const StaffEdit = ({ id, setStaffId }) => {
-
+  const [profile, setProfile] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [staff, setStaff] = useState("");
   const [fname, setFname] = useState("");
@@ -19,6 +21,8 @@ const StaffEdit = ({ id, setStaffId }) => {
   const [gender, setGender] = useState("");
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
+  const [progresspercent, setProgresspercent] = useState(0);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,6 +44,7 @@ const StaffEdit = ({ id, setStaffId }) => {
     }
 
     const newStaff = {
+      imgUrl,
       staff,
       fname,
       lname,
@@ -64,6 +69,7 @@ const StaffEdit = ({ id, setStaffId }) => {
       setMessage({ error: true, msg: err.message })
     }
 
+    setProfile("");
     setStaff("");
     setFname("");
     setLname("");
@@ -116,9 +122,36 @@ const StaffEdit = ({ id, setStaffId }) => {
     setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
-  const deleteHandler = async (id) => {
-    await StaffDataService.deleteStaff(id);
-    getStaffs();
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setProfile(e.target.files[0]);
+    }
+  }
+
+  console.log("image :", profile)
+
+  const uploadProfile = (e) => {
+    e.preventDefault()
+    if (!profile) return;
+    const storageRef = ref(storage, `profiles/${profile.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, profile);
+
+    uploadTask.on("state_changed",
+      (snapshot) => {
+        const progress =
+          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setProgresspercent(progress);
+      },
+      (error) => {
+        alert(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImgUrl(downloadURL)
+          alert("Profile Updated")
+        });
+      }
+    );
   }
 
   return (
@@ -137,14 +170,30 @@ const StaffEdit = ({ id, setStaffId }) => {
           {message?.msg}
         </Alert>
       )}
+      <div className="ui center aligned container">
+        <Image
+          Input
+          src={imgUrl}
+          control={Input}
+          size='medium'
+          centered
+          rounded
+          onChange={(e) => setImgUrl(e.target.value)} /> <br />
+        <div className='input box'>
+          <div className="ui input">
+            <input
+              accept=".jpg, .png, .jpeg"
+              type="file"
+              placeholder="Search..."
+              onChange={handleChange}
+            />
+          </div>
+          &nbsp;
+          <div className='ui small compact button' onClick={uploadProfile} >Save</div>
+        </div>
+      </div>
+      <br />
 
-      <Image
-        Input
-        src={imgUrl}
-        control={Input}
-        size='medium'
-        centered
-        rounded /> <br />
 
       <Form onSubmit={handleSubmit}>
         <Form.Group widths='equal'>
@@ -152,7 +201,6 @@ const StaffEdit = ({ id, setStaffId }) => {
             id='form-input-control-staff-id'
             control={Input}
             label='Staff ID'
-
             value={staff}
             onChange={(e) => setStaff(e.target.value)}
           />
