@@ -50,7 +50,7 @@ const Staff = ({ getStaffId }) => {
                                         onClick={(e) => getStaffId(doc.id)}
                                     >
                                         <div class="image">
-                                            <Image src={doc.imgUrl} rounded/>
+                                            <Image src={doc.imgUrl} rounded />
                                         </div>
                                         <div class="ui large header">{doc.fname}</div><hr />
                                         <div class="description">{doc.job}</div>

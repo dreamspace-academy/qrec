@@ -15,7 +15,7 @@ function Loginpage() {
       password: "pass1"
     },
     {
-      username: "user2",
+      username: "user2", 
       password: "pass2"
     }
   ];
@@ -78,6 +78,9 @@ function Loginpage() {
             <input type="submit" name="login" required />
           </div>
         </form>
+        <div>
+          Don't have an account ?
+        </div>
       </div>
     </dody>
   );
