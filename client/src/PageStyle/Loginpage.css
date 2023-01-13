@@ -1,74 +1,11 @@
-.logo {
-  padding-top: 15px;
-  padding-bottom: -5px;
-  margin-bottom: 10px;
+.login-block{
+  float:left;
+  width:100%;
+  padding : 50px 0;
 }
 
-.loginpage {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-  padding: 26.5px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-image: url("../images/login-page-bg.jpg");
-}
-
-input[type="text"],
-input[type="password"] {
-  height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  background: rgb(255, 255, 255, 0.75);
-}
-
-input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-input[type="submit"]:hover {
-  background: #6cf0c2;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-}
-
-.login-form {
-  background: rgb(255, 255, 255, 0.25);
-  padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
-}
-
-.list-container {
-  display: flex;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-.title {
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px;
-}
+.container{background:#D3D3D3; border-radius: 10px; width: 40%; height: 40%;}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #0069c0;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#6ec6ff; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #0069c0; color:#fff; font-weight:600;}
