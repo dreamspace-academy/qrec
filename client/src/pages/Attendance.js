@@ -34,14 +34,14 @@ const Attendance = ({ getStaffId }) => {
                         <Form.Group inline >
 
                             <Form.Input
-                                className='ui input center aligned container'
+                                className='ui input center aligned '
                                 label='StaffID'
                                 placeholder='Type Here'
                                 width={6}
                                 onChange={(e) => setStaffID(e.target.value)}
                             />
                             <Form.Input
-                                className='ui input center aligned container'
+                                className='ui input center aligned '
                                 label='Name'
                                 placeholder='Type Here'
                                 width={6}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import DASH from "../Components/Dash-bord";
 import logo from "../images/logo2.png"
 import "../PageStyle/Loginpage.css";
 
@@ -15,7 +16,7 @@ function Loginpage() {
       password: "pass1"
     },
     {
-      username: "user2", 
+      username: "user2",
       password: "pass2"
     }
   ];
@@ -43,7 +44,7 @@ function Loginpage() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
-        
+
       }
     } else {
       // Username not found
@@ -91,7 +92,7 @@ function Loginpage() {
         <img src={logo} width="240px" className="logo" />
         <h1> Welcome to qRec</h1>
         <div className="login-form">
-          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+          {isSubmitted ? <DASH /> : renderForm}
         </div>
         <br />
 

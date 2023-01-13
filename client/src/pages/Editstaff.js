@@ -170,7 +170,7 @@ const StaffEdit = ({ id, setStaffId }) => {
           {message?.msg}
         </Alert>
       )}
-      <div className="ui center aligned container">
+      <div className="ui center aligned">
         <Image
           Input
           src={imgUrl}

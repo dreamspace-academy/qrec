@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./Home.css";
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
@@ -31,42 +31,33 @@ const Home = () => {
         <div className="container-fluid m-0 p-0 float-start">
             <Router>
                 <DASH>
-                    <Switch>
-                        <Route exact path="/">
-                            <All />
-                        </Route>
-                        <Route path="/about">
-                            <Staff getStaffId={getStaffIdHandler} />
-                        </Route>
-                        <Route path="/Attendance">
-                            <Attendance
+                    <Routes>
+                        <Route path='/' element={<All />} />
+                        <Route
+                            path='/about'
+                            element={<Staff getStaffId={getStaffIdHandler} />} />
+                        <Route
+                            path="/Attendance"
+                            element={<Attendance
                                 getStaffId={getStaffIdHandler}
                                 onSearchFilterSelected={searchFilterSelected}
-                            />
-                        </Route>
-                        <Route path="/settings">
-                            <Settings />
-                        </Route>
-                        <Route path="/login">
-                            <Loginpage />
-                        </Route>
-                        <Route path="/qrview">
-                            <QrV />
-                        </Route>
-                        <Route path="/qrgenerate">
-                            <QrG id={staffId} setStaffId={setStaffId} />
-                        </Route>
-                        <Route path="/addStaff">
-                            <Add />
-                        </Route>
-                        <Route path="/staffdetails">
-                            <Details id={staffId} setStaffId={setStaffId} />
-                        </Route>
-                        <Route path="/staffedit">
-                            <Edit id={staffId} setStaffId={setStaffId} />
-                        </Route>
-                    </Switch>
+                            />} />
+                        <Route path="/settings" element={<Settings />} />
+                        <Route path="/login" element={<Loginpage />} />
+                        <Route path="/qrview" element={<QrV />} />
+                        <Route
+                            path="/qrgenerate"
+                            element={<QrG id={staffId} setStaffId={setStaffId} />} />
+                        <Route path="/addStaff" element={<Add />} />
+                        <Route
+                            path="/staffdetails"
+                            element={<Details id={staffId} setStaffId={setStaffId} />} />
+                        <Route
+                            path="/staffedit"
+                            element={<Edit id={staffId} setStaffId={setStaffId} />} />
+                    </Routes>
                 </DASH>
+
             </Router>
         </div>
     );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {  Image, Button } from 'semantic-ui-react'
+import { Image, Button } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
@@ -15,7 +15,7 @@ const Staff = ({ getStaffId }) => {
     }, [])
 
     const getStaffs = async () => {
-        const data = await StaffDataService.getAllStaffs() || await ProfileDataService.getAllProfiles();       
+        const data = await StaffDataService.getAllStaffs() || await ProfileDataService.getAllProfiles();
         console.log(data.docs);
         setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
@@ -43,10 +43,10 @@ const Staff = ({ getStaffId }) => {
                     {staffs.map((doc) => {
                         return (
                             <div class="ui card" key={doc.id}>
-                            
+
                                 <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
                                     <div
-                                        className='ui basic button center aligned container inline'
+                                        className='ui basic button center aligned inline'
                                         onClick={(e) => getStaffId(doc.id)}
                                     >
                                         <div class="image">
@@ -58,8 +58,8 @@ const Staff = ({ getStaffId }) => {
                                     </div>
                                 </Link>
 
-                                <div className="ui content fluid inline container">
-                                    <div className="ui container">
+                                <div className="ui content fluid inline ">
+                                    <div className="ui">
                                         {/* <Link to={'/qrview'}>
                                             <div
                                                 className='ui tiny black circular icon button left floated item'>
@@ -68,14 +68,14 @@ const Staff = ({ getStaffId }) => {
                                             </div>
                                         </Link> */}
                                         <div
-                                            className='ui tiny circular icon red button center aligned container '
+                                            className='ui tiny circular icon red button center aligned  '
                                             onClick={(e) => deleteHandler(doc.id)}>
                                             <i aria-hidden="true" class=" trash large icon" id="addStaff">
                                             </i>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         );
                     })}

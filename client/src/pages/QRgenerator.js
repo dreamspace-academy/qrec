@@ -76,7 +76,7 @@ const QrCode = ({ id, setStaffId }) => {
         <h1>QR Generator</h1>
       </div>
 
-      <div className="ui qrcode center aligned container">
+      <div className="ui qrcode center aligned ">
         <div ref={qrRef}>{qrcode}</div>
         <br />
         <div className="input__group">
