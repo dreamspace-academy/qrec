@@ -156,7 +156,7 @@ const StaffEdit = ({ id, setStaffId }) => {
   }
 
   return (
-    <div className='container-fluid Scroll'>
+    <div>
       <DASH>
         <div className='ui dividing header'>
           <h1>Edit Staff</h1>
