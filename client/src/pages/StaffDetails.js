@@ -1,9 +1,10 @@
 import { doc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
 import DASH from '../Components/Dash-bord';
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const StaffDetails = ({ id, getStaffId }) => {
 
@@ -58,6 +59,10 @@ const StaffDetails = ({ id, getStaffId }) => {
     console.log(data.docs);
     setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/" />
+  }
 
   return (
     <div>

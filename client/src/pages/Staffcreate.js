@@ -113,7 +113,7 @@ const Staffcreate = () => {
 
   return (
 
-    <div className='container-fluid Scroll'>
+    <div >
       <DASH>
         <div className='ui dividing header'>
           <h1>Staff Registation</h1>

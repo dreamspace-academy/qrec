@@ -6,20 +6,22 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import DASH from '../Components/Dash-bord';
 import { getUserData, removeUserData } from "../services/Storage"
 
-const LogOut = () => {
+const LogOut = (props) => {
 
     const navigate = useNavigate();
 
     const logoutUser = () => {
-        console.log("hi")
-        removeUserData();
-        // logout();
-        navigate('/')
+        logout();
+        navigate('/', { replace: true })
+    }
+
+    if (!isAuthenticated()) {
+        return <Navigate to="/" />
     }
 
     return (
         <div>
-            <DASH logoutUser={logoutUser} >
+            <DASH>
                 <div className='ui dividing header'>
                     <h1>Log Out</h1>
                 </div>

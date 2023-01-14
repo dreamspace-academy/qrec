@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Table, Icon, Header, Form } from 'semantic-ui-react'
 import AttenDataService from "../services/attendance.services";
 import DASH from '../Components/Dash-bord';
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Attendance = ({ getStaffId }) => {
 
@@ -21,6 +23,10 @@ const Attendance = ({ getStaffId }) => {
         console.log(data.docs);
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
+
+    if (!isAuthenticated()) {
+        return <Navigate to="/" />
+    }
 
     return (
         <div>

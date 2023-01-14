@@ -1,8 +1,15 @@
 import React from 'react';
 import { Header, Icon, Button, Form } from 'semantic-ui-react'
 import DASH from '../Components/Dash-bord';
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Settings = () => {
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/" />
+  }
+
   return (
     <div>
       <DASH>

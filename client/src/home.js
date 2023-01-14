@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./Home.css";
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
@@ -29,7 +29,6 @@ const Home = () => {
     const searchFilterSelected = (searchValue) => {
         console.log(searchValue)
     }
-
 
     return (
         <div className="container-fluid m-0 p-0 float-start">
