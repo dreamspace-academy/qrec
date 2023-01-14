@@ -14,6 +14,8 @@ import QrG from './pages/QRgenerator';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 import LogOut from "./pages/LogOut";
+import Register from './Components/RegisterPage';
+
 
 const Home = () => {
 
@@ -34,6 +36,7 @@ const Home = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Loginpage />} />
+                    <Route path="/register" element={<Register />} />
                     <Route element={<DASH />} />
                     <Route path='/dash' element={<All />} />
                     <Route
