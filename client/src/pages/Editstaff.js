@@ -6,7 +6,8 @@ import { Alert } from 'react-bootstrap';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from '../firebase-config';
 import DASH from '../Components/Dash-bord';
-
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const StaffEdit = ({ id, setStaffId }) => {
   const [profile, setProfile] = useState("");
@@ -153,6 +154,10 @@ const StaffEdit = ({ id, setStaffId }) => {
         });
       }
     );
+  }
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/" />
   }
 
   return (

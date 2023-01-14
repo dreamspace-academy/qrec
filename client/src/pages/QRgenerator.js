@@ -4,7 +4,8 @@ import { doc } from 'firebase/firestore';
 import StaffDataService from "../services/staffs.services";
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
 import DASH from '../Components/Dash-bord';
-
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const QrCode = ({ id, setStaffId }) => {
 
@@ -70,6 +71,10 @@ const QrCode = ({ id, setStaffId }) => {
       level={"H"}
     />
   );
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/" />
+  }
 
   return (
     <div>

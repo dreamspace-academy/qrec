@@ -5,6 +5,8 @@ import StaffDataService from '../services/staffs.services';
 import { storage } from '../firebase-config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import DASH from '../Components/Dash-bord';
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Staffcreate = () => {
   const [profile, setProfile] = useState("");
@@ -109,6 +111,10 @@ const Staffcreate = () => {
         });
       }
     );
+  }
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/" />
   }
 
   return (

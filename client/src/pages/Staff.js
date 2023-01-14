@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Image, Button } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
 import DASH from '../Components/Dash-bord';
-
+import { isAuthenticated } from '../services/Auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Staff = ({ getStaffId }) => {
 
@@ -24,6 +24,10 @@ const Staff = ({ getStaffId }) => {
     const deleteHandler = async (id) => {
         await StaffDataService.deleteStaff(id) || await ProfileDataService.getAllProfiles(id);
         getStaffs();
+    }
+
+    if (!isAuthenticated()) {
+        return <Navigate to="/" />
     }
 
     return (
