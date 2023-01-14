@@ -4,6 +4,7 @@ import { Alert } from 'react-bootstrap';
 import StaffDataService from '../services/staffs.services';
 import { storage } from '../firebase-config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import DASH from '../Components/Dash-bord';
 
 const Staffcreate = () => {
   const [profile, setProfile] = useState("");
@@ -113,151 +114,153 @@ const Staffcreate = () => {
   return (
 
     <div className='container-fluid Scroll'>
-      <div className='ui dividing header'>
-        <h1>Staff Registation</h1>
-      </div>
-
-      {message?.msg && (
-        <Alert
-          variant={message?.error ? "danger" : "success"}
-          dismissble
-          onClose={() => setMessage("")}
-        >
-          {" "}
-          {message?.msg}
-        </Alert>
-      )}
-
-
-      <Form onSubmit={handleSubmit} success>
-
-        <div className="ui center aligned ">
-          <Image
-            type={Input}
-            src={imgUrl}
-            control={Input}
-            size='medium'
-            centered
-            rounded
-          />
-          <br />
-          <div className='input box'>
-            <div className="ui input">
-              <input
-                accept=".jpg, .png, .jpeg"
-                type="file"
-                placeholder="Search..."
-                onChange={handleChange}
-              />
-            </div>
-            &nbsp;
-            <div className='ui small compact button' onClick={uploadProfile} >Save</div>
-          </div>
-
+      <DASH>
+        <div className='ui dividing header'>
+          <h1>Staff Registation</h1>
         </div>
-        <br />
 
-        <Form.Group widths='equal'>
-          <Form.Field
-            id='form-input-control-staff-id'
-            control={Input}
-            label='Staff ID'
-            placeholder='Staff ID'
-            value={staff}
-            onChange={(e) => setStaff(e.target.value)}
-          />
-          <Form.Field
-            id='form-input-control-error-email'
-            control={Input}
-            label='Email'
-            placeholder='joe@schmoe.com'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
+        {message?.msg && (
+          <Alert
+            variant={message?.error ? "danger" : "success"}
+            dismissble
+            onClose={() => setMessage("")}
+          >
+            {" "}
+            {message?.msg}
+          </Alert>
+        )}
 
-        <Form.Group widths='equal'>
-          <Form.Field
-            id='form-input-control-first-name'
-            control={Input}
-            label='First name'
-            placeholder='First name'
-            value={fname}
-            onChange={(e) => setFname(e.target.value)}
-          />
-          <Form.Field
-            id='form-input-control-phone-number'
-            control={Input}
-            label='Phone Number'
-            placeholder='xxx xxxxxxx'
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group widths='equal'>
-          <Form.Field
-            id='form-input-control-last-name'
-            control={Input}
-            label='Last name'
-            placeholder='Last name'
-            value={lname}
-            onChange={(e) => setLname(e.target.value)}
-          />
-          <Form.Field
-            id='form-input-control-lab-name'
-            control={Input}
-            label='Department'
-            placeholder='Lab'
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-          />
-        </Form.Group>
 
-        <Form.Group widths='equal'>
-          <Form.Field
-            id='form-input-control-dateofbirth-name'
-            control={Input}
-            label='D.O.B'
-            placeholder='Date of Birth'
-            value={dob}
-            onChange={(e) => setDob(e.target.value)}
-          />
-          <Form.Field
-            id='form-input-control-role-name'
-            control={Input}
-            label='Job Role'
-            placeholder='role'
-            value={job}
-            onChange={(e) => setJob(e.target.value)}
-          />
-        </Form.Group>
+        <Form onSubmit={handleSubmit} success>
 
-        <Form.Group widths='equal'>
+          <div className="ui center aligned ">
+            <Image
+              type={Input}
+              src={imgUrl}
+              control={Input}
+              size='medium'
+              centered
+              rounded
+            />
+            <br />
+            <div className='input box'>
+              <div className="ui input">
+                <input
+                  accept=".jpg, .png, .jpeg"
+                  type="file"
+                  placeholder="Search..."
+                  onChange={handleChange}
+                />
+              </div>
+              &nbsp;
+              <div className='ui small compact button' onClick={uploadProfile} >Save</div>
+            </div>
 
-          <Form.Field
-            control={Input}
-            id='form-input-control-gender-name'
-            label='Gender'
-            placeholder='Gender'
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          />
-          <Form.Field
-            id='form-input-control-remark-name'
-            control={TextArea}
-            label='Remarks'
-            placeholder='text'
-            value={remark}
-            onChange={(e) => setRemark(e.target.value)}
-          />
+          </div>
+          <br />
 
-        </Form.Group>
+          <Form.Group widths='equal'>
+            <Form.Field
+              id='form-input-control-staff-id'
+              control={Input}
+              label='Staff ID'
+              placeholder='Staff ID'
+              value={staff}
+              onChange={(e) => setStaff(e.target.value)}
+            />
+            <Form.Field
+              id='form-input-control-error-email'
+              control={Input}
+              label='Email'
+              placeholder='joe@schmoe.com'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
 
-        <Button className='ui blue button' type='submit'>
-          Add
-        </Button>
-      </Form>
-      <br /><br /><br />
+          <Form.Group widths='equal'>
+            <Form.Field
+              id='form-input-control-first-name'
+              control={Input}
+              label='First name'
+              placeholder='First name'
+              value={fname}
+              onChange={(e) => setFname(e.target.value)}
+            />
+            <Form.Field
+              id='form-input-control-phone-number'
+              control={Input}
+              label='Phone Number'
+              placeholder='xxx xxxxxxx'
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group widths='equal'>
+            <Form.Field
+              id='form-input-control-last-name'
+              control={Input}
+              label='Last name'
+              placeholder='Last name'
+              value={lname}
+              onChange={(e) => setLname(e.target.value)}
+            />
+            <Form.Field
+              id='form-input-control-lab-name'
+              control={Input}
+              label='Department'
+              placeholder='Lab'
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group widths='equal'>
+            <Form.Field
+              id='form-input-control-dateofbirth-name'
+              control={Input}
+              label='D.O.B'
+              placeholder='Date of Birth'
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+            />
+            <Form.Field
+              id='form-input-control-role-name'
+              control={Input}
+              label='Job Role'
+              placeholder='role'
+              value={job}
+              onChange={(e) => setJob(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group widths='equal'>
+
+            <Form.Field
+              control={Input}
+              id='form-input-control-gender-name'
+              label='Gender'
+              placeholder='Gender'
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            />
+            <Form.Field
+              id='form-input-control-remark-name'
+              control={TextArea}
+              label='Remarks'
+              placeholder='text'
+              value={remark}
+              onChange={(e) => setRemark(e.target.value)}
+            />
+
+          </Form.Group>
+
+          <Button className='ui blue button' type='submit'>
+            Add
+          </Button>
+        </Form>
+        <br /><br /><br />
+      </DASH>
     </div>
   )
 }

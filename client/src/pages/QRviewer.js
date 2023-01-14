@@ -1,11 +1,13 @@
 import Img from "../images/QR.jpg";
 import { Card, Image, Reveal, Button } from 'semantic-ui-react'
+import DASH from '../Components/Dash-bord';
 
 
 function QR() {
 
   return (
     <div className='container-fluid Scroll'>
+      <DASH />
       <div className='ui dividing header'>
         <h1>QR Viewer</h1>
       </div>

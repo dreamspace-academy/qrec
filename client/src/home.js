@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import "./Home.css";
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
@@ -28,39 +28,38 @@ const Home = () => {
         console.log(searchValue)
     }
 
+
     return (
         <div className="container-fluid m-0 p-0 float-start">
-            <Router>
-                <DASH>
-                    <Routes>
-                        <Route path='/' element={<All />} />
-                        <Route
-                            path='/about'
-                            element={<Staff getStaffId={getStaffIdHandler} />} />
-                        <Route
-                            path="/Attendance"
-                            element={<Attendance
-                                getStaffId={getStaffIdHandler}
-                                onSearchFilterSelected={searchFilterSelected}
-                            />} />
-                        <Route path="/settings" element={<Settings />} />
-                        <Route path="/login" element={<Loginpage />} />
-                        <Route path="/logout" element={<LogOut />} />
-                        <Route path="/qrview" element={<QrV />} />
-                        <Route
-                            path="/qrgenerate"
-                            element={<QrG id={staffId} setStaffId={setStaffId} />} />
-                        <Route path="/addStaff" element={<Add />} />
-                        <Route
-                            path="/staffdetails"
-                            element={<Details id={staffId} setStaffId={setStaffId} />} />
-                        <Route
-                            path="/staffedit"
-                            element={<Edit id={staffId} setStaffId={setStaffId} />} />
-                    </Routes>
-                </DASH>
-
-            </Router>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Loginpage />} />
+                    <Route element={<DASH />} />
+                    <Route path='/dash' element={<All />} />
+                    <Route
+                        path='/about'
+                        element={<Staff getStaffId={getStaffIdHandler} />} />
+                    <Route
+                        path="/Attendance"
+                        element={<Attendance
+                            getStaffId={getStaffIdHandler}
+                            onSearchFilterSelected={searchFilterSelected}
+                        />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/logout" element={<LogOut />} />
+                    <Route path="/qrview" element={<QrV />} />
+                    <Route
+                        path="/qrgenerate"
+                        element={<QrG id={staffId} setStaffId={setStaffId} />} />
+                    <Route path="/addStaff" element={<Add />} />
+                    <Route
+                        path="/staffdetails"
+                        element={<Details id={staffId} setStaffId={setStaffId} />} />
+                    <Route
+                        path="/staffedit"
+                        element={<Edit id={staffId} setStaffId={setStaffId} />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

@@ -18,7 +18,7 @@ const DASH = ({ children }) => {
     const toggle = () => setIsOpen(!isOpen);
     const menuItem = [
         {
-            path: "/",
+            path: "/dash",
             name: "Dashboard",
             icon: <FaTh />
         },

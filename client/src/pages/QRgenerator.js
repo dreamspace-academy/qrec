@@ -3,6 +3,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import { doc } from 'firebase/firestore';
 import StaffDataService from "../services/staffs.services";
 import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
+import DASH from '../Components/Dash-bord';
 
 
 const QrCode = ({ id, setStaffId }) => {
@@ -72,33 +73,35 @@ const QrCode = ({ id, setStaffId }) => {
 
   return (
     <div>
-      <div className="ui dividing header">
-        <h1>QR Generator</h1>
-      </div>
-
-      <div className="ui qrcode center aligned ">
-        <div ref={qrRef}>{qrcode}</div>
-        <br />
-        <div className="input__group">
-
-          <Form key={doc.id}>
-            <div className="ui small header" >
-              Staff ID : &nbsp; &nbsp;
-              <div class="ui input">
-                <input type="text" defaultValue={staff} value={staff} readOnly />
-              </div>
-            </div>
-          </Form>
-
-          <br />
-          <br />
-
-          <div onClick={downloadQRCode} type="submit" className="ui blue button">
-            Download
-          </div>
-
+      <DASH>
+        <div className="ui dividing header">
+          <h1>QR Generator</h1>
         </div>
-      </div>
+
+        <div className="ui qrcode center aligned ">
+          <div ref={qrRef}>{qrcode}</div>
+          <br />
+          <div className="input__group">
+
+            <Form key={doc.id}>
+              <div className="ui small header" >
+                Staff ID : &nbsp; &nbsp;
+                <div class="ui input">
+                  <input type="text" defaultValue={staff} value={staff} readOnly />
+                </div>
+              </div>
+            </Form>
+
+            <br />
+            <br />
+
+            <div onClick={downloadQRCode} type="submit" className="ui blue button">
+              Download
+            </div>
+
+          </div>
+        </div>
+      </DASH>
     </div>
 
   );
