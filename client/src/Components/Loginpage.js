@@ -61,7 +61,7 @@ export default function Loginpage() {
 
     if (isAuthenticated()) {
         //redirect user to dashboard
-        return <Navigate to="/settings" />
+        return <Navigate to="/" />
     }
 
 
