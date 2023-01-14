@@ -38,11 +38,11 @@ const DASH = ({ children }) => {
             icon: <FaWrench />
         },
         {
-            path: "/login",
+            path: "/logout",
             name: "Log-out",
             icon: <FaPowerOff />
         },
-        
+
     ]
     return (
         <div className="DashBoardItem">

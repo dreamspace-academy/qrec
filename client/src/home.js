@@ -5,7 +5,7 @@ import All from "./pages/Dashboard";
 import Staff from './pages/Staff';
 import Attendance from './pages/Attendance';
 import Settings from './pages/Settings';
-import Loginpage from './pages/Loginpage';
+import Loginpage from './Components/Loginpage';
 import Add from './pages/Staffcreate';
 import Details from "./pages/StaffDetails";
 import Edit from './pages/Editstaff';
@@ -13,6 +13,7 @@ import QrV from './pages/QRviewer';
 import QrG from './pages/QRgenerator';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
+import LogOut from "./pages/LogOut";
 
 const Home = () => {
 
@@ -44,6 +45,7 @@ const Home = () => {
                             />} />
                         <Route path="/settings" element={<Settings />} />
                         <Route path="/login" element={<Loginpage />} />
+                        <Route path="/logout" element={<LogOut />} />
                         <Route path="/qrview" element={<QrV />} />
                         <Route
                             path="/qrgenerate"
