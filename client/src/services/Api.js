@@ -17,5 +17,5 @@ export const LoginApi = (inputs)=>{
 }
 export const UserDetailsApi = ()=>{
     let data = {idToken:getUserData()}
-    return axios.post(USER_DETAILS_URL,data)
+    return axios.post(USER_DETAILS_URL,data) 
 }
