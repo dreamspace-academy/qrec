@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
-import { Alert } from 'react-bootstrap';
-import StaffDataService from '../services/staffs.services';
-import { storage } from '../firebase-config';
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import DASH from '../Components/Dash-bord';
+import StaffDataService from '../services/staffs.services';
+import React, { useState } from 'react'
+import { Alert } from 'react-bootstrap';
+import { storage } from '../firebase-config';
+import { Navigate } from 'react-router-dom';
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
 const Staffcreate = () => {
   const [profile, setProfile] = useState("");
@@ -136,10 +136,9 @@ const Staffcreate = () => {
           </Alert>
         )}
 
-
         <Form onSubmit={handleSubmit} success>
 
-          <div className="ui center aligned ">
+          <div className="ui center aligned container">
             <Image
               type={Input}
               src={imgUrl}
