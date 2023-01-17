@@ -1,11 +1,11 @@
+import StaffDataService from "../services/staffs.services";
+import DASH from '../Components/Dash-bord';
 import React, { useState, useRef, useEffect } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { doc } from 'firebase/firestore';
-import StaffDataService from "../services/staffs.services";
-import { Form, Input, TextArea, Button, Select, Divider, Image } from 'semantic-ui-react';
-import DASH from '../Components/Dash-bord';
+import { Form } from 'semantic-ui-react';
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const QrCode = ({ id, setStaffId }) => {
 
@@ -31,17 +31,6 @@ const QrCode = ({ id, setStaffId }) => {
     }
   }, [id])
 
-  const [staffs, setStaffs] = useState([]);
-  useEffect(() => {
-    getStaffs();
-  }, [id])
-
-  const getStaffs = async () => {
-    const data = await StaffDataService.getStaffs();
-    console.log(data.docs);
-    setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  };
-
   const [url, setUrl] = useState("");
   const qrRef = useRef();
   const downloadQRCode = async (e) => {
@@ -60,8 +49,6 @@ const QrCode = ({ id, setStaffId }) => {
   const QrCreate = async (id) => {
     setUrl(id);
   }
-
-  console.log(staff)
 
   const qrcode = (
     <QRCodeCanvas
