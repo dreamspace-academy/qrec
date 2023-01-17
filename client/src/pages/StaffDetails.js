@@ -1,10 +1,10 @@
-import { doc } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
-import StaffDataService from "../services/staffs.services";
 import DASH from '../Components/Dash-bord';
+import StaffDataService from "../services/staffs.services";
+import React, { useEffect, useState } from 'react';
+import { doc } from 'firebase/firestore';
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 
 const StaffDetails = ({ id, getStaffId }) => {
 
@@ -50,9 +50,6 @@ const StaffDetails = ({ id, getStaffId }) => {
   }, [id])
 
   const [staffs, setStaffs] = useState([]);
-  // useEffect(() => {
-  //   getStaffs();
-  // }, [])
 
   const getStaffs = async () => {
     const data = await StaffDataService.getStaffs();
@@ -72,7 +69,8 @@ const StaffDetails = ({ id, getStaffId }) => {
             <Link to={'/qrgenerate'}>
               <Button
                 className='ui small icon black button right floated'
-                onClick={(e) => getStaffs(doc.id)}>
+                onClick={(e) => getStaffs(doc.id)}
+              >
                 Generate &nbsp; <i aria-hidden="true" class=" qrcode icon" id="addStaff"></i>
               </Button>
             </Link>
@@ -88,7 +86,8 @@ const StaffDetails = ({ id, getStaffId }) => {
             size='medium'
             centered
             rounded
-            key={doc.id} /> <br />
+          />
+          <br />
           <Form key={doc.id}>
             <Form.Group widths='equal'>
               <Form.Field
