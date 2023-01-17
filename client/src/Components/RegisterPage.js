@@ -1,10 +1,10 @@
+import '../PageStyle/RegisterPage.css';
+import logo from '../images/logo2.png'
 import { useState } from 'react'
 import { RegisterApi } from '../services/Api';
-import { isAuthenticated } from '../services/Auth';
 import { storeUserData } from '../services/Storage';
-import '../PageStyle/RegisterPage.css';
 import { Link, Navigate } from 'react-router-dom';
-import logo from '../images/logo2.png'
+import { isAuthenticated } from '../services/Auth';
 
 
 export default function RegisterPage() {

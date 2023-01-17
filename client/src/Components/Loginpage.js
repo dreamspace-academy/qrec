@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { LoginApi } from '../services/Api';
 import { storeUserData } from '../services/Storage'
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 
 export default function Loginpage() {
@@ -61,7 +61,7 @@ export default function Loginpage() {
     if (isAuthenticated()) {
         //redirect user to dashboard
         return <Navigate to="/dash" />
-    }  
+    }
 
 
     return (
