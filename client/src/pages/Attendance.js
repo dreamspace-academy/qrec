@@ -3,7 +3,7 @@ import { Table, Icon, Header, Form } from 'semantic-ui-react'
 import AttenDataService from "../services/attendance.services";
 import DASH from '../Components/Dash-bord';
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const Attendance = ({ getStaffId }) => {
 
@@ -134,9 +134,6 @@ const Attendance = ({ getStaffId }) => {
             </DASH>
         </div>
     )
-
-
-
 
 };
 
