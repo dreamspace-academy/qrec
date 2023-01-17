@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
-import StaffDataService from "../services/staffs.services";
-import { Alert } from 'react-bootstrap';
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from '../firebase-config';
 import DASH from '../Components/Dash-bord';
+import StaffDataService from "../services/staffs.services";
+import React, { useState, useEffect } from 'react';
+import { Alert } from 'react-bootstrap';
+import { storage } from '../firebase-config';
 import { isAuthenticated } from '../services/Auth';
 import { Navigate } from 'react-router-dom';
+import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
 const StaffEdit = ({ id, setStaffId }) => {
   const [profile, setProfile] = useState("");

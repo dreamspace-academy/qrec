@@ -1,6 +1,6 @@
 import Img from "../images/QR.jpg";
-import { Button } from 'semantic-ui-react'
 import DASH from '../Components/Dash-bord';
+import { Button } from 'semantic-ui-react'
 
 
 function QR() {

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Image, Button } from 'semantic-ui-react'
 import '../PageStyle/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
 import DASH from '../Components/Dash-bord';
+import React, { useEffect, useState } from 'react';
+import { Image, Button } from 'semantic-ui-react'
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Staff = ({ getStaffId }) => {
 
@@ -36,14 +36,13 @@ const Staff = ({ getStaffId }) => {
                 <div className='ui dividing header'>
                     <h1>Staff Management
                         <Link to={'/addstaff'}>
-                            <Button className='ui black small compact button right floated '>
+                            <Button className='ui black small compact button right floated'>
                                 Add &nbsp; <i aria-hidden="true" className=" user plus icon " id="addStaff">
                                 </i>
                             </Button>
                         </Link>
                     </h1>
                 </div>
-                {/* <pre>{JSON.stringify(staffs, undefined, 2)}</pre> */}
                 <div>
                     <div className='ui five cards'>
                         {staffs.map((doc) => {
@@ -52,7 +51,7 @@ const Staff = ({ getStaffId }) => {
 
                                     <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
                                         <div
-                                            className='ui basic button center aligned inline'
+                                            className='ui basic button center aligned container'
                                             onClick={(e) => getStaffId(doc.id)}
                                         >
                                             <div class="image">
@@ -64,7 +63,7 @@ const Staff = ({ getStaffId }) => {
                                         </div>
                                     </Link>
 
-                                    <div className="ui content fluid inline ">
+                                    <div className="ui content fluid container ">
                                         <div className="ui">
                                             {/* <Link to={'/qrview'}>
                                             <div
@@ -74,10 +73,9 @@ const Staff = ({ getStaffId }) => {
                                             </div>
                                         </Link> */}
                                             <div
-                                                className='ui tiny circular icon red button center aligned  '
+                                                className='ui tiny icon red button center aligned container '
                                                 onClick={(e) => deleteHandler(doc.id)}>
-                                                <i aria-hidden="true" class=" trash large icon" id="addStaff">
-                                                </i>
+                                                <i aria-hidden="true" class=" trash large icon" id="addStaff"></i>
                                             </div>
                                         </div>
                                     </div>

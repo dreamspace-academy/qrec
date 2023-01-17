@@ -1,7 +1,7 @@
+import DASH from '../Components/Dash-bord';
+import AttenDataService from "../services/attendance.services";
 import React, { useEffect, useState } from 'react';
 import { Table, Icon, Header, Form } from 'semantic-ui-react'
-import AttenDataService from "../services/attendance.services";
-import DASH from '../Components/Dash-bord';
 import { isAuthenticated } from '../services/Auth';
 import { Navigate } from 'react-router-dom';
 

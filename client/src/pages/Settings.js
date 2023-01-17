@@ -1,8 +1,8 @@
 import React from 'react';
-import { Header, Icon, Button, Form } from 'semantic-ui-react'
 import DASH from '../Components/Dash-bord';
-import { isAuthenticated } from '../services/Auth';
 import { Navigate } from 'react-router-dom';
+import { isAuthenticated } from '../services/Auth';
+import { Header, Icon, Button, Form } from 'semantic-ui-react'
 
 const Settings = () => {
 

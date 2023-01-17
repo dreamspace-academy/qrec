@@ -1,11 +1,11 @@
 import StaffDataService from "../services/staffs.services";
 import DASH from '../Components/Dash-bord';
 import React, { useState, useRef, useEffect } from "react";
-import { QRCodeCanvas } from "qrcode.react";
 import { doc } from 'firebase/firestore';
 import { Form } from 'semantic-ui-react';
-import { isAuthenticated } from '../services/Auth';
 import { Navigate } from 'react-router-dom';
+import { QRCodeCanvas } from "qrcode.react";
+import { isAuthenticated } from '../services/Auth';
 
 const QrCode = ({ id, setStaffId }) => {
 
