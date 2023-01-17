@@ -1,20 +1,20 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./Home.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
-import Staff from './pages/Staff';
-import Attendance from './pages/Attendance';
-import Settings from './pages/Settings';
-import Loginpage from './Components/Loginpage';
-import Add from './pages/Staffcreate';
-import Details from "./pages/StaffDetails";
-import Edit from './pages/Editstaff';
-import QrV from './pages/QRviewer';
 import QrG from './pages/QRgenerator';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { useState } from "react";
+import QrV from './pages/QRviewer';
+import Add from './pages/Staffcreate';
+import Edit from './pages/Editstaff';
+import Staff from './pages/Staff';
 import LogOut from "./pages/LogOut";
+import Details from "./pages/StaffDetails";
+import Settings from './pages/Settings';
 import Register from './Components/RegisterPage';
+import Loginpage from './Components/Loginpage';
+import Attendance from './pages/Attendance';
+import { useState } from "react";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 
 const Home = () => {
