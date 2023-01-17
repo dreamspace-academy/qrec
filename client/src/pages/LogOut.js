@@ -1,10 +1,9 @@
 import React from 'react';
 import { logout } from '../services/Auth';
-import { Header, Icon, Button, Form } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import DASH from '../Components/Dash-bord';
-import { getUserData, removeUserData } from "../services/Storage"
 
 const LogOut = (props) => {
 

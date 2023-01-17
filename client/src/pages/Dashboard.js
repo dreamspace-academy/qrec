@@ -3,7 +3,7 @@ import { Header, Image, List } from 'semantic-ui-react';
 import IMG from '../images/square-logo-remove-bg.png';
 import DASH from '../Components/Dash-bord';
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const All = () => {
 
