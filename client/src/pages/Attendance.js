@@ -38,18 +38,18 @@ const Attendance = ({ getStaffId }) => {
                 <div  >
                     <Header as='h3' block >
                         <Form className='ui form' >
-                            <div className='ui small header center aligned item '> Search By :</div>  <hr />
+                            <div className='ui small header center aligned container '> Search By :</div>  <hr />
                             <Form.Group inline >
 
                                 <Form.Input
-                                    className='ui input center aligned '
+                                    className='ui input center aligned container '
                                     label='StaffID'
                                     placeholder='Type Here'
                                     width={6}
                                     onChange={(e) => setStaffID(e.target.value)}
                                 />
                                 <Form.Input
-                                    className='ui input center aligned '
+                                    className='ui input center aligned container '
                                     label='Name'
                                     placeholder='Type Here'
                                     width={6}
