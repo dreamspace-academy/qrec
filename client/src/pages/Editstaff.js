@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import StaffDataService from "../services/staffs.services";
 import { Alert } from 'react-bootstrap';
@@ -7,7 +6,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from '../firebase-config';
 import DASH from '../Components/Dash-bord';
 import { isAuthenticated } from '../services/Auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const StaffEdit = ({ id, setStaffId }) => {
   const [profile, setProfile] = useState("");
@@ -24,7 +23,6 @@ const StaffEdit = ({ id, setStaffId }) => {
   const [remark, setRemark] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [progresspercent, setProgresspercent] = useState(0);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,6 +70,7 @@ const StaffEdit = ({ id, setStaffId }) => {
     }
 
     setProfile("");
+    setImgUrl("");
     setStaff("");
     setFname("");
     setLname("");
@@ -113,24 +112,11 @@ const StaffEdit = ({ id, setStaffId }) => {
     }
   }, [id])
 
-  const [staffs, setStaffs] = useState([]);
-  // useEffect(() => {
-  //   getStaffs();
-  // }, [])
-
-  const getStaffs = async () => {
-    const data = await StaffDataService.getStaffs();
-    console.log(data.docs);
-    setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  };
-
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setProfile(e.target.files[0]);
     }
   }
-
-  console.log("image :", profile)
 
   const uploadProfile = (e) => {
     e.preventDefault()
@@ -295,7 +281,6 @@ const StaffEdit = ({ id, setStaffId }) => {
             />
           </Form.Group>
 
-          {/* <Link to={'/staffdetails'}></Link> */}
           <Button className='ui blue button' type='submit'>
             Update
           </Button>
