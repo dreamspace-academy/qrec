@@ -1,4 +1,4 @@
-import "./Home.css";
+import "./PageStyle/Home.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import DASH from "./Components/Dash-bord";
 import All from "./pages/Dashboard";
