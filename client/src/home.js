@@ -16,7 +16,6 @@ import Attendance from './pages/Attendance';
 import { useState } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
-
 const Home = () => {
 
     const [staffId, setStaffId] = useState("");
