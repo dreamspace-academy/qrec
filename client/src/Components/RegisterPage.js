@@ -73,8 +73,8 @@ export default function RegisterPage() {
     return (
         <div>
             <section className="register-block">
-            <img src={logo}   />
-            <h1>Welcom to qRec</h1>
+                <img src={logo} width="200px" />
+                <h1>Welcom to qRec</h1>
                 <div className="r-container">
                     <div className="row ">
                         <div className="col register-sec">
