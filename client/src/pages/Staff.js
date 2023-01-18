@@ -22,8 +22,9 @@ const Staff = ({ getStaffId }) => {
     };
 
     const deleteHandler = async (id) => {
-        await StaffDataService.deleteStaff(id) || await ProfileDataService.getAllProfiles(id);
+        await StaffDataService.deleteStaff(id);
         getStaffs();
+        window.location.reload(false);
     }
 
     if (!isAuthenticated()) {
