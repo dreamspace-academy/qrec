@@ -2,8 +2,8 @@ import DASH from '../components/Dash-bord';
 import StaffDataService from "../services/staffs.services";
 import React, { useEffect, useState } from 'react';
 import { doc } from 'firebase/firestore';
-import { isAuthenticated } from '../services/Auth';
 import { Link, Navigate } from 'react-router-dom';
+import { isAuthenticated } from '../services/Auth';
 import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 
 const StaffDetails = ({ id, getStaffId }) => {

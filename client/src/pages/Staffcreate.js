@@ -3,8 +3,6 @@ import StaffDataService from '../services/staffs.services';
 import React, { useState } from 'react'
 import { Alert } from 'react-bootstrap';
 import { storage } from '../firebase-config';
-import { Navigate } from 'react-router-dom';
-import { isAuthenticated } from '../services/Auth';
 import { Form, Input, TextArea, Button, Image } from 'semantic-ui-react';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
@@ -83,11 +81,11 @@ const Staffcreate = () => {
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
-      setProfile(e.target.files[0])
+      setProfile(e.target.files[0]);
     }
   }
 
-  // console.log("image :", profile)
+  console.log("image :", profile)
 
   const uploadProfile = (e) => {
     e.preventDefault()
@@ -107,19 +105,15 @@ const Staffcreate = () => {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImgUrl(downloadURL)
-          // alert("Profile Updated")
+          alert("Profile Updated")
         });
       }
     );
   }
 
-  if (!isAuthenticated()) {
-    return <Navigate to="/" />
-  }
-
   return (
 
-    <div >
+    <div>
       <DASH>
         <div className='ui dividing header'>
           <h1>Staff Registation</h1>
@@ -136,9 +130,10 @@ const Staffcreate = () => {
           </Alert>
         )}
 
+
         <Form onSubmit={handleSubmit} success>
 
-          <div className="ui center aligned container">
+          <div className="ui center aligned ">
             <Image
               type={Input}
               src={imgUrl}
@@ -155,7 +150,6 @@ const Staffcreate = () => {
                   type="file"
                   placeholder="Search..."
                   onChange={handleChange}
-
                 />
               </div>
               &nbsp;
