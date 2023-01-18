@@ -10,13 +10,11 @@ const Settings = () => {
     return <Navigate to="/" />
   }
 
-
-
-
   return (
     <div>
       <DASH>
         <div className="ui dividing header">
+
           <Header as='h1'>
             <Icon name='settings' />
             <Header.Content>
@@ -24,34 +22,37 @@ const Settings = () => {
               <Header.Subheader>Manage your preferences</Header.Subheader>
             </Header.Content>
           </Header>
+
         </div>
 
-        <br>
-        </br>
+        <br></br>
 
         <div >
-          <h3>Change Password</h3>
+          <h2>Change Password</h2>
         </div>
 
-        <br></br><br></br>
+        <br></br>
 
         <Form>
+
           <Form.Field>
             <label>Current Password</label>
             <input placeholder='Current password' />
           </Form.Field>
+
           <Form.Field>
             <label>New Password</label>
             <input placeholder='New password' />
           </Form.Field>
+
           {/* <Form.Field>
             <label>Confirm Password</label>
             <input placeholder='Confirm password' />
           </Form.Field> */}
 
+          <br />
           <Button primary type='confirm'>Confirm</Button>
         </Form>
-        <br />
 
       </DASH>
     </div>
