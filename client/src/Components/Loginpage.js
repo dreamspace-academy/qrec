@@ -4,6 +4,7 @@ import { LoginApi } from '../services/Api';
 import { storeUserData } from '../services/Storage'
 import { isAuthenticated } from '../services/Auth';
 import { Link, Navigate } from 'react-router-dom';
+import logo from '../images/logo2.png'
 
 
 export default function Loginpage() {
@@ -65,10 +66,12 @@ export default function Loginpage() {
 
 
     return (
-        <body>
+        
             <div>
 
                 <section className="login-block">
+                <img src={logo}   />
+            <h1>Welcom to qRec</h1>
                     <div className="r-container">
                         <div className="row ">
                             <div className="col login-sec">
@@ -118,6 +121,6 @@ export default function Loginpage() {
                     </div>
                 </section>
             </div>
-        </body>
+       
     )
 }
