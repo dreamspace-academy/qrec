@@ -1,5 +1,5 @@
 import Img from "../images/QR.jpg";
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import { Button } from 'semantic-ui-react'
 
 

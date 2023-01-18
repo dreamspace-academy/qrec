@@ -1,4 +1,4 @@
-import '../PageStyle/Loginpage.css';
+import '../page-styles/Loginpage.css';
 import { useState } from 'react';
 import { LoginApi } from '../services/Api';
 import { storeUserData } from '../services/Storage'

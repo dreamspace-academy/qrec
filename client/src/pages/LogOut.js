@@ -1,5 +1,5 @@
 import React from 'react';
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import { logout } from '../services/Auth';
 import { Button } from 'semantic-ui-react'
 import { isAuthenticated } from '../services/Auth';

@@ -1,4 +1,4 @@
-import '../PageStyle/RegisterPage.css';
+import '../page-styles/RegisterPage.css';
 import logo from '../images/logo2.png'
 import { useState } from 'react'
 import { RegisterApi } from '../services/Api';

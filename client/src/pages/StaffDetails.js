@@ -1,4 +1,4 @@
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import StaffDataService from "../services/staffs.services";
 import React, { useEffect, useState } from 'react';
 import { doc } from 'firebase/firestore';

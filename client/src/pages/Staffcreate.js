@@ -1,4 +1,4 @@
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import StaffDataService from '../services/staffs.services';
 import React, { useState } from 'react'
 import { Alert } from 'react-bootstrap';

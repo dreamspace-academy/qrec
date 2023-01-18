@@ -1,4 +1,4 @@
-import '../PageStyle/Dash-board.css'
+import '../page-styles/Dash-board.css'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {

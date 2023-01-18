@@ -1,7 +1,7 @@
-import '../PageStyle/Staff.css'
+import '../page-styles/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import React, { useEffect, useState } from 'react';
 import { Image, Button } from 'semantic-ui-react'
 import { isAuthenticated } from '../services/Auth';

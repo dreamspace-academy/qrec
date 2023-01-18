@@ -1,6 +1,6 @@
 import React from 'react';
 import IMG from '../images/square-logo-remove-bg.png';
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import { Header, Image, List } from 'semantic-ui-react';
 import { isAuthenticated } from '../services/Auth';
 import { Navigate } from 'react-router-dom';

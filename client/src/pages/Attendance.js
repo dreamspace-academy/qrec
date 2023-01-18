@@ -1,4 +1,4 @@
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import AttenDataService from "../services/attendance.services";
 import React, { useEffect, useState } from 'react';
 import { Table, Icon, Header, Form } from 'semantic-ui-react'

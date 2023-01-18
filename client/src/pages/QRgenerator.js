@@ -1,5 +1,5 @@
 import StaffDataService from "../services/staffs.services";
-import DASH from '../Components/Dash-bord';
+import DASH from '../components/Dash-bord';
 import React, { useState, useRef, useEffect } from "react";
 import { doc } from 'firebase/firestore';
 import { Form } from 'semantic-ui-react';
