@@ -82,7 +82,7 @@ export default function RegisterPage() {
                             <form onSubmit={handleSubmit} className="register-form" action="" >
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1" className="text-uppercase">Name</label>
-                                    <input type="text" className="form-control" onChange={handleInput} name="name" id="" />
+                                    <input type="text" className="form-control" onChange={handleInput} name="name" id="" placeholder="Username" />
                                     {errors.name.required ?
                                         (<span className="text-danger" >
                                             Name is required.
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1" className="text-uppercase">Email</label>
-                                    <input type="text" className="form-control" onChange={handleInput} name="email" id="" />
+                                    <input type="text" className="form-control" onChange={handleInput} name="email" id="" placeholder="Email" />
                                     {errors.email.required ?
                                         (<span className="text-danger" >
                                             Email is required.
@@ -100,7 +100,7 @@ export default function RegisterPage() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputPassword1" className="text-uppercase">Password</label>
-                                    <input className="form-control" type="password" onChange={handleInput} name="password" id="" />
+                                    <input className="form-control" type="password" onChange={handleInput} name="password" id="" placeholder="Password" />
                                     {errors.password.required ?
                                         (<span className="text-danger" >
                                             Password is required.

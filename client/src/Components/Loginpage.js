@@ -1,10 +1,10 @@
 import '../page-styles/Loginpage.css';
+import logo from '../images/logo2.png'
 import { useState } from 'react';
 import { LoginApi } from '../services/Api';
 import { storeUserData } from '../services/Storage'
-import { isAuthenticated } from '../services/Auth';
 import { Link, Navigate } from 'react-router-dom';
-import logo from '../images/logo2.png'
+import { isAuthenticated } from '../services/Auth';
 
 
 export default function Loginpage() {
@@ -63,7 +63,6 @@ export default function Loginpage() {
         //redirect user to dashboard
         return <Navigate to="/dash" />
     }
-
 
     return (
 

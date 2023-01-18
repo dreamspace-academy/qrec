@@ -10,6 +10,9 @@ const Settings = () => {
     return <Navigate to="/" />
   }
 
+
+
+
   return (
     <div>
       <DASH>
@@ -22,11 +25,16 @@ const Settings = () => {
             </Header.Content>
           </Header>
         </div>
-        <br></br>
+
+        <br>
+        </br>
+
         <div >
           <h3>Change Password</h3>
         </div>
+
         <br></br><br></br>
+
         <Form>
           <Form.Field>
             <label>Current Password</label>
@@ -36,10 +44,10 @@ const Settings = () => {
             <label>New Password</label>
             <input placeholder='New password' />
           </Form.Field>
-          <Form.Field>
+          {/* <Form.Field>
             <label>Confirm Password</label>
             <input placeholder='Confirm password' />
-          </Form.Field>
+          </Form.Field> */}
 
           <Button primary type='confirm'>Confirm</Button>
         </Form>

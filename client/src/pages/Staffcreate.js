@@ -83,11 +83,11 @@ const Staffcreate = () => {
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
-      setProfile(e.target.files[0]);
+      setProfile(e.target.files[0])
     }
   }
 
-  console.log("image :", profile)
+  // console.log("image :", profile)
 
   const uploadProfile = (e) => {
     e.preventDefault()
@@ -107,7 +107,7 @@ const Staffcreate = () => {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImgUrl(downloadURL)
-          alert("Profile Updated")
+          // alert("Profile Updated")
         });
       }
     );
@@ -155,6 +155,7 @@ const Staffcreate = () => {
                   type="file"
                   placeholder="Search..."
                   onChange={handleChange}
+
                 />
               </div>
               &nbsp;
