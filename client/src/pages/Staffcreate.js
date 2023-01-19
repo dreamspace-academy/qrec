@@ -133,7 +133,7 @@ const Staffcreate = () => {
 
         <Form onSubmit={handleSubmit} success>
 
-          <div className="ui center aligned ">
+          <div className="ui center aligned container">
             <Image
               type={Input}
               src={imgUrl}
