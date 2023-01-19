@@ -24,6 +24,9 @@ main {
     height: 100vh;
     width: 340px;
     transition: all 0.9s;
+    position: fixed;
+    z-index: 1;
+    overflow: visible;
 }
 
 .top_section {

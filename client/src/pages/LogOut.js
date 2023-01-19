@@ -1,5 +1,6 @@
 import React from 'react';
 import DASH from '../components/Dash-bord';
+import '../page-styles/Staff.css'
 import { logout } from '../services/Auth';
 import { Button } from 'semantic-ui-react'
 import { isAuthenticated } from '../services/Auth';
@@ -21,11 +22,13 @@ const LogOut = (props) => {
     return (
         <div>
             <DASH>
-                <div className='ui dividing header'>
-                    <h1>Log Out</h1>
-                </div>
-                <div>
-                    <Button primary type='Logout' onClick={logoutUser}>LogOut</Button>
+                <div className='page'>
+                    <div className='ui dividing header'>
+                        <h1>Log Out</h1>
+                    </div>
+                    <div>
+                        <Button primary type='Logout' onClick={logoutUser}>LogOut</Button>
+                    </div>
                 </div>
             </DASH>
         </div >

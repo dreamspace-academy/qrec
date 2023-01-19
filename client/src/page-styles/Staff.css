@@ -1,5 +1,9 @@
-.Scroll {
-    height: 660px;
-    min-width: fit-content;
-
+.page {
+    padding-left: 45px;
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    /* margin: auto; */
+    position: relative;
 }

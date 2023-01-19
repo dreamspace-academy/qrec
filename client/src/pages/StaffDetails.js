@@ -1,4 +1,5 @@
 import DASH from '../components/Dash-bord';
+import '../page-styles/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import React, { useEffect, useState } from 'react';
 import { doc } from 'firebase/firestore';
@@ -64,136 +65,139 @@ const StaffDetails = ({ id, getStaffId }) => {
   return (
     <div>
       <DASH>
-        <div className='ui dividing header'>
-          <h1>Staff Details
-            <Link to={'/qrgenerate'}>
-              <Button
-                className='ui small icon black button right floated'
-                onClick={(e) => getStaffs(doc.id)}
-              >
-                Generate &nbsp; <i aria-hidden="true" class=" qrcode icon" id="addStaff"></i>
-              </Button>
-            </Link>
-          </h1>
+        <div className='page'>
+          <div className='ui dividing header'>
+            <h1>Staff Details
+              <Link to={'/qrgenerate'}>
+                <Button
+                  className='ui small icon black button right floated'
+                  onClick={(e) => getStaffs(doc.id)}
+                >
+                  Generate &nbsp; <i aria-hidden="true" class=" qrcode icon" id="addStaff"></i>
+                </Button>
+              </Link>
+            </h1>
+          </div>
+
+          <div>
+
+            <Image
+              Input
+              src={imgUrl}
+              control={Input}
+              size='medium'
+              centered
+              rounded
+            />
+            <br />
+            <Form key={doc.id}>
+              <Form.Group widths='equal'>
+                <Form.Field
+                  id='form-input-control-staff-id'
+                  control={Input}
+                  label='Staff ID'
+                  value={staff}
+                  placeholder={staff}
+                  onChange={(e) => setStaff("")}
+                  readOnly
+                />
+                <Form.Field
+                  id='form-input-control-error-email'
+                  control={Input}
+                  label='Email'
+                  value={email}
+                  placeholder={doc.email}
+                  readOnly
+                />
+              </Form.Group>
+
+              <Form.Group widths='equal'>
+                <Form.Field
+                  id='form-input-control-first-name'
+                  control={Input}
+                  label='First name'
+                  value={fname}
+                  placeholder={doc.fname}
+                  readOnly
+                />
+                <Form.Field
+                  id='form-input-control-phone-number'
+                  control={Input}
+                  label='Phone Number'
+                  value={phone}
+                  placeholder={doc.phone}
+                  readOnly
+                />
+              </Form.Group>
+              <Form.Group widths='equal'>
+                <Form.Field
+                  id='form-input-control-last-name'
+                  control={Input}
+                  label='Last name'
+                  value={lname}
+                  placeholder={doc.lname}
+                  readOnly
+                />
+                <Form.Field
+                  id='form-input-control-lab-name'
+                  control={Input}
+                  label='Department'
+                  value={department}
+                  placeholder={doc.department}
+                  readOnly
+                />
+              </Form.Group>
+
+              <Form.Group widths='equal'>
+                <Form.Field
+                  id='form-input-control-dateofbirth-name'
+                  control={Input}
+                  label='D.O.B'
+                  value={dob}
+                  placeholder={doc.dob}
+                  readOnly
+                />
+                <Form.Field
+                  id='form-input-control-role-name'
+                  control={Input}
+                  label='Job Role'
+                  value={job}
+                  placeholder={doc.job}
+                  readOnly
+                />
+              </Form.Group>
+
+              <Form.Group widths='equal'>
+                <Form.Field
+                  control={Input}
+                  label='Gender'
+                  value={gender}
+                  placeholder={doc.gender}
+                  readOnly
+                />
+                <Form.Field
+                  id='form-input-control-remark-name'
+                  control={TextArea}
+                  label='Remark'
+                  value={remark}
+                  placeholder={doc.remark}
+                  readOnly
+                />
+              </Form.Group>
+
+              <Link to={'/staffedit'}>
+                <Form.Field
+                  id='form-button-control-public'
+                  control={Button}
+                  content='Edit'
+                />
+              </Link>
+            </Form>
+          </div>
+
+          <br /><br /><br /><br />
         </div>
 
-        <div>
-
-          <Image
-            Input
-            src={imgUrl}
-            control={Input}
-            size='medium'
-            centered
-            rounded
-          />
-          <br />
-          <Form key={doc.id}>
-            <Form.Group widths='equal'>
-              <Form.Field
-                id='form-input-control-staff-id'
-                control={Input}
-                label='Staff ID'
-                value={staff}
-                placeholder={staff}
-                onChange={(e) => setStaff("")}
-                readOnly
-              />
-              <Form.Field
-                id='form-input-control-error-email'
-                control={Input}
-                label='Email'
-                value={email}
-                placeholder={doc.email}
-                readOnly
-              />
-            </Form.Group>
-
-            <Form.Group widths='equal'>
-              <Form.Field
-                id='form-input-control-first-name'
-                control={Input}
-                label='First name'
-                value={fname}
-                placeholder={doc.fname}
-                readOnly
-              />
-              <Form.Field
-                id='form-input-control-phone-number'
-                control={Input}
-                label='Phone Number'
-                value={phone}
-                placeholder={doc.phone}
-                readOnly
-              />
-            </Form.Group>
-            <Form.Group widths='equal'>
-              <Form.Field
-                id='form-input-control-last-name'
-                control={Input}
-                label='Last name'
-                value={lname}
-                placeholder={doc.lname}
-                readOnly
-              />
-              <Form.Field
-                id='form-input-control-lab-name'
-                control={Input}
-                label='Department'
-                value={department}
-                placeholder={doc.department}
-                readOnly
-              />
-            </Form.Group>
-
-            <Form.Group widths='equal'>
-              <Form.Field
-                id='form-input-control-dateofbirth-name'
-                control={Input}
-                label='D.O.B'
-                value={dob}
-                placeholder={doc.dob}
-                readOnly
-              />
-              <Form.Field
-                id='form-input-control-role-name'
-                control={Input}
-                label='Job Role'
-                value={job}
-                placeholder={doc.job}
-                readOnly
-              />
-            </Form.Group>
-
-            <Form.Group widths='equal'>
-              <Form.Field
-                control={Input}
-                label='Gender'
-                value={gender}
-                placeholder={doc.gender}
-                readOnly
-              />
-              <Form.Field
-                id='form-input-control-remark-name'
-                control={TextArea}
-                label='Remark'
-                value={remark}
-                placeholder={doc.remark}
-                readOnly
-              />
-            </Form.Group>
-
-            <Link to={'/staffedit'}>
-              <Form.Field
-                id='form-button-control-public'
-                control={Button}
-                content='Edit'
-              />
-            </Link>
-          </Form>
-        </div>
-
-        <br /><br /><br /><br />
       </DASH>
     </div>
   )

@@ -1,4 +1,5 @@
 import DASH from '../components/Dash-bord';
+import '../page-styles/Staff.css'
 import StaffDataService from "../services/staffs.services";
 import React, { useState, useEffect } from 'react';
 import { Alert } from 'react-bootstrap';
@@ -149,144 +150,146 @@ const StaffEdit = ({ id, setStaffId }) => {
   return (
     <div>
       <DASH>
-        <div className='ui dividing header'>
-          <h1>Edit Staff</h1>
-        </div>
-
-        {message?.msg && (
-          <Alert
-            variant={message?.error ? "danger" : "success"}
-            dismissble
-            onClose={() => setMessage("")}
-          >
-            {" "}
-            {message?.msg}
-          </Alert>
-        )}
-        <div className="ui center aligned container">
-          <Image
-            Input
-            src={imgUrl}
-            control={Input}
-            size='medium'
-            centered
-            rounded
-            onChange={(e) => setImgUrl(e.target.value)} /> <br />
-          <div className='input box'>
-            <div className="ui input">
-              <input
-                accept=".jpg, .png, .jpeg"
-                type="file"
-                placeholder="Search..."
-                onChange={handleChange}
-              />
-            </div>
-            &nbsp;
-            <div className='ui small compact button' onClick={uploadProfile} >Save</div>
+        <div className='page'>
+          <div className='ui dividing header'>
+            <h1>Edit Staff</h1>
           </div>
+
+          {message?.msg && (
+            <Alert
+              variant={message?.error ? "danger" : "success"}
+              dismissble
+              onClose={() => setMessage("")}
+            >
+              {" "}
+              {message?.msg}
+            </Alert>
+          )}
+          <div className="ui center aligned container">
+            <Image
+              Input
+              src={imgUrl}
+              control={Input}
+              size='medium'
+              centered
+              rounded
+              onChange={(e) => setImgUrl(e.target.value)} /> <br />
+            <div className='input box'>
+              <div className="ui input">
+                <input
+                  accept=".jpg, .png, .jpeg"
+                  type="file"
+                  placeholder="Search..."
+                  onChange={handleChange}
+                />
+              </div>
+              &nbsp;
+              <div className='ui small compact button' onClick={uploadProfile} >Save</div>
+            </div>
+          </div>
+          <br />
+
+
+          <Form onSubmit={handleSubmit}>
+            <Form.Group widths='equal'>
+              <Form.Field
+                id='form-input-control-staff-id'
+                control={Input}
+                label='Staff ID'
+                value={staff}
+                onChange={(e) => setStaff(e.target.value)}
+              />
+              <Form.Field
+                id='form-input-control-error-email'
+                control={Input}
+                label='Email'
+
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group widths='equal'>
+              <Form.Field
+                id='form-input-control-first-name'
+                control={Input}
+                label='First name'
+
+                value={fname}
+                onChange={(e) => setFname(e.target.value)}
+              />
+              <Form.Field
+                id='form-input-control-phone-number'
+                control={Input}
+                label='Phone Number'
+
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group widths='equal'>
+              <Form.Field
+                id='form-input-control-last-name'
+                control={Input}
+                label='Last name'
+
+                value={lname}
+                onChange={(e) => setLname(e.target.value)}
+              />
+              <Form.Field
+                id='form-input-control-lab-name'
+                control={Input}
+                label='Department'
+
+                value={department}
+                onChange={(e) => setDepartment(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group widths='equal'>
+              <Form.Field
+                id='form-input-control-dateofbirth-name'
+                control={Input}
+                label='D.O.B'
+
+                value={dob}
+                onChange={(e) => setDob(e.target.value)}
+              />
+              <Form.Field
+                id='form-input-control-role-name'
+                control={Input}
+                label='Job Role'
+
+                value={job}
+                onChange={(e) => setJob(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group widths='equal'>
+              <Form.Field
+                control={Input}
+                label='Gender'
+
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+              />
+              <Form.Field
+                id='form-input-control-remark-name'
+                control={TextArea}
+                label='Remarks'
+
+                value={remark}
+                onChange={(e) => setRemark(e.target.value)}
+              />
+            </Form.Group>
+
+            <Button className='ui blue button' type='submit'>
+              Update
+            </Button>
+
+          </Form>
+          <br /><br /><br />
         </div>
-        <br />
-
-
-        <Form onSubmit={handleSubmit}>
-          <Form.Group widths='equal'>
-            <Form.Field
-              id='form-input-control-staff-id'
-              control={Input}
-              label='Staff ID'
-              value={staff}
-              onChange={(e) => setStaff(e.target.value)}
-            />
-            <Form.Field
-              id='form-input-control-error-email'
-              control={Input}
-              label='Email'
-
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-
-          <Form.Group widths='equal'>
-            <Form.Field
-              id='form-input-control-first-name'
-              control={Input}
-              label='First name'
-
-              value={fname}
-              onChange={(e) => setFname(e.target.value)}
-            />
-            <Form.Field
-              id='form-input-control-phone-number'
-              control={Input}
-              label='Phone Number'
-
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group widths='equal'>
-            <Form.Field
-              id='form-input-control-last-name'
-              control={Input}
-              label='Last name'
-
-              value={lname}
-              onChange={(e) => setLname(e.target.value)}
-            />
-            <Form.Field
-              id='form-input-control-lab-name'
-              control={Input}
-              label='Department'
-
-              value={department}
-              onChange={(e) => setDepartment(e.target.value)}
-            />
-          </Form.Group>
-
-          <Form.Group widths='equal'>
-            <Form.Field
-              id='form-input-control-dateofbirth-name'
-              control={Input}
-              label='D.O.B'
-
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-            />
-            <Form.Field
-              id='form-input-control-role-name'
-              control={Input}
-              label='Job Role'
-
-              value={job}
-              onChange={(e) => setJob(e.target.value)}
-            />
-          </Form.Group>
-
-          <Form.Group widths='equal'>
-            <Form.Field
-              control={Input}
-              label='Gender'
-
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-            />
-            <Form.Field
-              id='form-input-control-remark-name'
-              control={TextArea}
-              label='Remarks'
-
-              value={remark}
-              onChange={(e) => setRemark(e.target.value)}
-            />
-          </Form.Group>
-
-          <Button className='ui blue button' type='submit'>
-            Update
-          </Button>
-
-        </Form>
-        <br /><br /><br />
       </DASH>
     </div>
   )
