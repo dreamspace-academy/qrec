@@ -111,9 +111,9 @@ export default function Loginpage() {
                                     <input type="submit" className="btn btn-login float-right" disabled={loading} value="Login" />
                                 </div>
                                 <div className="clearfix"></div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     Create new account ? Please <Link to="/register">Register</Link>
-                                </div>
+                                </div> */}
                             </form>
                         </div>
                     </div>
