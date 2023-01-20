@@ -46,7 +46,7 @@ const Staff = ({ getStaffId }) => {
                         </h1>
                     </div>
                     <div>
-                        <div className='ui five cards'>
+                        <div className='ui five doubling stackable cards'>
                             {staffs
                                 .sort((a, b) => a.staff > b.staff ? 1 : -1)
                                 .map((doc) => {
