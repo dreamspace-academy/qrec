@@ -52,19 +52,13 @@ const QrCode = ({ id, setStaffId }) => {
   }
 
   const qrcode = (
-    // <QRCodeCanvas
-    //   value={url}
-    //   size={380}
-    //   bgColor={"#0FF0FF"}
-    //   level={"H"}
-    //   bgSize={400}
-    // />
     <QRCode
       value={url}
-      size={380}
-      bgColor={"#FFFFFF"}
+      size={400}
+      bgColor={"#ffffff"}
       level={"H"}
       bgSize={400}
+      includeMargin={true}
     />
   );
 
@@ -82,7 +76,6 @@ const QrCode = ({ id, setStaffId }) => {
 
           <div className="ui qrcode center aligned container">
             <div ref={qrRef}>{qrcode}</div>
-            <br />
             <div className="input__group">
 
               <Form key={doc.id}>
