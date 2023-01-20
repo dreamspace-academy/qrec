@@ -1,5 +1,5 @@
-import DASH from '../components/Dash-bord';
 import '../page-styles/Staff.css'
+import DASH from '../components/Dash-bord';
 import React, { useState } from 'react';
 import { RegisterApi } from '../services/Api';
 import { storeUserData } from '../services/Storage';

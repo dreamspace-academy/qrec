@@ -100,6 +100,7 @@ const Attendance = ({ getStaffId }) => {
                                     </Table.Row>
                                 </Table.Header>
                                 {attendance
+                                    .sort( (a, b) => a.date < b.date ? 1 : -1 )
                                     .filter((doc) => {
                                         return (
                                             doc.StaffID.includes(staffID)
@@ -113,7 +114,6 @@ const Attendance = ({ getStaffId }) => {
                                             doc.date_only.includes(date)
                                         )
                                     })
-
                                     .map((doc) => {
                                         return (
                                             <Table.Body >

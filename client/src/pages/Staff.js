@@ -1,7 +1,7 @@
 import '../page-styles/Staff.css'
+import DASH from '../components/Dash-bord';
 import StaffDataService from "../services/staffs.services";
 import ProfileDataService from "../services/staffs.services";
-import DASH from '../components/Dash-bord';
 import React, { useEffect, useState } from 'react';
 import { Image, Button } from 'semantic-ui-react'
 import { isAuthenticated } from '../services/Auth';
@@ -47,44 +47,36 @@ const Staff = ({ getStaffId }) => {
                     </div>
                     <div>
                         <div className='ui five cards'>
-                            {staffs.map((doc) => {
-                                return (
-                                    <div class="ui card" key={doc.id}>
-
-                                        <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
-                                            <div
-                                                className='ui basic button center aligned container'
-                                                onClick={(e) => getStaffId(doc.id)}
-                                            >
-                                                <div class="image">
-                                                    <Image src={doc.imgUrl} rounded />
+                            {staffs
+                                .sort((a, b) => a.staff > b.staff ? 1 : -1)
+                                .map((doc) => {
+                                    return (
+                                        <div class="ui card" key={doc.id}>
+                                            <Link to="/staffdetails" style={{ textDecoration: 'none' }}>
+                                                <div
+                                                    className='ui basic button center aligned container'
+                                                    onClick={(e) => getStaffId(doc.id)}
+                                                >
+                                                    <div class="image">
+                                                        <Image src={doc.imgUrl} rounded />
+                                                    </div>
+                                                    <div class="ui large header">{doc.fname}</div><hr />
+                                                    <div class="description">{doc.job}</div>
+                                                    <div className='ui extra content'>ID : {doc.staff}</div>
                                                 </div>
-                                                <div class="ui large header">{doc.fname}</div><hr />
-                                                <div class="description">{doc.job}</div>
-                                                <div className='ui extra content'>ID : {doc.staff}</div>
-                                            </div>
-                                        </Link>
+                                            </Link>
 
-                                        <div className="ui content fluid container ">
-                                            <div className="ui">
-                                                {/* <Link to={'/qrview'}>
-                                            <div
-                                                className='ui tiny black circular icon button left floated item'>
-                                                <i aria-hidden="true" class=" qrcode solid large icon" id="addStaff">
-                                                </i>
-                                            </div>
-                                        </Link> */}
+                                            <div className="ui content fluid container ">
                                                 <div
                                                     className='ui tiny icon red button center aligned container '
-                                                    onClick={(e) => deleteHandler(doc.id)}>
+                                                    onClick={(e) => deleteHandler(doc.id)}
+                                                >
                                                     <i aria-hidden="true" class=" trash large icon" id="addStaff"></i>
                                                 </div>
                                             </div>
                                         </div>
-
-                                    </div>
-                                );
-                            })}
+                                    );
+                                })}
                         </div>
 
                     </div>

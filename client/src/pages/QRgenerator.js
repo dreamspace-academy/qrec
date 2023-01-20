@@ -1,11 +1,11 @@
-import StaffDataService from "../services/staffs.services";
-import DASH from '../components/Dash-bord';
 import '../page-styles/Staff.css'
+import DASH from '../components/Dash-bord';
+import StaffDataService from "../services/staffs.services";
 import React, { useState, useRef, useEffect } from "react";
 import { doc } from 'firebase/firestore';
 import { Form } from 'semantic-ui-react';
 import { Navigate } from 'react-router-dom';
-import { QRCodeCanvas } from "qrcode.react";
+import QRCode, { QRCodeCanvas } from "qrcode.react";
 import { isAuthenticated } from '../services/Auth';
 
 const QrCode = ({ id, setStaffId }) => {
@@ -37,10 +37,10 @@ const QrCode = ({ id, setStaffId }) => {
   const downloadQRCode = async (e) => {
     e.preventDefault();
     let canvas = qrRef.current.querySelector("canvas");
-    let image = canvas.toDataURL("image/png");
+    let image = canvas.toDataURL("image/jpeg");
     let anchor = document.createElement("a");
     anchor.href = image;
-    anchor.download = "qr.png";
+    anchor.download = "qr.jpeg";
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
@@ -52,11 +52,19 @@ const QrCode = ({ id, setStaffId }) => {
   }
 
   const qrcode = (
-    <QRCodeCanvas
+    // <QRCodeCanvas
+    //   value={url}
+    //   size={380}
+    //   bgColor={"#0FF0FF"}
+    //   level={"H"}
+    //   bgSize={400}
+    // />
+    <QRCode
       value={url}
       size={380}
-      bgColor={"#F0F0F0"}
+      bgColor={"#FFFFFF"}
       level={"H"}
+      bgSize={400}
     />
   );
 
