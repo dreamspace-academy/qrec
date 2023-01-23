@@ -1,10 +1,10 @@
-import DASH from '../components/Dash-bord';
 import '../page-styles/Staff.css'
+import DASH from '../components/Dash-bord';
 import AttenDataService from "../services/attendance.services";
 import React, { useEffect, useState } from 'react';
-import { Table, Icon, Header, Form } from 'semantic-ui-react'
-import { isAuthenticated } from '../services/Auth';
 import { Navigate } from 'react-router-dom';
+import { isAuthenticated } from '../services/Auth';
+import { Table, Icon, Header, Form, Label } from 'semantic-ui-react'
 
 const Attendance = ({ getStaffId }) => {
 
@@ -100,7 +100,7 @@ const Attendance = ({ getStaffId }) => {
                                     </Table.Row>
                                 </Table.Header>
                                 {attendance
-                                    .sort((a, b) => a.date < b.date ? 1 : -1)
+                                    .sort((a, b) => a.time < b.time ? 1 : -1)
                                     .filter((doc) => {
                                         return (
                                             doc.StaffID.includes(staffID)
@@ -118,7 +118,11 @@ const Attendance = ({ getStaffId }) => {
                                         return (
                                             <Table.Body >
                                                 <Table.Row>
-                                                    <Table.Cell>{doc.Year}-{doc.Month}-{doc.date_only}</Table.Cell>
+                                                    <Table.Cell>
+                                                        <Label basic size="medium">
+                                                            {doc.Year} - {doc.Month} - {doc.date_only}
+                                                        </Label>
+                                                    </Table.Cell>
                                                     <Table.Cell>{doc.StaffID}</Table.Cell>
                                                     <Table.Cell>{doc.name}</Table.Cell>
                                                     <Table.Cell>{doc.department}</Table.Cell>
