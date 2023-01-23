@@ -89,30 +89,8 @@ const Settings = () => {
             </Header>
           </div>
 
-          <br />
-
-          <div className='pass-change'>
-            <div >
-              <h2>Change Your Account Password</h2>
-            </div>
-
             <br />
 
-            <Form>
-              <Form.Field>
-                <label>Current Password</label>
-                <input placeholder='Current password' />
-              </Form.Field>
-
-              <Form.Field>
-                <label>New Password</label>
-                <input placeholder='New password' />
-              </Form.Field>
-              <Button primary type='confirm'>Confirm</Button>
-            </Form>
-          </div>
-          <br />
-          <br />
           <div className='register'>
             <div >
               <h2>Register a new User</h2>
@@ -177,6 +155,28 @@ const Settings = () => {
             </Form>
             <br />
             < Button type="submit" className="ui primary button" disabled={loading} value="Register" onClick={handleSubmit}>Register </Button>
+          </div>
+            <br />
+            <br />
+          <div className='pass-change'>
+            <div >
+              <h2>Change Your Account Password</h2>
+            </div>
+
+            <br />
+
+            <Form>
+              <Form.Field>
+                <label>Current Password</label>
+                <input placeholder='Current password' />
+              </Form.Field>
+
+              <Form.Field>
+                <label>New Password</label>
+                <input placeholder='New password' />
+              </Form.Field>
+              <Button primary type='confirm'>Confirm</Button>
+            </Form>
           </div>
 
         </div>
