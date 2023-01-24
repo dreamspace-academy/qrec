@@ -27,6 +27,10 @@ const Staff = ({ getStaffId }) => {
         window.location.reload(false);
     }
 
+    const addDefaultSrc = (ev) => {
+        ev.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" 
+    }
+
     if (!isAuthenticated()) {
         return <Navigate to="/" />
     }
@@ -58,7 +62,7 @@ const Staff = ({ getStaffId }) => {
                                                     onClick={(e) => getStaffId(doc.id)}
                                                 >
                                                     <div class="image">
-                                                        <Image src={doc.imgUrl} rounded />
+                                                        <Image src={doc.imgUrl} alt={"loading"} onError={addDefaultSrc} rounded fluid />
                                                     </div>
                                                     <div class="ui large header">{doc.fname}</div><hr />
                                                     <div class="description">{doc.job}</div>
