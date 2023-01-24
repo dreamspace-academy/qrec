@@ -142,6 +142,10 @@ const StaffEdit = ({ id, setStaffId }) => {
     );
   }
 
+  const addDefaultSrc = (ev) => {
+    ev.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+  }
+
   if (!isAuthenticated()) {
     return <Navigate to="/" />
   }
@@ -169,6 +173,8 @@ const StaffEdit = ({ id, setStaffId }) => {
               Input
               src={imgUrl}
               control={Input}
+              alt={"loading"}
+              onError={addDefaultSrc}
               size='medium'
               centered
               rounded
