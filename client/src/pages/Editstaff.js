@@ -37,8 +37,7 @@ const StaffEdit = ({ id, setStaffId }) => {
       department === "" ||
       dob === "" ||
       job === "" ||
-      gender === "" ||
-      remark === ""
+      gender === ""
     ) {
       setMessage({ error: true, msg: "All fields are mandatory!" });
       return;
