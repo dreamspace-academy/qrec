@@ -1,6 +1,7 @@
 import DASH from '../components/Dash-bord';
 import '../page-styles/Staff.css'
 import StaffDataService from "../services/staffs.services";
+import addDefaultSrc from "./Staff";
 import React, { useEffect, useState } from 'react';
 import { doc } from 'firebase/firestore';
 import { Link, Navigate } from 'react-router-dom';
@@ -58,6 +59,10 @@ const StaffDetails = ({ id, getStaffId }) => {
     setStaffs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
+  const addDefaultSrc = (ev) => {
+    ev.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+  }
+
   if (!isAuthenticated()) {
     return <Navigate to="/" />
   }
@@ -85,6 +90,8 @@ const StaffDetails = ({ id, getStaffId }) => {
               Input
               src={imgUrl}
               control={Input}
+              alt={"loading"}
+              onError={addDefaultSrc}
               size='medium'
               centered
               rounded

@@ -28,7 +28,7 @@ const Staff = ({ getStaffId }) => {
     }
 
     const addDefaultSrc = (ev) => {
-        ev.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" 
+        ev.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
     }
 
     if (!isAuthenticated()) {
