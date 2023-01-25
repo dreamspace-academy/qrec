@@ -95,6 +95,7 @@ export default function Loginpage() {
                                     }
                                 </div>
                                 <div className="form-group">
+                                    <br />
                                     {loading ?
                                         (<div className="text-center">
                                             <div className="spinner-border text-primary " role="status">

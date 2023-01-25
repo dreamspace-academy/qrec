@@ -36,7 +36,6 @@ const Attendance = ({ getStaffId }) => {
                     <div className='ui dividing header'>
                         <h1>Attendance Management</h1>
                     </div>
-                    {/* <pre>{JSON.stringify(attendance, undefined, 2)}</pre> */}
                     <div  >
                         <Header as='h3' block >
                             <Form className='ui form' >
@@ -100,7 +99,7 @@ const Attendance = ({ getStaffId }) => {
                                     </Table.Row>
                                 </Table.Header>
                                 {attendance
-                                    .sort((a, b) => a.time > b.time ? 1 : -1)
+                                    .sort((a, b) => a.date_time < b.date_time ? 1 : -1)
                                     .filter((doc) => {
                                         return (
                                             doc.StaffID.includes(staffID)
