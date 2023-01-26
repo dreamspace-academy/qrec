@@ -67,18 +67,23 @@ const Attendance = ({ getStaffId }) => {
                                         placeholder='xx'
                                         width={6}
                                         type='number'
+                                        maxLength={2}
+
                                         onChange={(e) => setDate(e.target.value)} />
                                     <Form.Input
                                         label='Month'
                                         placeholder='xx'
                                         width={4}
                                         type='number'
+                                        maxLength={2}
+
                                         onChange={(e) => setMonth(e.target.value)} />
                                     <Form.Input
                                         label='Year'
                                         placeholder='xxxx'
                                         width={6}
                                         type='number'
+                                        maxLength={4}
                                         onChange={(e) => setYear(e.target.value)} />
                                 </Form.Group>
                             </Form>
