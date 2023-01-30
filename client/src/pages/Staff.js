@@ -40,7 +40,7 @@ const Staff = ({ getStaffId }) => {
             <DASH>
                 <div className='page'>
                     <div className='ui dividing header'>
-                        <h1>Staff Management
+                        <h1>Staffs
                             <Link to={'/addstaff'}>
                                 <Button className='ui black small compact button right floated'>
                                     Add &nbsp; <i aria-hidden="true" className=" user plus icon " id="addStaff">
