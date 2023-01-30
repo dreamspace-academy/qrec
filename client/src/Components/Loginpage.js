@@ -78,7 +78,7 @@ export default function Loginpage() {
                             <form onSubmit={handleSubmit} className="login-form" action="">
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1" className="text-uppercase">Email</label>
-                                    <input type="email" className="form-control" onChange={handleInput} name="email" id="" placeholder="email" />
+                                    <input type="email" className="form-control" onChange={handleInput} name="email" id="" placeholder="Email" />
                                     {errors.email.required ?
                                         (<span className="text-danger" >
                                             Email is required.
@@ -87,7 +87,7 @@ export default function Loginpage() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputPassword1" className="text-uppercase">Password</label>
-                                    <input className="form-control" type="password" onChange={handleInput} name="password" placeholder="password" id="" />
+                                    <input className="form-control" type="password" onChange={handleInput} name="password" placeholder="Password" id="" />
                                     {errors.password.required ?
                                         (<span className="text-danger" >
                                             Password is required.
