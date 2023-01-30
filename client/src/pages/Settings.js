@@ -89,7 +89,7 @@ const Settings = () => {
             </Header>
           </div>
 
-            <br />
+          <br />
 
           <div className='register'>
             <div >
@@ -156,9 +156,9 @@ const Settings = () => {
             <br />
             < Button type="submit" className="ui primary button" disabled={loading} value="Register" onClick={handleSubmit}>Register </Button>
           </div>
-            <br />
-            <br />
-          <div className='pass-change'>
+          <br />
+          <br />
+          {/* <div className='pass-change'>
             <div >
               <h2>Change Your Account Password</h2>
             </div>
@@ -177,7 +177,7 @@ const Settings = () => {
               </Form.Field>
               <Button primary type='confirm'>Confirm</Button>
             </Form>
-          </div>
+          </div> */}
 
         </div>
 

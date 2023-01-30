@@ -4,7 +4,7 @@ import AttenDataService from "../services/attendance.services";
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { isAuthenticated } from '../services/Auth';
-import { Table, Icon, Header, Form, Label } from 'semantic-ui-react'
+import { Table, Icon, Header, Form, Label, Pagination } from 'semantic-ui-react'
 
 const Attendance = ({ getStaffId }) => {
 
@@ -25,6 +25,11 @@ const Attendance = ({ getStaffId }) => {
         setAttendance(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     };
 
+    const PaginationExamplePagination = () => (
+        <Pagination defaultActivePage={5} totalPages={10} />
+    )
+
+
     if (!isAuthenticated()) {
         return <Navigate to="/" />
     }
@@ -39,7 +44,7 @@ const Attendance = ({ getStaffId }) => {
                     <div  >
                         <Header as='h3' block >
                             <Form className='ui form' >
-                                <div className='ui small header center aligned container '> Search By :</div>  <hr />
+                                <div className='ui small header center aligned container '> Search :</div>  <hr />
                                 <Form.Group inline >
 
                                     <Form.Input
@@ -92,7 +97,8 @@ const Attendance = ({ getStaffId }) => {
                     <br />
                     <div>
                         <div>
-                            <Table celled >
+
+                            <Table celled PaginationExamplePagination>
                                 <Table.Header>
                                     <Table.Row>
                                         <Table.HeaderCell>Date</Table.HeaderCell>
@@ -137,16 +143,22 @@ const Attendance = ({ getStaffId }) => {
                                         )
                                     })
                                 }
+
                             </Table>
+
                         </div>
+
                         <br />
                         <br />
                     </div>
                 </div>
+
             </DASH>
         </div>
     )
 
 };
+
+
 
 export default Attendance
